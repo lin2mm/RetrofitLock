@@ -10,11 +10,11 @@
 
 | 文件 | FILE_ID | 大小 | 类型 | 状态 |
 |------|---------|------|------|------|
-| `00_MTH-J07_Agent3_Start_Summary_Plan_CN_v2.md` | `1XsxEj_AO4pXERB2b4VPElN1MAlAjF0mZ` | 27KB | md | `Agent read`（chunk 1–2/3）→ `PRODUCT_TRUTH.md`、`CATALOG_METHOD.md` |
+| `00_MTH-J07_Agent3_Start_Summary_Plan_CN_v2.md` | `1XsxEj_AO4pXERB2b4VPElN1MAlAjF0mZ` | 27KB | md | `Agent read`（**3/3 chunk 全读**，含 R15–R20 视觉修订史）→ `PRODUCT_TRUTH.md`、`CATALOG_METHOD.md`、`CAD_LOG.md` |
 | `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` | `1ZiCFZwu9WtuGROTaGvDowwBIAweeZU6f` | 3KB | md | `Agent read`（全文）→ `PRODUCT_TRUTH.md` §1–3 |
 | `00_EXP1-DRIVE_SourceOfTruth_Registry_CN_v1.md` | `1J8Qo7vJ9mScbkepnj2acbxLKGS8aABNJ` | 9KB | md | `Agent read`（全文）→ 状态词表、目录结构、交换协议 |
 | `00_EXP1-J09_DriveFolder_FileExchange_Link_CN_v1.md` | `1kvH9LNRVR-5eIIb_XOZcv2NHwwb1ld3R` | 2KB | md | `Agent read`（全文）→ 通道方法与 M8b |
-| `00_EXP1-J90_Methodology_GapFix_Recommendations_CN_v1.md` | `1thWc6_dv07HdkzFJtEgk8xBUMxiQtWGG` | 17KB | md | `Agent read`（chunk 1/2，D01–D55）→ `CATALOG_METHOD.md` |
+| `00_EXP1-J90_Methodology_GapFix_Recommendations_CN_v1.md` | `1thWc6_dv07HdkzFJtEgk8xBUMxiQtWGG` | 17KB | md | `Agent read`（**2/2 chunk 全读**，D01–**D67**）→ `CATALOG_METHOD.md`、`CAD_LOG.md` |
 | `00_EXP1-J00_Index_..._RunLog_CN_v1.xlsx` | `1dOaF7cZESaq7dC-S2DOb-OI-BSBWwHwX` | 27KB | xlsx | `Drive pointer stored`（未读；xlsx 需附件或 `fetch-drive.sh`） |
 | `00_EXP1-J90_..._Recommendations_CN_v1.xlsx` | `1ezj1dcVJ01cr4nYDpfmjXO3M4-ucJ4aC` | 23KB | xlsx | `Drive pointer stored` |
 
@@ -41,6 +41,16 @@
 | `装配-DB-4-成功.FCStd` | `1a4h7m__cpRPNrWHB-sA8j9MZpQx_kVCL` | `Drive pointer stored` → 与 Folder2 里同名件不同 id（两份，取这份还是那份需你确认） |
 | `装配-db-4.FCStd` | `1hYHmEAJZZ9IJMe1MssVv5HH7b-eFkPZf` | `Drive pointer stored` |
 | `装配-DC-4.FCStd` | `1PyQDppCv8aJsUDl18HZakXSbmk_9XRDP` | `Drive pointer stored` → DC-4 变体（与"成功"版差异需核对） |
+
+## 实测结论（2026-09-20，两条路径各测一次，别再重复测）
+| 目的 | 途径 | 结果 |
+|---|---|---|
+| 枚举 folder / 取 FILE_ID | `fetch_page` folder URL | ✅ 成功（含子文件夹） |
+| 读 **md/txt** 正文 | `fetch_page` + `uc?export=download&id=` | ✅ 成功（Folder 1 的 4 份 md 全读） |
+| 读 **zip/stl/FCStd/mp4** 内容 | `fetch_page` 同一端点 | ❌ **HTTP 500** |
+| 读上面这些 | 沙盒 `curl` | ❌ **000**（白名单） |
+→ 所以对你的问题「能不能自己从 Drive 读那 2 个 CAD 文件」：**不能**。二进制只有 ①聊天附件 ②你本机 `fetch-drive.sh`。
+→ 这条边界就是项目自己 **D65** 的结论：无输入只能标"用户报告、尚未验证"，不得据此出正式角度图。
 
 ## 仍然缺（不在任何已枚举位置）
 1. **底部电池盖 3 张装配截图（2026-09-20 新版）** —— 全项目唯一的电池盖装配证据；两个 folder 里都没有。
