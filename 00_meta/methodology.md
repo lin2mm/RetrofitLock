@@ -62,6 +62,24 @@
 
 ## D. 交付工程（中英双语 / PDF / 网站）
 
+### cad-verified-render-pipeline
+问题：铝合金边框 + 底部电池盖的产品图**一直生成不出来**，多轮反复失败，从未成功过一次；AI 文生图根本保不住这两处几何。
+做法：① 几何只从 CAD 取（`sx-db-4.stp` / `CAD-贴锁-设计-stl.zip` / `装配-DB-4-成功.FCStd`，包络 39.8×22.5×90.5mm）；
+ ② 渲染走 mesh → 我自写 z-buffer + 朗伯着色（或 three.js + 用户浏览器出高清图），**禁止 AI 画产品主体**；
+ ③ AI 只允许用在场景/手部/门这些背景元素上，且产品区域由 CAD 图**贴回**（inpaint 产品区锁定）；
+ ④ 出图前先跑几何 QA：包围盒尺寸、底部 R 角、面盖连续性、旋钮比例，任一项不过 = 自动作废不给人看。
+为什么：本沙盒 `cadquery/OCP` 已装但缺 `libGL.so.1`（无 root 装不了）→ 若 STL 分支可用（`trimesh` 读 STL/OBJ 不需 OCP），
+直接绕过 CAD 内核；这也解释了为什么"再试一次 AI"永远失败：错误在**管线**而不在提示词。
+出处：Session 5 — 2026-09-20（用户："还没生成过成功的铝合金边框与正确电池盖的图"）| 状态：有效（STL 到手即跑通）
+
+### failure-ledger-before-retry
+问题：同一个部件（电池盖 / 铝框）反复犯错，每轮都从头猜，纠错不累积。
+做法：每次用户纠正落成一条硬记录：错在哪 → 用户原话 → 禁止项（"不得从面盖稿反推厚度/R 角"、"不得引用已删除的 71–93 记录"）→
+ 可判定验收式（"R 角：底视轮廓四角半径>0"）→ 对应 QA 脚本。生成之前先读该部件的 ledger，**把验收式当 prompt 的一部分与出图后的断言**。
+为什么：上一线就是这么做的（`60_GTM_ConfirmedClosedCover_KnobSource_Crop_v1.png` + `96_GTM_V4_Knob_Error_Cleanup_Manifest` +
+ `70_..._Frozen_And_AluminumCAD_Verification`），它把"纠错"变成机器可判定的约束而不是设计师的印象；任何渲染器没有这套硬约束都会重复犯错。
+出处：Session 5 — 2026-09-20 | 状态：有效（本 session 建 `40_images/QA_ledger.md` 承接）
+
 ### one-html-two-outputs
 问题：目录 PDF 和网页版各写一遍，改文案要改两处。
 做法：`50_catalog/catalog.html` 用 A4 `@page` + print CSS，同一份既 Ctrl+P 出 PDF 又是网页版；Step ④ 网站继续复用。

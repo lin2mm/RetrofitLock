@@ -28,6 +28,18 @@ S4-index: 同上（网站大纲 + 是否已部署 URL + 定位一句）
 ```
 我拿到 index 自己挑要不要读 —— 你不用判断哪份重要，那是我的活。
 
-## 那份 md（`00_MTH-J07_Agent3_Start_Summary_Plan_CN_v2.md`）
-沙盒里确实不存在（`/home/user/uploads` 无此目录、全盘 find 无匹配），跟你说的一致：mark successful 点错了。
-**别重传** —— 直接把它放进 Drive 发我第一条链接，我们顺便验证 Drive 通道是否真的可用。
+## 已收到（不用重传）
+你给的 folder `1MHsQ5cQTBeUyh-eS3rv-qMfk4Bf8SnhT` 我用 `fetch_page` 枚举成功，4 份 md 已读并落库
+（`00_meta/intake/_READ_LOG.md` + `00_meta/PRODUCT_TRUTH.md`）。那份 J07 的 md 也从 Drive 读到了 —— **沙盒没落文件也没关系，Drive 通道够用**。
+所以之前那句"附件没落地"不再是阻塞，我把通道写死了。
+
+## 现在唯一卡住「铝合金边框 + 电池盖正确出图」的 4 项
+（都在 Canonical 文件夹 `14Enb5EiikE_EbIqReAp-oEqqPqg4EtSi` 里，但二进制我读不到正文，需要下面两种方式之一）
+```
+1) CAD-贴锁-设计-stl.zip            473KB   → 聊天附件优先；或 Drive 链接我按 folder 里已知 id 试文本(不行)
+2) 装配-DB-4-成功.FCStd              17KB   → 同上（或你从 FreeCAD 导出 STL/OBJ/GLB 更省事）
+3) 电池盖 3 张装配截图（2026-09-20 新版）  ← 不在 folder 1，必须单独给；旧推断链已作废，我只认这 3 张
+4) nuki like lock smallest size...mp4 1.3MB  → 我这边有 static ffmpeg，传进来就抽帧
+```
+最省事：**1+2+3 一起当附件发我**（合计 <1MB）。我收到后：SHA256 记进 `90_archive/_manifest.md` → STL 进 trimesh →
+出 6 个正交/等轴视图 + 尺寸 QA → **QA 不过就不给你看**（这就是不再返工的关键）。
