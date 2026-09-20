@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # verify-upload.sh — 别信 UI 的 "successful"，只信沙盒里的文件
-# 修正（2026-09-20）：旧版把平台自己的临时物（/tmp/arena-workspace/coding.*、/tmp/*.mjs）当成"用户文件"，
+# 修正 v2（2026-09-20）：兜底扫描曾把仓库内自建模板误算成用户文件 → 加 -not -path */RetrofitLock/*；旧版把平台自己的临时物（/tmp/arena-workspace/coding.*、/tmp/*.mjs）当成"用户文件"，
 #                     且 found>0 但 copied=0 时误报"都已入库" → 假阳性。现把**用户投递位置**与**平台噪声**分开计数。
 # 用法:
 #   bash 00_meta/scripts/verify-upload.sh            # 判断本轮附件是否真落地
@@ -31,7 +31,7 @@ while IFS= read -r f; do
   user_hits+=("$f")
 done < <(find /home/user /workspace /code -xdev -type f -mmin -180 \
     \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.md' -o -name '*.txt' -o -name '*.pdf' -o -name '*.csv' -o -name '*.zip' -o -name '*.stl' -o -name '*.obj' \) \
-    -not -path "*/RetrofitLock/00_*" -not -path "*/RetrofitLock/10_*" -not -path "*/RetrofitLock/40_*" \
+    -not -path "*/RetrofitLock/*" \
     -not -path "*/.npm*" -not -path "*/.local/*" -not -path "*/node_modules/*" 2>/dev/null | head -30)
 
 # 去重
