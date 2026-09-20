@@ -78,9 +78,12 @@ conda 源、**所有 apt 源**（且无 root）。没有 Blender/KeyShot/CAD/pan
 含义：目录按"兼容矩阵 + 按 ICP 的选配件包"组织；图片只把主机渲染一次，换配件/门型/背景做延展。
 详见 `10_product/base_unit.md` 与 `10_product/accessories.csv`。
 
-## 6. 素材怎么进这个沙盒
-见 `00_handoff/assets_index.md` 最后一节（Drive 链接读不了 → 用聊天附件 / 抽帧 / base64 兜底 /
-或让别的 session push 到 `lin2mm/RetrofitLock` 分支让我 fetch）。
+## 6. 规则、方法论、命名、容量、S1–S4 全量索引 → 都在 `00_meta/`
+本页只讲进度；**跨 session 的长期规则在 `00_meta/META.md`（开局必读）**：
+`00_meta/index_sessions1-4.md` = Session 1–4 有什么资料、我该给你什么（按 ID）·
+`00_meta/methodology.md` = 累积方法论（每轮末追加）· `00_meta/naming.md` = 命名与状态码 ·
+`00_meta/capacity.md` = 空间红线 · `bash 00_meta/scripts/capacity.sh` = 自检。
+`00_handoff/assets_index.md` 是本 session 的**精简版**（先给哪 4 个），全量以 `00_meta/` 为准。
 
 ## 6c. 待你回答的 3 个决策（不答我只能默认）
 1. **品牌名**：客户看到的品牌名/Logo/联系方式是什么？GlobalLockSummary 是内部工程师库，目录上能不能挂它？

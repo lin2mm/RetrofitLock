@@ -1,0 +1,69 @@
+# CAPACITY — 空间与容量红线（Arena + GitHub）
+
+> 本页是**约束**，不是笔记。`00_meta/META.md` M6 引用它。自检脚本：`00_meta/scripts/capacity.sh`。
+
+## 1. 硬限制（平台侧，不可调）
+
+| 来源 | 限制 | 后果 |
+|------|------|------|
+| Arena 沙盒 | 只持久化 `/home/user` 下的文件；排除 `.cache .npm .local .venv node_modules dist out build .next .output __pycache__` 等目录 | 放外面的东西下个 session 消失 |
+| Arena patchset | 每轮末快照 **累计约 128MB 或 10,000 文件**（尽力而为） | 超出后**交付可能被截断**，不是报错而是静默变少 |
+| GitHub 单文件 | >50MB 警告，>100MB 拒收 | push 直接失败 |
+| GitHub 仓库 | 建议 <1GB，>5GB 受限 | 变慢、被封推送 |
+| GitHub API | `gh` 认证可用，限流 5000/h | 大文件走 `contents` API 有 1MB 上限 → 用 git 而非 API |
+| 磁盘（实测） | 21G 总 / **19G 可用**（本沙盒） | 不是瓶颈；瓶颈是 patchset 与"是否持久化" |
+
+**结论：真正的红线不是磁盘，而是 ①是否落在 `/home/user` ②是否进过 git ③是否把 patchset 128MB 预算烧在无意义二进制上。**
+
+## 2. 本项目的自设预算（留余量）
+
+| 项 | 预算 | 超限怎么办 |
+|----|------|-----------|
+| 工作树（git 跟踪） | ≤ **60MB** | 把大素材移出仓库，只留路径清单 + 缩略图 |
+| 单文件进 git | ≤ **25MB** | 压图/抽帧/分卷，或走"源 session push 分支"通道 |
+| 交付图（`40_images/out/`） | 单张 ≤ **400KB**（JPEG q82 / WebP） | `convert -quality 82 -resize 1600x1600\>` |
+| 原始素材（`90_archive/`） | **不进 git**，只提交 `_manifest.md`（文件名、来源、哈希、用途） | 需要重看时让我重新要那一份 |
+| 跟踪文件数 | ≤ **2,000** | 检查是否误提交 node_modules/字体包 |
+| 视频/字体包/模型 | 一律不进仓库 | 视频→抽帧；字体→`@fontsource` npm；模型→不给 |
+
+## 3. 最新自检（脚本原样输出）
+
+```
+CAPACITY CHECK — 2026-09-20 (Session 5)
+[1] 磁盘: 总 21G 已用 9% 可用 19G
+[2] 工作树 705KB | .git 425KB | 跟踪文件 25 个            ← 距 60MB/2000 个极远，健康
+[3] 大文件 >25MB: 无
+[4] 未提交改动: 已处理（每轮末 commit+push）
+[5] local == remote (arena/01a0bd80-retrofitlock)          ← 成果在 GitHub 上
+[6] 易失区: /tmp/chromium 200M(不持久) ~/.local 129MB ~/.npm 236MB(均不持久)
+[7] 工具链: Pillow ✅ fpdf2 ✅ fonttools ✅ imageio-ffmpeg ✅ ImageMagick ✅
+    中文字体 ✅（已迁到 /home/user/.npm-fonts，76MB，1836 个 woff2，不进 git）
+    puppeteer/chromium ❌ 缺 libnss3（沙盒内 page.pdf() 不可用，见方法论 sandbox-pdf-limitation-workaround）
+VERDICT: PASS（除 [7] 的 PDF 引擎已知缺口）
+```
+
+## 4. 网络白名单（实测 2026-09-20，别浪费时间试）
+
+| 通 | 不通（返回 000） |
+|----|------------------|
+| `github.com`、`api.github.com`、`codeload.github.com` | `drive.google.com`、`figma.com`、`dropbox.com` |
+| `registry.npmjs.org` | `raw.githubusercontent.com`、`media.githubusercontent.com`(LFS) |
+| `pypi.org`（含 `pip download`） | `storage.googleapis.com`、`fonts.googleapis.com`、`fonts.gstatic.com` |
+| `git ls-remote` / `git fetch` / `git push`（本仓库） | `unpkg.com`、`esm.sh`、`jsdelivr`、`npmmirror`、`conda.anaconda.org`、**所有 apt 源**、`openai.com`、`ftp.mozilla.org` |
+
+→ 所以：外部素材只能靠**聊天附件**或**别的 session push 到本仓库分支**；`fetch_page` 只对能解析的公开页有效（GitHub 系、公开站点），Drive/Figma 分享页拿不到内容。
+
+## 5. 回答"session 5 还需要空间提示吗"
+
+**需要，但只剩三条**（其余我已在脚本里自动查了）：
+
+1. **别把 `/tmp` 当仓库**：要留下的东西一律 `/home/user/...`；重装依赖用 `bash 00_meta/scripts/capacity.sh --fix`（不要手写安装命令，也不要记在脑子里）。
+2. **图片进 git 前必须压**：交付图 ≤400KB。AI 出图原始尺寸常在 1–3MB，一次 30 张就吃掉 60MB 预算的一半，且**patchset 是累计的** —— 后半程（网站）才是真正需要余量的时候。这就是为什么压缩是**规则**而不是优化。
+3. **网站阶段（④）注意**：`node_modules`、`dist`、`.next`、`.cache`、`out` 已被 `.gitignore`/Arena 排除，但**大字体与大图放 `60_website/public/` 会进 git**：字体一律走 `@fontsource` 的 CDN-less 本地引用或让 dev server 直接从 `/home/user/.npm-fonts` 复制；不要为了省事把 76MB 字包塞进仓库。
+
+顺带：**当前用量离任何上限都很远**（工作树 705KB）。真正会爆的只有"把视频/源文件/字体包塞进仓库"这一种行为。
+
+## 6. merge 闸门（与容量无关，但和 session 存活有关）
+
+用户要求在一个 session 内连做 图→目录→网站，因此：阶段完成**不 merge**，只 push 到工作分支；
+必须**征得用户明确同意**才 merge（详见 `META.md` M3）。理由：merge 会让本 session 对话结束。

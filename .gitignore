@@ -2,3 +2,21 @@ node_modules/
 .cache/
 *.tmp
 .DS_Store
+# 大素材与临时物（见 00_meta/capacity.md 预算）
+40_images/video/*
+!40_images/video/.gitkeep
+!40_images/video/.ffmpeg_path
+90_archive/**
+!90_archive/README.md
+!90_archive/**/_manifest.md
+*.mp4
+*.mov
+*.zip
+*.step
+*.obj
+*.fbx
+*.blend
+*.psd
+*.ai
+60_website/node_modules/
+60_website/dist/
