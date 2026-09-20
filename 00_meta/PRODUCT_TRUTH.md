@@ -59,7 +59,8 @@
 - 通道现状：本沙盒渲染栈已打通（OCP + libGL stub，配方在 `capacity.md` §4c）；
   二进制品（png/FCStd）在沙盒外——面盖像素 QA 需用户裁决（默认：肉眼 + Drive 原件，GitHub 不动）。
 - 状态机（105 §4 输出词）：`CAD verified / CAD-screenshot consistent / discrepancy / geometry incomplete`——
-  当前电池盖 = **CAD-screenshot consistent（渲染级待网格化）**。
+  当前电池盖 = **CAD-screenshot consistent（几何源已到手：sx-dc-gai-4.stp，渲染级待网格化）**；
+  对外资格词表按 `102` §6：图2 未过 = 客户 FINAL BLOCKED；图2 过但子 BREP 未全 = `Approved visual asset` + `partial verification`（两词不互认）。
 
 ### 1b. 其余历史事实（CAD 侧仍有效；外观侧以 1a 为准）
 

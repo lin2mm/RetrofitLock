@@ -1,4 +1,4 @@
-# REQUEST_FILES — CAD / 设计稿 / 视频取件清单 v2（R13 更新）
+# REQUEST_FILES — CAD / 设计稿 / 视频取件清单 **v3**（R14 更新）
 
 > **v1→v2 变化**：P0 大半已满足——`sx-db-4.stp`(222KB 文本)✓、子文件夹 3×FCStd✓、P1 的 101/105/107/110/94 全部读完✓。
 > 通道判定（R13）：①聊天附件在本沙盒**从不落盘**（4 次实测，仅肉眼可见）②GitHub 按你要求**不动**（inbox=例外通道，默认弃用）
@@ -8,14 +8,13 @@
 
 | # | 文件 | 级别 | 为什么 / 备注 |
 |---|------|------|--------------|
-| 1 | `battery_cover.step`（`SX_DC_GAI_4` 单独导出 .stp） | **P0** | `105` §3 原文请求：**mm 单位、保留原始坐标系（或附变换）、注明对应 SX_DC_GAI_4**。有了它 + `sx-db-4.stp`，外壳+电池盖全在文本通道内 → **我可以在本沙盒独立出全部几何图，不再需要你做任何搬运** |
-| 2 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` | P0（文本） | **视频 1（实拍当前产品）的抽帧清单/编号表**——你 item 4 说"抽帧都在老的索引里"，就是这份；我拿到后自己挑帧、给你精确的选帧请求（文件名/时间码） |
-| 3 | `09_GTM_Input_Asset_Audit_2026-09-15.md` | P0（文本） | 同上配套（两视频+CAD 的审计结论） |
-| 4 | `66_GTM_FrozenClosedCover_Knob_And_Envelope_Proportions_v1_2026-09-19.md` | P1 | 旋钮/包络比例记录（94 列为在册证据） |
-| 5 | `70_GTM_CAD_ClosedCover_KnobPanel_Frozen_And_AluminumCAD_Verification_v1_2026-09-19.md` | P1 | 壳+面盖+旋钮三合复核记录（我出图后要对着它复核） |
-| 6 | `102_GTM_ConfirmedCover_Knob_BatteryCover_From31_TwoImageGate_And_HistoricalCleanupPlan_2026-09-20.md` | P1 | 双图闸门+历史清理计划（唯一没传的 P1） |
+| 1 | ~~battery_cover.step~~ ✅ **已到位**：`sx-dc-gai-4.stp`（~130KB 文本，头+首块与 107 几何一致，id 见 DRIVE_INDEX） | ~~P0~~ | 外壳+电池盖文本几何闭环；全文 17 chunks 由我在渲染轮自读，你零动作 |
+| 2 | ~~09_GTM_Visual_Input_Inventory~~ ✅ 已读 | — | 它指认：**抽帧明细其实在 3 份报告里**（见 #3） |
+| 3 | 从你本地 `CAD_LongTerm_Workspace_2026-09-19.zip` **解出 5 份小文本**（zip 本体别传，二进制我打不开）：`09_GTM_Video_Media_Keyframe_Inspection_2026-09-15.md`、`09_GTM_Input_Asset_Audit_2026-09-15.md`、`09_GTM_CAD_Geometry_Inspection_2026-09-15.json`、`66_GTM_FrozenClosedCover_Knob_And_Envelope_Proportions_v1_2026-09-19.md`、（有就带）`95/96_GTM_..._Cleanup_Manifest` | **P0（文本）** | Asset_Audit 确认已随 09-20 清理删除（不在 113 保留清单）→ 你手里 09-19 zip 快照是唯一副本；前两份=抽帧清单本体；json=5 STEP 逐件几何数据（等效我已解析） |
+| 4 | ~~70~~ ✅ 已读；~~102~~ ✅ 已读；66 并入 #3 解出 | — | 66/70 里的旋钮 4.30:1 细则按 09-20 O2 裁决覆盖，只作历史引用 |
 | 7 | `确认设计稿-闭合面盖-带Logo字.png` + **B 版（不带 LOGO）** | P1·像素受限 | 我肉眼已看过 A 版（O1–O9 已记录）；**正式像素 QA** 二选一：出网开放的 session 直读 / 你批准的例外 inbox（359KB，当日删）——**默认都不用，我按肉眼级继续推进** |
-| 8 | 实拍视频 1 选帧 png（≤6 张，见下 C 表） | P2 | 等 #2 索引到位我列精确帧号，你再挑；png=肉眼级够用 |
+| 8 | 实拍视频 1 选帧 png（≤6 张，见 C 表） | P2 | 等 #3 的 Keyframe 报告到位，我列精确帧号你再挑；png=肉眼级够用 |
+| 9 | `compute_common.py`（同目录若有 `97_prepare...py` 等渲染/QA 脚本一并） | P1（文本） | 旧管线计算母本：相机/投影/QA 实现照抄不重造；py=文本，投 folder 我直读 |
 
 ## B. 明确不用再传（已入库，防重复）
 - folder 里 21 项全部有登记（详见 `DRIVE_INDEX.md`）；`09_AICAD`/两个 xlsx/J90 xlsx = 不阻塞，无需重传。

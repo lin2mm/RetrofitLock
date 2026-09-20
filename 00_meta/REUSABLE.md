@@ -17,6 +17,9 @@
 | `101_GTM_Drive_FCStd_..._Render_Delete_QA` | 装配树 13 objects/Slider 引用边；6 条「旧图为何错」；97–100 删除链；**渲染前 6 步新闸门** | 我自己总结 109 教训、自定闸门 | 错误清单直接并入禁止事项；闸门=成品图前置 | **已读** |
 | `94_..._Compacted_LongTermMemory` | 唯一工作范围 + **10 条后续硬规则**（组合唯一/内部件不出现/尺寸只认 sx-db-4.stp…） | 我重立视觉规则 | truth §1ac 逐条指针化，不重述 | **已读** |
 | `110_GTM_Workspace_Refresh_..._Protocol` | refresh 9 触发条件 + 「AI 说不能=强制 A–I 流程」+ 事实/判断/建议/待确认四分 | 我把它当新要求 | META M0/M9 与它对表；四分法即我【源/证/推/问】的母本 | **已读** |
+| `102_..._TwoImageGate_And_HistoricalCleanupPlan` | 双图闸门（图1 最小变化验证→QA→图2 受控确认→用户闸门）+ 清理 6 步安全检 + 8 条不可变禁令 + 状态词表 | 我自定「一张候选图直接给你」的节奏；删档无安全检查 | **两图节奏照搬**；清理时执行 6 步检（M10 加严） | **已读** |
+| `70_..._Verification` | 三源锁定表（壳=STEP/面盖=确认稿/旋钮=66）+ 禁反推条款 | — | 与我现行 §0 铁律逐条同构 → 引用即可 | **已读** |
+| `09_GTM_Visual_Input_Inventory_2026-09-15.md` | CAD 包真相=**5 STEP 无 STL**（全单实体 mm）；视频已抽帧，明细在 3 份待解出的报告 | 我以为 zip 里是 STL 网格 | 渲染轮按 STEP（NURBS）处理，OCP 正合适 | **已读** |
 | `113_GTM_Workspace_Compression_..._Completion.md` | 快照 92,354,796B / 355 files / SHA256 `a0300a56…`；按需 refetch 六步法 | 我另造一套取用流程 | 我的 M10 与它**对齐**（先读 index→只取所需→校验→做→删） | **已读** |
 | `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | 产品事实表 + **claim 禁用清单**（HomeKit/Matter/Thread/Airbnb/BHMA/ANSI/world's smallest）+ 证据标签【源/证/代/推/问】+ 统计闸门 + 对外语气规范 + **银黑转换需确认** | 我重做 claim 纪律、重定文案口径 | 直接采用；已加 K11（银黑需确认） | **已读** |
 | `ImmutableCrop_Extract_v2.py` + `QA_Score_v2`（R20） | 1:1 原生像素裁剪（禁重绘/缩放/旋转/透视/重采样）+ 逐像素评分脚本 | 我重写一套裁剪与比对脚本 | **要文件本体**（≤1MB，走 `inbox` 通道）；拿到即用 | 指针 |

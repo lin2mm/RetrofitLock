@@ -26,6 +26,8 @@
 
 | R13 | 六条：①三张 FreeCAD 截图直接发在消息里（说明「定期删、本地有备份」）②别占 GitHub 空间 ③只留临时空间、结论后删 ④实拍视频在 session3 Drive、要我列抽帧需求 ⑤session5 folder 已更新 ⑥还缺什么文件；当前目标=**铝壳+确认面盖+正确电池盖的成品图** | 方法论 +1：`binary-starve-to-text`（#25）——STEP 222KB 文本可自读 + **OCP 渲染栈在沙盒内打通**（libGL stub×119 符号，配方入 capacity §4c）；截图=历史 image-1/2/3（94/101 登记件），视觉结论与 107/105 交叉一致：盖贴 +Z 端面、凸筋先入后压平、31 遮挡按 A/B 双图规则（K14） | `CAD_LOG` §3e（精确 bbox/体积/placement/两个子文件夹 id/STEP 头）；`PRODUCT_TRUTH` §1ac（电池盖定案+107§6 工序+94 组合唯一）；`QA_ledger` K14；`DRIVE_INDEX` 21 项重登记；`REQUEST_FILES` v2（含抽帧需求表）；`REUSABLE`/`LOOP_AUDIT`/`capacity` 同步 | 更正①：附件「落盘后定期删」→ 实测本沙盒**从不落盘**（第 4 次），无物可删，聊天附件仅肉眼级；更正②：上轮说「渲染要等出网 session」→ 错，stub 自修复后本沙盒就能渲 |
 
+| R14 | 五条：①`CAD_LongTerm_Workspace_2026-09-19.zip` 有没有用 ②`compute_common.py` 有没有用 ③`Asset_Audit` 找不到、是否在删除记录里 ④`SX_DC_GAI_4` 已上传 ⑤查 folder 更新 | ④⑤当场兑现：folder 14→23 项，`sx-dc-gai-4.stp`（17 chunks 文本）+ `102` + `70` + `09_Inventory` 全部读完/登记；**电池盖几何源闭环**（与 107 数字一致）。①有用但**别传 zip 本体**——zip=二进制打不开，要从你本地备份解出 5 份小文本（Keyframe/Asset_Audit/Geometry.json/66/95-96）投 folder；②有用，py=文本，投 folder 我直读（渲染工序母本）。③证实：不在 113 保留清单=已随 09-20 清理删除，只剩两代快照（09-19 你手里那份 zip + 92MB 09-20 快照） | `DRIVE_INDEX`（23 项 + 4 新行含 STEP 登记）；`CAD_LOG` §3e（zip 真相=5 STEP 无 STL、清理安全检 6 步入册）；`PRODUCT_TRUTH`（状态词表对齐 102 §6）；`REQUEST_FILES` v3 | 无撤回；顺带把 `102`/`70` 里的旋钮 4.30:1 细则标为被 O2 裁决覆盖（旧规则已 superseded，不复活） |
+
 ## 我此刻对你消息里那 3 个具体问题的答复去向
 - 「上传的 session3 md」→ 沙盒里不存在（`/home/user/uploads/` 无此目录，全盘 `find` 无匹配）→ 已把"别信 UI 成功标签"写成方法 `verify-artifact-not-status-label`，并配 `verify-upload.sh`。
 - 「Drive 是不是更好」→ 不是 Drive 更好，是**我之前判断错了**；两条通道都可用，Drive 直链成为你的默认通道（M8b）。

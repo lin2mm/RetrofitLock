@@ -101,6 +101,9 @@
 - FCStd 子件（107 精确值，全部入 truth）：db-4 local bbox X±21.543136 / Y-0.503532…22.003532 / Z-21.541602…71.015493，
   vol 30262.714750 mm³；DC-GAI-4 bbox X-14.055311…19.047235 / Y0…6.400058 / Z±9.447235，vol 1304.841078 mm³；
   placements：DB (-4.6,-7.55,-22.35)+identity；GAI (-14.2,+3.05,+42.45)+90°X；15.180740 mm³ 仅诊断量。
+- 09-20 R14：`sx-dc-gai-4.stp` 头+首块已验 → 与 107 几何一致（见 DRIVE_INDEX 新行）；`102` 全文吸收（双图闸门+清理 6 步安全检：manifest→唯一性→保源→先改引用后删→find+grep 复查→新 QA 记录）；
+  `09_Inventory` 揭 zip 真相 = **5 个 STEP（无 STL）**+2 参考 png+Mac 元数据，全部单实体 mm；关键帧当年已抽（报告 3 份，待从 zip 备份解出）：`09_GTM_Video_Media_Keyframe_Inspection` / `Asset_Audit` / `09_GTM_CAD_Geometry_Inspection.json`。
+  视频 1 描述=「手持黑色圆壳/内部」，与成品关系当时未定 → 后续由用户确认=当前产品（Registry §3）。
 - 子文件夹两个 id 并存（107 记录 `1n5gFRP-AcLH8y1-Rqq9zKRueRgo3kIZ8`；本轮枚举 `1iGXjZ4djXxYbSHr51WQdcsblDixtRp-B`，文件名与大小同 107：17/45/40KB）
   → 以本轮 id 为现行；旧 id 可能已回收。
 

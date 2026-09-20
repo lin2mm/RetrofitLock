@@ -16,7 +16,7 @@
 > 所以：文本 → 我 fetch；二进制 → 聊天附件，或你本机跑 `00_meta/scripts/fetch-drive.sh <FILE_ID> <名字>`。
 > 每次取用后：写结论 md → 删本地源（`bash 00_meta/scripts/scratch.sh clean`）→ 只更新本页状态列（`refetch on demand`）。
 
-## Folder 1 · `20260920-LockSession5`  ← **2026-09-20 你更新后：7 → 14 项**
+## Folder 1 · `20260920-LockSession5`  ← **2026-09-20 两轮更新：7 → 14 → 23 项（含子文件夹）**
 `https://drive.google.com/drive/folders/1MHsQ5cQTBeUyh-eS3rv-qMfk4Bf8SnhT?usp=sharing`
 
 | 文件 | FILE_ID | 大小 | 类型 | 状态 |
@@ -34,6 +34,10 @@
 | `00_EXP1-DRIVE_SourceOfTruth_Registry_CN_v1.md` | `1J8Qo7vJ9mScbkepnj2acbxLKGS8aABNJ` | 9KB | md | ✅ **09-20 重读**：§10 面盖优先级、§11 清理+按需 fetch；canonical folder `14Enb5EiikE_EbIqReAp-oEqqPqg4EtSi`＝session3 归档根（视频 1=实拍当前产品 / 视频 2=安装参考 / 5 STEP=同一装配） |
 | `sx-db-4.stp` | `1kcUb22aSBNMmsP5p2J7B8XdltalI7R8l` | **222KB 文本** | step | ✅ 头已读（SX-DB-4/Creo/AP242/2025-12-23）；**全文 29 chunks 我方可自读**（渲染轮执行，无需你任何动作） |
 | `装配- DB-4-DC-4-成功-3个FCStd/`（子文件夹） | `1iGXjZ4djXxYbSHr51WQdcsblDixtRp-B` | 17/45/40KB | FCStd×3 | `User-reported`：ids `1RloavfBnqEQgY6dI3CwR08Jcx0wPIP_6` / `1qacexo-Whomb3wdFqXjxGQyXdBZgTpwS` / `1FyznpYkXJ3PU7L3EOQUYH_T277fETLQ2`；几何结论已被 107 全文化，二进制暂不必修（107 内旧 id `1n5gFRP-AcLH8y1-Rqq9zKRueRgo3kIZ8` 以本条为准） |
+| `09_GTM_Visual_Input_Inventory_2026-09-15.md` | `13ixlQ8Nv03b1Meg3fN91hgmufQzTZQjG` | 新 | md | ✅ 已读：**zip 实为 5 STEP（无 STL）**全单实体 mm；两视频已解码+关键帧已抽；明细在 3 份报告（Keyframe Inspection / Asset Audit / Geometry Inspection.json，**均不在 folder**） |
+| `102_GTM_..._TwoImageGate_And_HistoricalCleanupPlan` | `1vuNo74mOWWNg9xEormjg5sg1XJ6I0_40` | 新 | md | ✅ 已读（2/2）：双图闸门全流程 + 清理 6 步安全检 + 不可变禁令；其 66/旋钮规则受 09-20 O2 裁决覆盖 |
+| `70_GTM_CAD_ClosedCover_KnobPanel_..._v1` | `12O_DeOpmDItQMTNYQUSIsAcQV_OxiIwd` | 新 | md | ✅ 已读：三源锁（壳=STEP、面盖=确认稿、旋钮=66）+「禁止从面盖稿反推壳厚/R角」——与现行一致；旋钮 4.30:1 细则按 O2 覆盖 |
+| `sx-dc-gai-4.stp`（电池盖实体） | `14DuUTk1ZIi0xwA-Mn8p9op72zLBy3STV` | ~130KB 文本 | step | ✅ 头已验（SX-DC-GAI-4/Creo/AP242）；chunk0 坐标已见 -13.8…+18.6 / ±9.2，**与 107 记的 local bbox（X-14.055…19.047、Z±9.447）一致**；全文 17 chunks 留渲染轮专轮拉 |
 | `101` / `105` / `107` / `110` / `94` 五份 GTM 记录 | `1VUpnewuLlTiiwTEjFBdgys48jRlHkTn3` / `1eOiBiAyqlhkCEDpmcjEjPEgguXJxXR8_` / `10jGjXhu7B6Omfj84Cbk-spfytkRhaxkm` / `1OFIuujEu6UQlDksxO6Tn0rxnza_criex` / `182fMPluClFCx-E_zFULkbFKbG-1VvO0z` | 4–6KB | md | ✅ **全部读完**（09-20）；内容落点=`REUSABLE` §A/B、`CAD_LOG` §3e、`PRODUCT_TRUTH` §1ac |
 | `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` | `1ZiCFZwu9WtuGROTaGvDowwBIAweeZU6f` | 3KB | md | ✅ 已读 |
 | `00_EXP1-J00_Index_..._RunLog_CN_v1.xlsx` | `1dOaF7cZESaq7dC-S2DOb-OI-BSBWwHwX` | 27KB | xlsx | ⛔ 二进制类，未取 |
