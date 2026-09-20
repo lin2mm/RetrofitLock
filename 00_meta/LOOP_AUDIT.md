@@ -48,12 +48,12 @@
 ## E. 审计与溯源
 | 文件 | 内容 |
 |------|------|
-| `00_meta/loop_ledger.md` | **每轮一行**：输入要点 / 沉淀 / 改了哪些文件 / **撤回了什么**（6 轮，含我 4 次自纠） |
+| `00_meta/loop_ledger.md` | **每轮一行**：输入要点 / 沉淀 / 改了哪些文件 / **撤回了什么**（9 行，含我 7 次自纠） |
 | `00_meta/session_log.md` | 每个 session 收尾三行（做了/下一步/还缺） |
 | `00_meta/intake/_READ_LOG.md` | Drive 读取台账：谁被 `Agent read`、谁只是 `Drive pointer stored` |
 | `00_meta/DRIVE_INDEX.md` | Drive 全量 FILE_ID 索引 + 取用纪律（**这就是"保留的文件夹 index"**） |
 | `00_meta/INDEX_session3_files.md` | **Session 3 文件索引（从已读文档重建）**：按 CAD 优先级列"该给我哪些旧文件" |
-| `00_meta/CAD_LOG.md` | CAD/视觉的**历史 + 分析 + 规则**（项目 D55–D67 原文规则 ⇄ 我上轮结论的对照表） |
+| `00_meta/CAD_LOG.md` | CAD/视觉的**历史+分析+规则**（顶部有 SUPERSEDED 横幅）+ 最新稿可见特征 O1–O9 与【问】清单 |
 | `00_meta/PRODUCT_TRUTH.md` | 产品冻结事实 + 7 条禁止事项（优先级最高的真相源） |
 
 ## F. 已知漏洞（诚实列出，别假装 loop 完美）
