@@ -33,7 +33,10 @@
    `00_meta/methodology.md` 对应板块；只对本产品有效的写成败事实 → 写进 `10_product/`，**不污染方法论**。
 3. **跑 capacity.sh 并 commit + push**（含 `00_meta/capacity.md` 的快照更新）。
 
-命令式追加（保证格式统一）：`bash 00_meta/scripts/learn.sh <kebab-name> <板块A-D> "问题" "做法" "为什么" [状态]`
+**硬约束（本 session 两次踩坑后写死）**：改文档正文**只允许** `write_file` / `edit_file`；
+`bash -c` 里**禁止**出现含反引号、`$()`、`<占位符>`、成对双引号的文档内容 —— 会被 shell 展开，**静默吃掉文件名甚至把文档当重定向目标**。
+需要批量替换时：先用 `write_file` 写一个临时 `.py`，跑完立刻 `rm`（M10 用完即删）。
+命令式追加（只用于**纯 ASCII 短文本**）：`bash 00_meta/scripts/learn.sh <kebab-name> <板块A-D> "问题" "做法" "为什么" [状态]`
 **先查已有，再新增（沿用项目自己的 D44 元规则）**：动手前先查 `methodology.md` / `naming.md` / 本规则页有没有对应条目；
 已有 → 引用并更新（版本号 +1），缺失 → 才新增，并分配下一个 delta 编号。
 项目序列**已用到 D67**（`J90` R25 / 2026-09-15），本项目从 **D68** 续编；
