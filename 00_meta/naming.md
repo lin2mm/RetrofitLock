@@ -50,6 +50,11 @@ PROOF-STYLE_packshot_v1-PLACE.jpg     ← 无参考图的风格基线，永不�
 `lifestyle_door` 门型场景 · `kit_flatlay` 整套平铺 · `trust_badges` 认证条（需客户授权）·
 `comparison` 对比图 · `accessory_detail` 配件特写 · `icp_variant` 按 ICP 的组合示意
 
+> **状态词表采纳项目原有体系**（`00_meta/PRODUCT_TRUTH.md` §4 ← `00_EXP1-DRIVE_SourceOfTruth_Registry` §8）。映射：
+> `blocked-*`→`User-reported` · `ready-to-generate`→`Verified input` · `generated-candidate`→`Angle hypothesis`（未过 QA = 推测，禁外发）·
+> 过几何 QA 的渲染→`CAD verified angle` · `approved`/`final`→`Approved asset` · 未批准外发一律 `NoSend`。
+> 新表用右侧词；旧 CSV 的左侧词下次改到该行时就地替换。
+
 ## 4. 状态码（CSV `status` 列只能用这些，别的算 bug）
 
 | 码 | 含义 | 谁能解 |

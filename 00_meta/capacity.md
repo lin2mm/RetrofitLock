@@ -51,10 +51,20 @@ VERDICT: PASS（除 [7] 的 PDF 引擎已知缺口）
 | `bash` / `curl`（沙盒内） | **000 不通** | `drive.google.com` 000 不通 | 沙盒是白名单：只有 `github.com`/`api.github.com`/`codeload`/npm/PyPI |
 | `fetch_page` / `web_search`（工具侧，沙盒外） | **可读** | `workspace.google.com` 可读 | **不是白名单，能上公网** → Drive 直链可读（见下） |
 
-→ 两条收件通道都成立，按用户偏好选：
-1. **Drive 直链**（零门槛，用户在用）：我读得到，但必须是"取到文件内容"的 URL，配方见 `META.md` M8b。
-   坑：Drive 的 HTML 预览页抓不到正文，要用导出/下载直链。
-2. **git 通道**：源 session push 到 `main`/`inbox`，我 `git fetch`（适合成堆文件、源码、要保真度的东西）。
+→ 两条收件通道都成立（**2026-09-20 实测跑通，非推测**）：
+1. **Drive 直链（用户默认通道）** —— `fetch_page` 可读：
+   · 列文件夹：`https://drive.google.com/drive/folders/<FOLDER_ID>` 或 `.../embeddedfolderview?id=<FID>#grid`
+     → 得到**文件名、大小、每个文件的 33 位 file id**（两个 folder 我都枚举成功）
+   · 读正文：`https://drive.google.com/uc?export=download&id=<FILE_ID>`（md/txt 返原文；PDF 可解析；`?usp=sharing` 预览页不行）
+   · 读不到：Drive 里的二进制（zip / FCStd / mp4 / png）只返回文本页；**且不能写回**（无凭证、无同步、无监听）
+   这与本项目自己写的纪律一致（`00_EXP1-DRIVE_SourceOfTruth_Registry` §2/§8）：
+   **链接可读 ≠ 已校验**，只有进 workspace 并读成功才算 `Agent read`；不得因"已上传 Drive"就声称读过。
+2. **git 通道**：源 session push 到 `main`/`inbox`，我 `git fetch`（成堆文件、源码、要保真度的东西）。
+
+**渲染工具链实测（2026-09-20）**：`cadquery 2.8 + OCP` 已装但 `import` 失败 —— **缺 `libGL.so.1`**（无 mesa、apt 不通、无 root）
+→ STEP 解析暂不可用。`trimesh` 已装，**读 STL/OBJ/GLB 不需要 OCP** → 拿到 STL 就能出精确 mesh。
+`@napi-rs/canvas`（npm，2D 光栅可用）、`gl`/headless-gl 8.1.6（要编译+系统 GL，大概率不通）、
+`@sparticuz/chromium`（二进制可解出，缺 libnss3）。→ 结论写进方法论 `cad-verified-render-pipeline`。
 
 **沙盒内做不到的（真限制，别试）**：`curl`/pip 从 GitHub 之外抓文件、npm 从非官方源、
 `apt`（无 root + 源不通）、chromium 的 CDN（`cdn.playwright.dev`/`storage.googleapis.com`）、
