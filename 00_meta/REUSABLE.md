@@ -3,13 +3,17 @@
 > 用途：**开工前 60 秒扫本页**。凡是这里已存在的，只"扩展/换依据"，**不重新做一遍**。
 > 本轮就是教训：我起草了 9 页目录结构，而你们 09-14 已有 one-pager 草稿 + D61 规则；我还独立"发明"了
 > CAD-to-render 优先的管线，而项目 **D66** 早写着。→ 立成规则：`consult-before-build`（见 `methodology.md`）。
-> 状态列 = 我这边现在有没有实物：**指针** = 只在 Drive/文字里被提到，未进沙盒；**已读** = 内容已入库；**已建** = 我这边新写的。
+> 状态列 = **指针**（Drive 里有、我没读）/ **已读**（内容已入库，可直接引用）/ **已建**（我新写的）。
+> 2026-09-20 更新：Folder 1 新增 7 份 md，其中 **4 份已读完**（111/113/01_A01/09_VisualMethod）→ 下表中**QA 评分制、FCStd 几何、取用纪律、claim 纪律全部变成"已读直接采用"，重复工作被消掉了。**
 
 ## A. 视觉 / CAD（第①步要用）
 | 旧资产 | 内容 | 我原本会重复做什么 | 现在怎么用 | 状态 |
 |--------|------|-------------------|-----------|------|
-| `09_GTM_Visual_FromFrozenProduct_ToAngles_ToScenes_Method_CN_v1.md`（D64） | 冻结图→多角度→场景的三段法 + `angle hypothesis` 标注 + **QA≥95/100** | 我自己定 QA 阈值与标注 | **阈值直接采用 95/100**，写进 `40_images/QA_ledger.md` K10 | 指针 |
-| `09_GTM_AI_CAD_Combination_Capability_Assessment_CN_v1.md`（D66） | CAD=几何真源 / 视频=外观参考 / 冻结图=对外基准 / AI=助手与合成 | 我上轮独立写了 `cad-verified-render-pipeline` | **改为引用 D66**，我的脚本只是它的实现 | 已读要点 |
+| `09_GTM_Visual_FromFrozenProduct_ToAngles_ToScenes_Method_CN_v1.md`（D64） | **✅ 已读（Drive 新件）**：Stage0–6 全流程 + **100 分 QA 评分表（8 维 + 6 红项）** + 3 个现成 prompt 模板（探索/合成/拒绝）+ 8 模块学习节奏 | 我自己定 QA 阈值、自拟 prompt、自创分阶段流程 | **整套直接采用**：`QA_ledger` 已换成他们的 100 分制；prompt 用他们的 A/B/C 模板 | **已读** |
+| `09_GTM_AI_CAD_Combination_Capability_Assessment_CN_v1.md`（D66） | CAD=几何真源 / 视频=外观参考 / 冻结图=对外基准 / AI=助手与合成 | 我上轮独立写了 `cad-verified-render-pipeline` | **改为引用 D66**，我的脚本只是它的实现 | 指针（id 已知） |
+| `111_GTM_Workspace_Refresh_Summary_2026-09-20.md` | **FCStd 已解析完**：db-4/DC-4 的 solid/face/edge/vertex、`SX_DC_GAI_4` 包络、Slider 运动副、103/104/106/108/109 产物、Gate 状态、历史错误保护清单 | 我要从 STL/FCStd 重算几何、重做电池盖 QA | **直接引用为事实**（已写进 `PRODUCT_TRUTH.md` §1ab）→ 我**不必再解 FCStd** | **已读** |
+| `113_GTM_Workspace_Compression_..._Completion.md` | 快照 92,354,796B / 355 files / SHA256 `a0300a56…`；按需 refetch 六步法 | 我另造一套取用流程 | 我的 M10 与它**对齐**（先读 index→只取所需→校验→做→删） | **已读** |
+| `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | 产品事实表 + **claim 禁用清单**（HomeKit/Matter/Thread/Airbnb/BHMA/ANSI/world's smallest）+ 证据标签【源/证/代/推/问】+ 统计闸门 + 对外语气规范 + **银黑转换需确认** | 我重做 claim 纪律、重定文案口径 | 直接采用；已加 K11（银黑需确认） | **已读** |
 | `ImmutableCrop_Extract_v2.py` + `QA_Score_v2`（R20） | 1:1 原生像素裁剪（禁重绘/缩放/旋转/透视/重采样）+ 逐像素评分脚本 | 我重写一套裁剪与比对脚本 | **要文件本体**（≤1MB，走 `inbox` 通道）；拿到即用 | 指针 |
 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` / `09_GTM_Input_Asset_Audit_2026-09-15.md` | 输入清单+审计的**字段格式**（CAD 格式/单位/历史、视频遮挡/反光/比例一致性） | 我自拟登记表 | 用他们的字段做我的 `.scratch` 取用记录 | 指针 |
 | `70_GTM_CAD_ClosedCover_KnobPanel_Frozen_And_AluminumCAD_Verification_v1_2026-09-19.md` | 面盖+旋钮+铝壳的验证清单与结论 | 我重新设计验证项 | **K1–K10 就是它的可判定化**；拿到原文后对齐措辞 | 指针 |

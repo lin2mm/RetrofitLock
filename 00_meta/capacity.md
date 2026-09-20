@@ -76,7 +76,10 @@ VERDICT: PASS（除 [7] 的 PDF 引擎已知缺口）
 |---|---|---|
 | 旧 session（EXP1 / Agent3） | ✅ 可以 | `J07 R15` + `D67`：沙盒内 curl 下载 `CAD-贴锁-设计-stl.zip` + 2 视频并读取；`00_EXP1-J09` 操作手册即沙盒 curl |
 | 本 session（Session 5） | ❌ 不行 | `drive.google.com`/`drive.usercontent`/`workspace.google.com` 全 000，而 github/npm/PyPI=200；同 FILE_ID 用 `fetch_page` = HTTP 500（同工具读 md 成功） |
-→ 结论：**能力必须每次探测**，不能记忆。探针：`bash 00_meta/scripts/probe-drive.sh [FILE_ID]`。
+→ 底层机制（本轮定位）：egress **白名单**，非白名单域名 TCP 能连上但 **TLS 握手被掐**（`Connected` 之后 `SSL_ERROR_SYSCALL`）；
+  `/usr/local/share/ca-certificates/e2b-ca.crt` 说明流量过 E2B TLS 中间人。`fetch_page` 侧同样拿不到二进制（zip/png 都 HTTP 500，md 成功）。
+→ 实操结论：**md/txt 我自己读 Drive；二进制只走 GitHub inbox（实测 sha256 一致）**。
+→ 结论：**能力必须每次探测，不能记忆。探针：`bash 00_meta/scripts/probe-drive.sh [FILE_ID]`。
 
 ## 5. 回答"session 5 还需要空间提示吗"
 

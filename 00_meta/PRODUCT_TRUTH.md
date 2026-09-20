@@ -38,9 +38,17 @@
 | O8 | 底部带 3 道横纹的棕色区 | ✅ **就是电池盖** | **不再需要你补 3 张装配截图**；电池盖外观按本稿；**装配关系仍要 CAD（`105/107` 记录或 FCStd）确认** |
 | — | CAD 视口坐标轴（红/绿/蓝） | ❌ 派生图必须清除（沿用历史 `CleanWorkingDerivative` 规则） | 裁剪时避开或修掉，**不得出现在任何对外图** |
 
-> 文件位置：`User-reported`（沙盒内仍无像素文件；聊天附件 3 次未落地）。
-> **取用改走已验证通道**：你或旧 session 跑 `bash 00_meta/scripts/push-inbox.sh 确认设计稿.png`（≤1MB）→ 我 `pull-inbox.py` 按字节取回（本轮实测 sha256 一致）。
+> 文件位置：已确认在 Drive `20260920-LockSession5` → `确认设计稿-闭合面盖-带Logo字.png`（id `11XTS3AWTVC2bBLY__Vrcca3sYuzmbqPt`）。文件名自证两件事：**闭合面盖** 视角 + **带 Logo 字**版本（= 我 O5 两版中的 A 版）。缺 **B 版（不带 LOGO）**。
+> 沙盒内仍无像素文件（curl TLS 被掐 / fetch_page 500 / 附件未落地）→ K10 仍未满足，**不出正式图**。
+> **取用通道（已验证）**：你或旧 session 跑 `bash 00_meta/scripts/push-inbox.sh 确认设计稿.png`（≤1MB）→ 我 `pull-inbox.py` 按字节取回（本轮实测 sha256 一致）。
 > 或告诉我它在 Drive 哪个 folder/FILE_ID，我先登记进 `DRIVE_INDEX.md` §0（长期保存）。
+
+### 1ab. 09-20 由 `111` 确认的 CAD 事实（**无需重做，直接引用**）
+- 电池盖几何**已从 FCStd 读出**：`装配-DC-4.FCStd` = 1 solid / 82 faces / 408 edges / 816 vertices；子件 `SX_DC_GAI_4` 包络 ≈ `33.1025 × 6.4001 × 18.8945 mm`。
+- 装配关系已知：`SX_DB_4` 接地 + `Slider(DC_GAI_4.Edge30 ↔ DB_4.Edge49)`；形状 = 平板 + 圆弧端 + 导轨/加强筋 + 滑动装配。
+- **待你/工程师判定**：公共体积 ≈ `15.18 mm³` 是配合还是干涉 → 在此之前**不做任何工程口径表述**（状态 HOLD）。
+- 已存在 109 候选（31 左前 25° + 真实 BREP 电池盖），状态 `CANDIDATE/HOLD`，**等你的批准**；历史清理在其批准后（BLOCKED）才启动。
+- 禁止引用清单（新增到 §3）：`97–100` 错误成品渲染链、AI 发明的下部圆形结构/外框/电池门/接口/内部件。
 
 ### 1b. 其余历史事实（CAD 侧仍有效；外观侧以 1a 为准）
 
