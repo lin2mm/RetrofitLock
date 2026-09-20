@@ -21,9 +21,9 @@
 
 | 文件 | FILE_ID | 大小 | 类型 | 状态 |
 |------|---------|------|------|------|
-| `确认设计稿-闭合面盖-带Logo字.png` | `11XTS3AWTVC2bBLY__Vrcca3sYuzmbqPt` | — | png | ⛔ `User-reported`：**沙盒拿不到字节**（curl TLS 被掐 / `fetch_page` HTTP 500 / lh3 缩略图也 500 / 聊天附件 3 次未落地）→ 见 §5 通道结论 |
+| `确认设计稿-闭合面盖-带Logo字.png` | `11XTS3AWTVC2bBLY__Vrcca3sYuzmbqPt` | — | png | ⛔ `User-reported`：**沙盒拿不到字节**（curl TLS 被掐 / `fetch_page` 500 / lh3 500；09-20 再测 `uc?export=view` 与 `file/d/../view` 亦 500）。用户确认此图=设计师面盖图 → 通道只剩 **聊天附件（肉眼）/ inbox（像素）**；见 §5 与 `REQUEST_FILES.md` P0#1 |
 | `111_GTM_Workspace_Refresh_Summary_2026-09-20.md` | `1pV8007Nz1O9QpbjdbrPiKxqyx5tq7JsX` | 新 | md | ✅ `Agent read` **关键**：CAD/FCStd 几何已读完（见下） |
-| `112_GTM_Workspace_Compression_And_Source_Delete_Plan_2026-09-20.md` | `1dl1loXUqVE6YSUL-tPTB2azvk-4uKYab` | 新 | md | `User-reported`（要点已由 113 覆盖） |
+| `112_GTM_Workspace_Compression_And_Source_Delete_Plan_2026-09-20.md` | `1dl1loXUqVE6YSUL-tPTB2azvk-4uKYab` | 新 | md | ✅ `Agent read`：容量爆 4 根因（zip+解包同存/多代并存/视频抽帧留存/uploads 不清）+ refetch 六步法 |
 | `113_GTM_Workspace_Compression_And_Source_Delete_Completion_2026-09-20.md` | `1MoTjN3orsPf13ubAWdnrZiuZq8Cx9wX3` | 新 | md | ✅ `Agent read`：快照 92,354,796 B / 355 files / SHA256 a0300a56…；按需 refetch 六步法 |
 | `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | `1_9Tw4l9pijghc-LncTgZ8D7FeUuvx_E1` | 新 | md | ✅ `Agent read`：产品事实/claim 纪律/证据标签/**银黑转换需你确认** |
 | `09_GTM_Visual_FromFrozenProduct_ToAngles_ToScenes_Method_CN_v1.md` | `1WgowHv295WmU468KYtw5AK1dCgw97ROX` | 新 | md | ✅ `Agent read` **关键**：Stage0–6 + **100 分 QA 评分表** + 3 个 prompt 模板 |
@@ -76,6 +76,7 @@ Gate 现状       : Drive 子文件 PASS · 子 BREP PASS · 装配位置 PASS �
    只有**二进制**（png/zip/xlsx/视频）才需要 inbox —— 因为本沙盒被网络策略挡住了，而旧 session 的策略没挡。
 
 ## 仍然缺（不在任何已枚举位置）
+> **R12 起本节让位于 [`00_meta/REQUEST_FILES.md`](REQUEST_FILES.md)**（P0/P1/P2 + 文本换算 + 防重复）。新增最大缺口：旧沙盒 `exp1/` 的 94/101/102/105/107/110 六份 md 未上 Drive。
 1. **底部电池盖 3 张装配截图（2026-09-20 新版）** —— 全项目唯一的电池盖装配证据；两个 folder 里都没有。
    ⚠️ 没有它，`K7` 无法通过，电池盖相关的任何图/文案我都不会生成（不再猜）。
 2. `01_SL-B03_..._DesignerFinal_Hero_Source_v1.png`（面盖确认源，registry §10 指定优先级最高）—— 不在 folder 里。

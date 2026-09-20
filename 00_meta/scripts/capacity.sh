@@ -30,6 +30,9 @@ printf "    工作树 %sKB | .git %sKB | 跟踪文件 %s 个\n" "$repo_kb" "$git
 echo "[3] 大文件（>25MB 不进 git；>100MB GitHub 直接拒）"
 big=$(find . -path ./.git -prune -o -type f -size +25M -print 2>/dev/null | head -10)
 if [[ -z "$big" ]]; then echo "    ✅ 无"; else echo "$big" | sed 's/^/    ⚠️ /'; warn=1; fi
+bincount=$(find -maxdepth 4 . /home/user \( -path "./.git" -o -path "*/node_modules" \) -prune -o -type f \( -name "*.stl" -o -name "*.stp" -o -name "*.step" -o -name "*.FCStd" -o -name "*.mp4" -o -name "*.zip" -o -name "*.obj" \) -print 2>/dev/null | sort -u | wc -l | tr -d ' ')
+echo "    binary-ish files (CAD/video/zip/obj): $bincount"
+[[ "$bincount" -gt 12 ]] && { echo "    WARN R12: zip-xor-unpack / one gen per asset / frames->contact sheet / snapshot must leave box"; warn=1; }
 
 # 4. 未提交改动（沙盒一销毁就丢）
 echo "[4] 未提交改动（不 commit = 下个 session 看不见）"
