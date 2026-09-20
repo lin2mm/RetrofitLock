@@ -115,6 +115,17 @@
 为什么：本 session 已两次栽在"我记得 / 我以为成功"上（成果没入库、网络结论写反）；台账是唯一能被审计的证据，
 也逼我在动手前先答一次"这条消息该改哪条规则"。
 
+## M10. Workspace 卫生循环（外部文件取用即焚；用户 2026-09-20 指定）
+
+```
+取源 → .scratch/（gitignore，永不入库）→ 分析 → 结论只写 md/xlsx 进仓库 → 更新 00_meta/DRIVE_INDEX.md 状态 → 删源
+```
+- 二进制（CAD/视频/压缩包/图片包）**一律不 push GitHub**；连 `90_archive/cad/` 的豁免也已收回。
+- 需要再看源时：按 `DRIVE_INDEX.md` 的 FILE_ID **重新 fetch**（文本我用 `fetch_page`；二进制你附件或本机跑 `fetch-drive.sh`）。
+- 每阶段末跑 `bash 00_meta/scripts/scratch.sh status`：它顺带证明"没有二进制被 git 跟踪"；有就 `git rm --cached`。
+- 保留物 = ①分析结论 md ②文件夹/文件索引（含大小、SHA256、状态）；**不保留原件副本**。
+- 理由：CAD 属临时分析件、非长期资产；而 Arena patchset 有 128MB 累计上限，二进制会把后半程（网站）预算吃光。
+
 ## M7. 长期学习的记录格式（methodology.md 怎么写）
 
 每条方法论固定四行，带出处，可被后续 session 引用：

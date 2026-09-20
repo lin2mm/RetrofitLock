@@ -41,5 +41,10 @@ S4-index: 同上（网站大纲 + 是否已部署 URL + 定位一句）
 3) 电池盖 3 张装配截图（2026-09-20 新版）  ← 不在 folder 1，必须单独给；旧推断链已作废，我只认这 3 张
 4) nuki like lock smallest size...mp4 1.3MB  → 我这边有 static ffmpeg，传进来就抽帧
 ```
-最省事：**1+2+3 一起当附件发我**（合计 <1MB）。我收到后：SHA256 记进 `90_archive/_manifest.md` → STL 进 trimesh →
+**取源只要两条路径之一**（二进制我不会 push 到 GitHub，也不会留在工作区）：
+- **A. 聊天附件**：`CAD-贴锁-设计-stl.zip`(id `1HlDJX0bcZY_ZbNKrUjoXj87Bp9M4inLN`) + 1 个 FCStd + 电池盖截图×3 → 我存 `.scratch/` 分析，出结论 md 后 `scratch.sh clean` 删源。
+- **B. 你本机跑**（若附件不方便）：`bash 00_meta/scripts/fetch-drive.sh 1HlDJX0bcZY_ZbNKrUjoXj87Bp9M4inLN CAD-贴锁-设计-stl.zip`
+  然后**把生成的 `.md` 结论**（不是 zip）留给我 —— 但注意我这边沙盒读不到你本机，所以 B 实际只适合"你本地自己看几眼再决定发哪几帧"。
+→ 结论：**走 A**。Drive 里的 id 我已全部登记在 `00_meta/DRIVE_INDEX.md`，随时可按需重取，不必反复上传。
+我收到后：SHA256 记进索引 → STL 进 trimesh →
 出 6 个正交/等轴视图 + 尺寸 QA → **QA 不过就不给你看**（这就是不再返工的关键）。

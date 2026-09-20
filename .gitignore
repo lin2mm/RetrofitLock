@@ -1,3 +1,6 @@
+# 临时取用区：分析完即删（见 META M10 / scratch.sh）
+.scratch/
+
 # ---- 通用排除（必须写在前面，negation 才能生效：gitignore 后者覆盖前者）----
 node_modules/
 .cache/
@@ -8,6 +11,9 @@ __pycache__/
 *.mov
 *.zip
 *.step
+*.stl
+*.FCStd
+*.obj
 *.fbx
 *.blend
 *.psd
@@ -23,11 +29,6 @@ __pycache__/
 !40_images/video/.gitkeep
 !40_images/video/.ffmpeg_path
 !90_archive/README.md
-!90_archive/cad/
-!90_archive/cad/*.zip
-!90_archive/cad/*.FCStd
-!90_archive/cad/*.stl
-!90_archive/cad/*.obj
 !90_archive/**/_manifest.md
 
 60_website/node_modules/

@@ -24,7 +24,8 @@
 | 交付图（`40_images/out/`） | 单张 ≤ **400KB**（JPEG q82 / WebP） | `convert -quality 82 -resize 1600x1600\>` |
 | 原始素材（`90_archive/`） | **不进 git**，只提交 `_manifest.md`（文件名、来源、哈希、用途） | 需要重看时让我重新要那一份 |
 | 跟踪文件数 | ≤ **2,000** | 检查是否误提交 node_modules/字体包 |
-| 视频/字体包/模型 | 一律不进仓库 | 视频→抽帧；字体→`@fontsource` npm；模型→不给 |
+| 视频/字体包/模型/**CAD（含 STL/FCStd/zip）** | 一律不进仓库（用户 2026-09-20 指令：CAD 是临时分析件） | 走 `.scratch/` 取用即焚，只留结论 md + `DRIVE_INDEX.md` 索引 |
+| 临时取用区 | `.scratch/` 任意体积，**只本地存活** | `scratch.sh clean` 删源；`status` 自检是否误入 git |
 
 ## 3. 最新自检（脚本原样输出）
 
