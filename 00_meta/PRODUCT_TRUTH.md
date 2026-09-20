@@ -1,4 +1,26 @@
-# 项目真相源（继承自 EXP1 长期记忆，2026-09-20 由 Session 5 从 Drive 读取并落库）
+# 项目真相源（唯一权威 · 2026-09-20 铁律重写）
+
+## 0. ⛔ 现行铁律（优先级高于本页其余全部内容，也高于历史"冻结/FINAL/100分"记录）
+
+> 用户 2026-09-20 原话：**所有以前锁定的都有问题，不能完全锁定。现在的铁律是这个最新的设计师稿件。**
+
+**依据只有两条，分工明确：**
+1. **铝合金外壳的尺寸与形状 → 只以 CAD 为准**（`sx-db-4.stp` / `CAD-贴锁-设计-stl.zip`；包络 39.800 W × 22.500 D × 90.500 H mm）。
+2. **面盖（含旋钮）的外观与比例 → 只以最新设计师稿为准**（本轮附件 `image-1.png`，2026-09-20）。
+   其可见特征与【问】清单见 `00_meta/CAD_LOG.md` §3c。
+
+**因此以下历史依据一律降级为 `superseded`（保留仅供溯源，禁止用来"证明"任何新图是对的）：**
+`R19 冻结基准 ..._BorderHighlightCorrected_CN_v1.png` · `..._UserSelectedReference` · `..._LockOnly_WhiteBG` ·
+`ImmutableCrop_v2 的 SilverLock/BlackLock`（**逐像素 100/100 也照样不算数**）·
+`31/33 provisional 闭合外观图` · `历史派生 Hero 图` · Registry §10 里那条"优先级高于 31/33"的排序（现在最高位是本稿）·
+`66_GTM_ConfirmedClosedCover_KnobSource_Crop_v1.png` 与"旋钮=近直角矩形长条、无金属套"这条硬规则（**最新稿的旋钮形态不同 → 待你确认后改写**）。
+
+**必须同步重做（不得沿用旧结论）**：`40_images/QA_ledger.md` 的 K4/K5/K12 类视觉断言、
+`40_images/slots.csv` 全部 `placeholder`/基线图（**已判违规，待删**）、`CATALOG_METHOD.md` 的 P1/P4/P5 页面依据、
+`PRODUCT_TRUTH.md` §1 表格中标 `Verified input` 的外观项。
+
+**状态**：本稿目前是 `User-reported`（图在对话里可见，但**沙盒内没有像素文件** → `verify-upload.sh` 实测无落地）。
+按 D65/R-22：**没有文件我就不出正式角度图**，只做规则与索引更新。
 
 > 来源：Drive 文件夹 `20260920-LockSession5`（folder id `1MHsQ5cQTBeUyh-eS3rv-qMfk4Bf8SnhT`）中
 > `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` 与 `00_EXP1-DRIVE_SourceOfTruth_Registry_CN_v1.md`。
@@ -11,11 +33,11 @@
 | 品类 | 紧凑 retrofit 智能锁模组（Nuki 式），三层产品线：compact retrofit / 电子 deadbolt 模组 / 成品锁 | `Verified input` |
 | 外壳 | **CNC 铝合金**，喷砂 + 氧化，灰/黑双冻结色 | `Verified input` |
 | 外形包络 | **39.800 W × 22.500 D × 90.500 H mm**（固定尺寸，来自 `sx-db-4.stp`） | `Verified input` |
-| 底部角 | **R 角**（v8 直角版曾被用户纠正 → v9 FINAL） | `Verified input` |
-| 面盖（闭合盖） | **普通塑料**，棕/红棕**细密纹理**，`not real wood`（不是真木）；未确认塑料牌号与工艺 | `User-confirmed visual` |
-| 旋钮 | **近直角矩形长条**；普通塑料；**无**金属套/装饰环/胶囊端/额外间隙；位置·比例·方向按确认稿 | `User-confirmed visual` |
-| 底部电池盖 | **仅以用户 2026-09-20 新传的 3 张装配截图为准**；旧的底部塑料件推断链、错误配件识别、旧 CAD 输出**已删除，不得引用** | `User-confirmed`（图待取） |
-| 品牌/UI | **无 logo、无可读 UI** | `Verified input` |
+| 底部角 | **R 角**（v8 直角版曾被纠正 → v9 FINAL） | ⚠️ `superseded`：程度以最新稿为准 |
+| 面盖（闭合盖） | **普通塑料**，棕/红棕**细密纹理**，`not real wood` | ✅ 最新稿一致（O6），仍待牌号/工艺 |
+| 旋钮 | ~~近直角矩形长条；无金属套/装饰环~~ | ❌ `superseded`：最新稿显示**圆盘 + 斜向长条**（O2），形态待你确认 |
+| 底部电池盖 | 旧 3 张装配截图口径 + 新稿 O8（底部带横纹棕色区域）**是否即电池盖** → 待你确认 | `User-reported`（图未落地） |
+| 品牌/UI | ~~无 logo~~ | ❌ `superseded`：最新稿有 **LOGO 刻字位**（O5），保留/取消待【问】 |
 | 合规话术 | **不夸大** HomeKit / Matter / BHMA / ANSI | 硬约束 |
 
 ## 2. 母件与文件（CAD source of truth）

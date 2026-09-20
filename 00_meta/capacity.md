@@ -71,6 +71,13 @@ VERDICT: PASS（除 [7] 的 PDF 引擎已知缺口）
 `apt`（无 root + 源不通）、chromium 的 CDN（`cdn.playwright.dev`/`storage.googleapis.com`）、
 `raw.githubusercontent.com` 与 GitHub LFS —— **但 `gh api repos/.../contents/<path>` 可用，单文件 ≤1MB**。
 
+### 4b. Drive 能力**按沙盒不同**（不是按链接形式）
+| 沙盒 | 拉 Drive 二进制 | 证据 |
+|---|---|---|
+| 旧 session（EXP1 / Agent3） | ✅ 可以 | `J07 R15` + `D67`：沙盒内 curl 下载 `CAD-贴锁-设计-stl.zip` + 2 视频并读取；`00_EXP1-J09` 操作手册即沙盒 curl |
+| 本 session（Session 5） | ❌ 不行 | `drive.google.com`/`drive.usercontent`/`workspace.google.com` 全 000，而 github/npm/PyPI=200；同 FILE_ID 用 `fetch_page` = HTTP 500（同工具读 md 成功） |
+→ 结论：**能力必须每次探测**，不能记忆。探针：`bash 00_meta/scripts/probe-drive.sh [FILE_ID]`。
+
 ## 5. 回答"session 5 还需要空间提示吗"
 
 **需要，但只剩三条**（其余我已在脚本里自动查了）：

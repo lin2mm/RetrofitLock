@@ -10,4 +10,4 @@ IMG-008,GL-DEADB-02,lifestyle_door,"场景：公寓入户门 + 手机解锁",p4,
 IMG-009,GL-KIT-03,kit_flatlay,"整箱/整套平铺，让 dealer 一眼看懂装什么",p5,1600x1200,"top-down flat lay of carton contents neatly arranged + open shipping box, white bg",,blocked-no-ref,
 IMG-010,ALL,trust_badges,"认证与质保条（CE/FCC/质保年限），横条",back,2400x600,"clean horizontal band, badge-style icons only, no invented logos — 认证标志必须由你确认可用",,needs-permission,
 IMG-011,ALL,comparison,"vs 换整套智能锁：省钱/省时间/不伤门 的对比图",p2,1600x900,"split frame: left 'full lock replacement' messy drill, right 'retrofit kit' clean 5-min install",,ready-to-generate,
-IMG-000,ALL,style_baseline,"占位：无参考图时的光线/构图基线，禁止外发",n/a,1600x1600,"see PROOF-STYLE_*.jpg",none,deprecated-after-refs,40_images/out/PROOF-STYLE_packshot_v1.jpg
+IMG-000,ALL,style_baseline,"已删除：违反 D65/R-22（无底稿即不得出角度图）",n/a,n/a,"—",none,deprecated,,
