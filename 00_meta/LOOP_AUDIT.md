@@ -1,7 +1,7 @@
 # LOOP AUDIT — 全部 loop 的唯一清单（长期文件）
 
 > 你要的那个"包含全部 loop 说明的长期文件"就是这个。**回答"一共有多少 loop"以本页为准。**
-> 计数快照：2026-09-20（Session 5 · 第 8 轮消息后）· meta 规则 **11** 条（M0–M10）· 方法论 **21** 条 · 台账 **8** 轮 · 脚本 **8** 个 · 长期参考文件 **10** 份（含本页）。
+> 计数快照：2026-09-20（Session 5 · 第 8 轮消息后）· meta 规则 **11** 条（M0–M10）· 方法论 **22** 条 · 台账 **9** 轮 · 脚本 **10** 个 · 长期参考文件 **11** 份（含本页）。
 > **当前最高优先级 = `PRODUCT_TRUTH.md` §0 铁律**（最新设计师稿 + CAD 铝壳），历史冻结全部 `superseded`。
 > 维护规则：新增/废弃任何 loop，只改本页 + 对应正文；本页与正文冲突时以正文为准并把本页修正。
 
@@ -35,7 +35,7 @@
 本轮关键新增：`cad-verified-render-pipeline`、`failure-ledger-before-retry`、`two-network-paths`、
 `drive-direct-link-intake`、`verify-artifact-not-status-label`、`never-edit-docs-via-bash-strings`、`self-export-at-source`。
 
-## D. 脚本（8 个，幂等，可重复跑）
+## D. 脚本（10 个，幂等，可重复跑）
 | 脚本 | 干什么 |
 |------|--------|
 | `capacity.sh [--fix]` | 空间/持久化/未提交/未推送/工具链自检；`--fix` 装缺失依赖（字体、ffmpeg） |
@@ -43,6 +43,8 @@
 | `fetch-drive.sh <FILE_ID> <名>` | 你本机跑：把 Drive 文件拉进 `.scratch/`（沙盒 curl 不通，实测 000）并记 sha256 |
 | `learn.sh <name> <板块> "问题" "做法" "为什么"` | 按 M7 格式追加方法论（内容别放反引号/`$`，会被 shell 吃掉） |
 | `verify-upload.sh` | 附件是否真落地（不信 UI 的 "successful"） |
+| `push-inbox.sh 文件...` | 把文件送进 `inbox` 分支（**不碰 main/会话分支**）——本沙盒唯一可靠的二进制入口，≤1MB |
+| `pull-inbox.py [--get inbox/<名>]` | 按字节取回并打印 sha256（实测往返一致） |
 | `probe-drive.sh [FILE_ID]` | **每次开局测本沙盒能否拉 Drive**（旧沙盒能、本沙盒不能 → 能力不可记忆） |
 
 ## E. 审计与溯源
@@ -53,6 +55,7 @@
 | `00_meta/intake/_READ_LOG.md` | Drive 读取台账：谁被 `Agent read`、谁只是 `Drive pointer stored` |
 | `00_meta/DRIVE_INDEX.md` | Drive 全量 FILE_ID 索引 + 取用纪律（**这就是"保留的文件夹 index"**） |
 | `00_meta/INDEX_session3_files.md` | **Session 3 文件索引（从已读文档重建）**：按 CAD 优先级列"该给我哪些旧文件" |
+| `00_meta/REUSABLE.md` | **先查旧记录再动手**：可复用清单 20 项 + 我白做的 6 项（开工前 60 秒扫） |
 | `00_meta/CAD_LOG.md` | CAD/视觉的**历史+分析+规则**（顶部有 SUPERSEDED 横幅）+ 最新稿可见特征 O1–O9 与【问】清单 |
 | `00_meta/PRODUCT_TRUTH.md` | 产品冻结事实 + 7 条禁止事项（优先级最高的真相源） |
 

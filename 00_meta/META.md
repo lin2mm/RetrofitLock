@@ -51,6 +51,13 @@
   要 merge 请明确说'合并'。" —— **拿到用户明确同意才动 merge**。
 - 三个大阶段（图 / 目录 / 网站）之间**不 merge、不换 session**，用本页 + HANDOFF 做内部续接。
 - 若平台侧出现自动合并/分支清理迹象，立刻告知用户并停止 merge 类操作。
+- **⛔ 用户永久指令（2026-09-20 再次强调）**：本项目**长期只在 `arena/01a0bd80-retrofitlock` 上工作，绝不提前 merge**。
+  走到最后一步（网站）也一样：**用 Cloudflare Pages 的"分支构建 / Preview URL"直接映射本分支**，
+  每次 push 自动出一个可预览站点，持续调整；**不需要**为了上线而合进 main。
+  → 部署链路：`60_website/` 构建产物 → Cloudflare Pages（生产分支设为本分支，或每次取 Preview URL）。
+  → 我可以代劳：建 Cloudflare 项目需要 `CLOUDFLARE_API_TOKEN`（你在沙盒里给我环境变量或直接贴 token 我就配 `wrangler`），
+     没有 token 时我就只准备 `wrangler.toml` + 构建脚本，你点两下即可。
+  → 规则含义：**任何"要不要 merge"的默认答案都是否**。只有你在本轮明确说"合并"，我才动 main。
 
 ## M4. 目录与命名体系（细则见 `00_meta/naming.md`）
 
