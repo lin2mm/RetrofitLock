@@ -1,7 +1,7 @@
 # LOOP AUDIT — 全部 loop 的唯一清单（长期文件）
 
 > 你要的那个"包含全部 loop 说明的长期文件"就是这个。**回答"一共有多少 loop"以本页为准。**
-> 计数快照：2026-09-20（Session 5 · 第 8 轮消息后）· meta 规则 **11** 条（M0–M10）· 方法论 **21** 条 · 台账 **8** 轮 · 脚本 **6** 个 · 长期参考文件 **10** 份（含本页）。
+> 计数快照：2026-09-20（Session 5 · 第 8 轮消息后）· meta 规则 **11** 条（M0–M10）· 方法论 **21** 条 · 台账 **8** 轮 · 脚本 **8** 个 · 长期参考文件 **10** 份（含本页）。
 > **当前最高优先级 = `PRODUCT_TRUTH.md` §0 铁律**（最新设计师稿 + CAD 铝壳），历史冻结全部 `superseded`。
 > 维护规则：新增/废弃任何 loop，只改本页 + 对应正文；本页与正文冲突时以正文为准并把本页修正。
 
@@ -35,7 +35,7 @@
 本轮关键新增：`cad-verified-render-pipeline`、`failure-ledger-before-retry`、`two-network-paths`、
 `drive-direct-link-intake`、`verify-artifact-not-status-label`、`never-edit-docs-via-bash-strings`、`self-export-at-source`。
 
-## D. 脚本（5 个，幂等，可重复跑）
+## D. 脚本（8 个，幂等，可重复跑）
 | 脚本 | 干什么 |
 |------|--------|
 | `capacity.sh [--fix]` | 空间/持久化/未提交/未推送/工具链自检；`--fix` 装缺失依赖（字体、ffmpeg） |
