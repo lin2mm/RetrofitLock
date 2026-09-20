@@ -40,6 +40,11 @@ Drive 里对应实物（我列过清单，尚未取得本地副本）：
 - 不得因"用户说已上传 Drive"就声称已读取/校验/同步；只有文件进 workspace 且读成功才算 `Agent read`
 - 不得把已删除的本地路径称为当前可读取文件（当前状态是 `Drive source indexed / local copy deleted / refetch on demand`）
 
+## 3b. 对外措辞（客户看到的）vs 内部事实
+- 公共 DM / 目录 / 网站：写 **`Aluminum Case`**（降低理解门槛，D45）；内部工程页与真相源保留 **`CNC 铝合金`**——措辞变、事实不变。
+- 面盖对客户表述：`fine-textured polymer cover`（不得写 wood / 木纹 / 高档木质）。
+- 不为竞品平台做免费广告：未使用 TTLock 的对象，文案里 `TTLock` → `mobile app`（D42）。
+
 ## 4. 状态词表（**采纳他们的，弃我自己那套**，映射见 `naming.md`）
 `Drive pointer stored` → `User-reported` → `Workspace received` → `Agent read` → `Verified input`
 → `Angle hypothesis`(AI 推测，**非产品事实**) / `CAD verified angle`(经 CAD+QA) → `Approved asset`(可对外) ；`NoSend` 贯穿始终。
@@ -53,6 +58,10 @@ Drive 里对应实物（我列过清单，尚未取得本地副本）：
 99_Archive      ← 90_archive/
 ```
 关键：**图必须分进 `Hypothesis_Not_ProductTruth/` 还是 `CAD_Verified/`**，两者混放就是之前反复返工的机制原因。
+
+## 5b. 目录状态（本 session）
+目录 = **重做**，但不是从零设计：执行 `02_SL-B15` 的资产盘点 + `02_SL-B16` 的文案草稿，按本页真相源重排。
+方法论与页面骨架已继承到 `00_meta/CATALOG_METHOD.md`；**不标 FINAL（停止点 S5 属于用户）**。
 
 ## 6. 交换协议（他们的，直接用）
 用户上传后发：
