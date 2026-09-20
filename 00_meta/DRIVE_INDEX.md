@@ -1,5 +1,16 @@
 # DRIVE 资产索引（长期有效 · 唯一入口清单）
 
+## 0. Canonical 链接（**原始 URL 全文长期保存**，不只存 id）
+| 名称 | 原样链接 | 出处（我从哪个文件读到的） | 状态 |
+|---|---|---|---|
+| Session 3 长期记忆 / EXP1 唯一文件往来通道 | `https://drive.google.com/drive/folders/14Enb5EiikE_EbIqReAp-oEqqPqg4EtSi?usp=drive_link` | `00_EXP1-J09_DriveFolder_FileExchange_Link_CN_v1.md` + `00_EXP1-DRIVE_SourceOfTruth_Registry_CN_v1.md` §1（**从文件里挖出来的，不是我猜的**） | ✅ 已枚举（9 项 + 1 子夹） |
+| 子文件夹（3 个 FCStd） | `https://drive.google.com/drive/folders/1n5gFRP-AcLH8y1-Rqq9zKRueRgo3kIZ8` | 上一条枚举结果 | ✅ 已枚举 |
+| 你本轮给我的 Session5 收件夹 | `https://drive.google.com/drive/folders/1MHsQ5cQTBeUyh-eS3rv-qMfk4Bf8SnhT?usp=sharing` | 你消息正文（2026-09-20） | ✅ 已枚举（7 项，4 份 md 已读） |
+| **`确认设计稿`（原 `image-1.png`，视觉唯一底稿）** | ⚠️ **待登记**：请给所在 folder 或 file 链接 + FILE_ID | 你 2026-09-20 指令改名 | `User-reported`（沙盒内无文件；附件 3 次未落地） |
+
+> 通道结论（本轮实测）：**GitHub `inbox` 分支 = 把文件按字节送进沙盒的可靠路**。
+> `push-inbox.sh` 送 → `pull-inbox.py --get inbox/<名>` 取，sha256 已验证一致；单文件 ≤1MB。
+
 > 规则：**本文件是 Drive 的索引，不是副本**。二进制**永不进仓库**（用户指令：CAD 是临时分析文件，只推 md/xlsx 结论）。
 > 沙盒 `curl` 实测 `drive.google.com/uc` = **000**（不可下载）；`fetch_page` 只能读**文本类**（md/txt/PDF）。
 > 所以：文本 → 我 fetch；二进制 → 聊天附件，或你本机跑 `00_meta/scripts/fetch-drive.sh <FILE_ID> <名字>`。
