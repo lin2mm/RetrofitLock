@@ -55,7 +55,8 @@ echo "    → 新 session 必须重跑: bash 00_meta/scripts/capacity.sh --fix"
 
 # 7. 工具链是否齐
 echo "[7] 工具链"
-probe(){ if eval "$2" >/dev/null 2>&1; then echo "    ✅ $1"; else echo "    ❌ $1"; MISSING="$MISSING $1"; warn=1; fi; }
+twarn=0
+probe(){ if eval "$2" >/dev/null 2>&1; then echo "    ✅ $1"; else echo "    ❌ $1  (可选，--fix 会补)"; MISSING="$MISSING $1"; twarn=1; fi; }
 MISSING=""
 probe "Pillow"        "python3 -c 'import PIL'"
 probe "fpdf2"         "python3 -c 'import fpdf'"
@@ -66,8 +67,9 @@ probe "ImageMagick convert" "convert -version"
 probe "playwright/puppeteer(缺 libnss3，可选)" "node -e 'require(\"puppeteer-core\")'"
 
 hr
-if [[ "$warn" == "0" ]]; then echo "VERDICT: ✅ PASS — 空间与持久化都健康"
-else echo "VERDICT: ⚠️ 见上方告警（先处理 [4][5] 再干活）"; fi
+if [[ "$warn" == "0" && "$twarn" == "0" ]]; then echo "VERDICT: ✅ PASS — 空间、持久化、工具链都健康"
+elif [[ "$warn" == "0" ]]; then echo "VERDICT: ✅ PASS（带提示）— 空间/持久化健康，仅工具链有可选项缺失，需要时跑 --fix"
+else echo "VERDICT: ⚠️ BLOCK — 先处理未提交[4]/未推送[5]/超大文件[3]，再产出新东西"; fi
 
 if [[ "$FIX" == "1" ]]; then
   hr; echo "FIX 模式：补齐缺失依赖"

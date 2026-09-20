@@ -33,6 +33,7 @@
    `00_meta/methodology.md` 对应板块；只对本产品有效的写成败事实 → 写进 `10_product/`，**不污染方法论**。
 3. **跑 capacity.sh 并 commit + push**（含 `00_meta/capacity.md` 的快照更新）。
 
+命令式追加（保证格式统一）：`bash 00_meta/scripts/learn.sh <kebab-name> <板块A-D> "问题" "做法" "为什么" [状态]`
 判定标准（什么才算方法论）：能改写成「以后凡是遇到 X，就做 Y，因为 Z」的句子才算；
 只是「这次这个 SKU 的孔距是 60mm」不算，那是数据。
 
