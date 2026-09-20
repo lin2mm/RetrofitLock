@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # 把一条经验按 META M7 的四行格式追加进 methodology.md（保证格式统一、可被后续 session 引用）
+# 注意：内容里别放反引号/$()/尖括号 URL —— 走 bash 双引号会被 shell 展开静默损坏（见 methodology never-edit-docs-vash-strings）。
+#       复杂内容改用 edit_file/write_file 直接写 methodology.md。
 # 用法: bash 00_meta/scripts/learn.sh <kebab-name> <板块A-D> "问题" "做法" "为什么" [状态]
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
