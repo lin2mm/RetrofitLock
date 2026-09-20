@@ -12,6 +12,11 @@
 | `09_GTM_Visual_FromFrozenProduct_ToAngles_ToScenes_Method_CN_v1.md`（D64） | **✅ 已读（Drive 新件）**：Stage0–6 全流程 + **100 分 QA 评分表（8 维 + 6 红项）** + 3 个现成 prompt 模板（探索/合成/拒绝）+ 8 模块学习节奏 | 我自己定 QA 阈值、自拟 prompt、自创分阶段流程 | **整套直接采用**：`QA_ledger` 已换成他们的 100 分制；prompt 用他们的 A/B/C 模板 | **已读** |
 | `09_GTM_AI_CAD_Combination_Capability_Assessment_CN_v1.md`（D66） | CAD=几何真源 / 视频=外观参考 / 冻结图=对外基准 / AI=助手与合成 | 我上轮独立写了 `cad-verified-render-pipeline` | **改为引用 D66**，我的脚本只是它的实现 | 指针（id 已知） |
 | `111_GTM_Workspace_Refresh_Summary_2026-09-20.md` | **FCStd 已解析完**：db-4/DC-4 的 solid/face/edge/vertex、`SX_DC_GAI_4` 包络、Slider 运动副、103/104/106/108/109 产物、Gate 状态、历史错误保护清单 | 我要从 STL/FCStd 重算几何、重做电池盖 QA | **直接引用为事实**（已写进 `PRODUCT_TRUTH.md` §1ab）→ 我**不必再解 FCStd** | **已读** |
+| `105_GTM_External_FCStd_..._Verification_Plan` | **9 步最短路径 + 8 视图清单 + 四态输出词 + A/B 双图规则 + battery_cover.step 替代方案**（§3/§5 原文） | 我重造 QA 流程和视图清单 | **逐字采用**（已入 CAD_LOG §3e / QA K14） | **已读** |
+| `107_GTM_External_FCStd_..._Geometry_Read` | db-4/DC-4 精确 bbox、体积、placements、15.18mm³ 定性（仅诊断）、§6 七步渲染工序 | 我从零解 FCStd；或找不到的二进制干等 | **数字直接引用**；工序=电池盖管线；FCStd 本体无需我再解 | **已读** |
+| `101_GTM_Drive_FCStd_..._Render_Delete_QA` | 装配树 13 objects/Slider 引用边；6 条「旧图为何错」；97–100 删除链；**渲染前 6 步新闸门** | 我自己总结 109 教训、自定闸门 | 错误清单直接并入禁止事项；闸门=成品图前置 | **已读** |
+| `94_..._Compacted_LongTermMemory` | 唯一工作范围 + **10 条后续硬规则**（组合唯一/内部件不出现/尺寸只认 sx-db-4.stp…） | 我重立视觉规则 | truth §1ac 逐条指针化，不重述 | **已读** |
+| `110_GTM_Workspace_Refresh_..._Protocol` | refresh 9 触发条件 + 「AI 说不能=强制 A–I 流程」+ 事实/判断/建议/待确认四分 | 我把它当新要求 | META M0/M9 与它对表；四分法即我【源/证/推/问】的母本 | **已读** |
 | `113_GTM_Workspace_Compression_..._Completion.md` | 快照 92,354,796B / 355 files / SHA256 `a0300a56…`；按需 refetch 六步法 | 我另造一套取用流程 | 我的 M10 与它**对齐**（先读 index→只取所需→校验→做→删） | **已读** |
 | `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | 产品事实表 + **claim 禁用清单**（HomeKit/Matter/Thread/Airbnb/BHMA/ANSI/world's smallest）+ 证据标签【源/证/代/推/问】+ 统计闸门 + 对外语气规范 + **银黑转换需确认** | 我重做 claim 纪律、重定文案口径 | 直接采用；已加 K11（银黑需确认） | **已读** |
 | `ImmutableCrop_Extract_v2.py` + `QA_Score_v2`（R20） | 1:1 原生像素裁剪（禁重绘/缩放/旋转/透视/重采样）+ 逐像素评分脚本 | 我重写一套裁剪与比对脚本 | **要文件本体**（≤1MB，走 `inbox` 通道）；拿到即用 | 指针 |
@@ -48,3 +53,5 @@
 4. 生成 2 张 AI 基线图 → 违反 **D65/R-22** → 已删除并记违规。
 5. 沿用 R19/R20 冻结底稿与"旋钮=近直角长条""无 logo"两条规则 → 你判定**全部有问题** → 已降级 `superseded`。
 6. 把本沙盒 000 写成 Drive 普遍不通 → 真相是**每个沙盒策略不同** → 已改成"每次探测"。
+7. 差点自己重跑「电池盖装配关系」分析 → `107`/`101` 已把 FCStd 解析完（placement/体积/bbox 全给了）→ R12/R13 扫记录截停，`consult-before-build` 生效（本轮连 8 视图清单都省了：`105` §4 现成）。
+8. 差点自拟「渲染要等出网 session」的限制 → 实际 gcc stub 119 个 GL 符号就打通 OCP headless → R13 立成 `binary-starve-to-text`（#25）：限制要么当场实测要么写明沙盒，禁止写成项目规则。

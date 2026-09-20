@@ -1,8 +1,8 @@
 # LOOP AUDIT — 全部 loop 的唯一清单（长期文件）
 
 > 你要的那个"包含全部 loop 说明的长期文件"就是这个。**回答"一共有多少 loop"以本页为准。**
-> 计数快照：2026-09-20（Session 5 · 第 11 轮消息后）· meta 规则 **11** 条（M0–M10）· 方法论 **24** 条 · 台账 **14** 行 · 脚本 **8** 个 · 长期参考文件 **13** 份（含本页与 `REQUEST_FILES.md`）。
-> R10/R11 新增 `root-cause-before-rule`；R12 新增 `binary-artifact-capacity-discipline`（109 判废 + 容量考古）。
+> 计数快照：2026-09-20（Session 5 · 第 11 轮消息后）· meta 规则 **11** 条（M0–M10）· 方法论 **25** 条 · 台账 **15** 行 · 脚本 **8** 个 · 长期参考文件 **13** 份（含本页与 `REQUEST_FILES.md`）。
+> R10/R11 新增 `root-cause-before-rule`；R12 新增 `binary-artifact-capacity-discipline`（109 判废 + 容量考古）；R13 新增 `binary-starve-to-text`（STEP 文本自读 + OCP stub 配方，渲染栈本沙盒打通）。
 > **当前最高优先级 = `PRODUCT_TRUTH.md` §0 铁律**（最新设计师稿 + CAD 铝壳），历史冻结全部 `superseded`。
 > 维护规则：新增/废弃任何 loop，只改本页 + 对应正文；本页与正文冲突时以正文为准并把本页修正。
 

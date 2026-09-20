@@ -1,46 +1,41 @@
-# REQUEST_FILES — CAD / 设计稿取件清单（R12 起）
+# REQUEST_FILES — CAD / 设计稿 / 视频取件清单 v2（R13 更新）
 
-> 规则：**先查本清单再传，清单里没有的我才缺**。已在 Drive folder `20260920-LockSession5` 的 14 项**都不要再传**
-> （其中 7 份 md 我已通读：111 / 113 / 112 / 01_A01 / 09_VisualMethod / J07 / J90；指针：StartHere / Registry / J09 / 09_AICAD / 112…见 `DRIVE_INDEX.md`）。
-> 传法：放进**同一个 folder**即可，我用 `fetch_page` 自读（文本类零你的动作）。
+> **v1→v2 变化**：P0 大半已满足——`sx-db-4.stp`(222KB 文本)✓、子文件夹 3×FCStd✓、P1 的 101/105/107/110/94 全部读完✓。
+> 通道判定（R13）：①聊天附件在本沙盒**从不落盘**（4 次实测，仅肉眼可见）②GitHub 按你要求**不动**（inbox=例外通道，默认弃用）
+> ③**文本类（md/STEP/OBJ/SVG/csv）我自己从 Drive 读，你零动作** → 因此下面的请求优先给文本。
 
-## P0 · 没有就无法出正式图
+## A. 还缺的文件（按优先级）
 
-| # | 文件名 | 为什么 | 通道 |
-|---|--------|--------|------|
-| 1 | `确认设计稿-闭合面盖-带Logo字.png` | 外观唯一依据（A 版） | 已在 Drive，但**像素取不到**（png/zip 一律 500，本轮再测 `export=view`、`file/d/../view` 均 500）→ 二选一：**聊天附件**（我能看见、能做肉眼对照，不能做像素 QA）或 **inbox**（`push-inbox.sh`，能做 QA/裁剪/测量） |
-| 2 | `确认设计稿-闭合面盖-不带Logo.png`（B 版） | 你已确认出 A/B 两版；**one-pager 用 B 版**（O5） | 同上；或只传带 LOGO 版、我按图位规则先占位 |
-| 3 | `sx-db-4.stp`（外壳主 STEP，**单独一个文件**） | 外壳尺寸/形状唯一权威（包络 39.8×22.5×90.5mm 已由 `111` 给出，但渲染几何需要本体） | **STEP 是文本格式 → 我可能能直接从 Drive 自读**！请单独上传（别包 zip），并尽量 ≤5MB |
-| 4 | `装配-DC-4.FCStd` 与 `装配-db-4.FCStd` | 电池盖/装配关系复算（结论已在 111，重渲染时才需要） | FCStd 是二进制 → 若 3 号 STEP 给全了，**可跳过**（优先给 3） |
+| # | 文件 | 级别 | 为什么 / 备注 |
+|---|------|------|--------------|
+| 1 | `battery_cover.step`（`SX_DC_GAI_4` 单独导出 .stp） | **P0** | `105` §3 原文请求：**mm 单位、保留原始坐标系（或附变换）、注明对应 SX_DC_GAI_4**。有了它 + `sx-db-4.stp`，外壳+电池盖全在文本通道内 → **我可以在本沙盒独立出全部几何图，不再需要你做任何搬运** |
+| 2 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` | P0（文本） | **视频 1（实拍当前产品）的抽帧清单/编号表**——你 item 4 说"抽帧都在老的索引里"，就是这份；我拿到后自己挑帧、给你精确的选帧请求（文件名/时间码） |
+| 3 | `09_GTM_Input_Asset_Audit_2026-09-15.md` | P0（文本） | 同上配套（两视频+CAD 的审计结论） |
+| 4 | `66_GTM_FrozenClosedCover_Knob_And_Envelope_Proportions_v1_2026-09-19.md` | P1 | 旋钮/包络比例记录（94 列为在册证据） |
+| 5 | `70_GTM_CAD_ClosedCover_KnobPanel_Frozen_And_AluminumCAD_Verification_v1_2026-09-19.md` | P1 | 壳+面盖+旋钮三合复核记录（我出图后要对着它复核） |
+| 6 | `102_GTM_ConfirmedCover_Knob_BatteryCover_From31_TwoImageGate_And_HistoricalCleanupPlan_2026-09-20.md` | P1 | 双图闸门+历史清理计划（唯一没传的 P1） |
+| 7 | `确认设计稿-闭合面盖-带Logo字.png` + **B 版（不带 LOGO）** | P1·像素受限 | 我肉眼已看过 A 版（O1–O9 已记录）；**正式像素 QA** 二选一：出网开放的 session 直读 / 你批准的例外 inbox（359KB，当日删）——**默认都不用，我按肉眼级继续推进** |
+| 8 | 实拍视频 1 选帧 png（≤6 张，见下 C 表） | P2 | 等 #2 索引到位我列精确帧号，你再挑；png=肉眼级够用 |
 
-## P1 · 省下我重做、或防再次返工
+## B. 明确不用再传（已入库，防重复）
+- folder 里 21 项全部有登记（详见 `DRIVE_INDEX.md`）；`09_AICAD`/两个 xlsx/J90 xlsx = 不阻塞，无需重传。
+- FCStd 三件的**几何数字**已由 `107` 全文化（bbox/体积/placement/Slider 边）→ 二进制只在"对方沙盒重渲染"时才用得上，本沙盒已不需要。
+- `111/112/113/01_A01/09_VisualMethod/J07/J09/StartHere/Registry/A01/101/105/107/110/94` = 已读已引用。
+- 快照 zip / drive_imports 原件：**别给我**（R12 容量规则；按需 fetch 制）。
 
-| # | 文件名 | 为什么 |
-|---|--------|--------|
-| 5 | `107_GTM_External_FCStd_Downloaded_And_BottomCover_Geometry_Read_2026-09-20.md` | **标题就是"已下载 FCStd + 底部盖几何已读"**——含旧 session 从 Drive 取 CAD 的确切方法（Q1 的答案）与电池盖几何原文 |
-| 6 | `101_GTM_Drive_FCStd_Assembly_Verification_And_Render_Delete_QA_2026-09-20.md` | 渲染 + 删除 + QA 的完整流程记录（我照抄流程，不重造） |
-| 7 | `102_GTM_ConfirmedCover_Knob_BatteryCover_From31_TwoImageGate_And_HistoricalCleanupPlan_2026-09-20.md` | 双图闸门 + 历史清理计划（你 ⑤"防重复"的最大件） |
-| 8 | `105_GTM_External_FCStd_And_BottomBatteryCover_Geometry_Verification_Plan_2026-09-20.md` | 验证计划（知道哪些步骤已被设计为 PASS） |
-| 9 | `94_GTM_CAD_VisualScope_Compacted_LongTermMemory_2026-09-19.md` | 压缩版长期记忆（防我读散档） |
-| 10 | `110_GTM_Workspace_Refresh_Summarize_Learn_Recommend_Protocol_2026-09-20.md` | 开局协议原文（我的 META 与它对表） |
-| 11 | `106_GTM_..._CAD_QA.png` / `108_GTM_..._CAD_QA.png`（111 提到的两张 QA 图） | 对照"109 到底错在哪"的最短路径（≤2MB 小图即可） |
-| 12 | `109_GTM_..._battery-cover-integrated_*.png` | 你已判废，**只作错误样本**（可选，小图） |
+## C. 抽帧需求表（待 #2 索引后精化；先给方向）
+| 组 | 内容 | 用途 |
+|----|------|------|
+| V1-a | 正面闭合、正对镜头 1–2 帧 | 与确认设计稿对比例（K4/视觉锚点） |
+| V1-b | 左侧面、右侧面各 1 帧 | 厚度 22.5、R 角、喷砂高光走向 |
+| V1-c | **底部端面**（电池盖缝/凸筋方向/齐平度）1–2 帧 | 与 3 张截图+107 placed bbox 三方互证 K13/K14 |
+| V1-d | 面盖圆盘+斜条旋钮区特写 | O2 手动旋钮区细节（暂定 LED=O3 一并看） |
+| V1-e | 中部功能键 + LOGO 刻字特写各 1 | O4/O5 |
+| V1-f | 纹理/颜色近景 1（白平衡正常段） | 棕红细密纹理=普通塑料（O6），色准参考 |
+| V2 | 安装参考视频**不需要帧**——`101` 已定性=外部安装参考，仅作场景灵感 | 防误用为产品真相 |
 
-## P2 · 有就用，没有不阻塞
-
-| # | 文件名 | 说明 |
-|---|--------|------|
-| 13 | `CAD-贴锁-设计-stl.zip` 整包 | 若只给 3 号单文件即可；整包走不了 inbox（>1MB）→ 传 Drive 后**把 STL 转成 OBJ/ASCII STL 再传一份**我就能自读 |
-| 14 | 实拍半成品视频（1–2 条） | 只用 imageio-ffmpeg 抽 6–10 帧 → 合成 1 张 contact sheet → **删原帧**（见方法论 `binary-artifact-capacity-discipline`） |
-| 15 | `iso.svg` | 文本格式，若给我能直接读 |
-
-## 格式换算约定（为了让我"能自读"）
-- 能给 **文本格式** 的都给文本：STEP(`.stp`) / IGES / **OBJ** / **ASCII STL** / SVG / md / csv → 我 `fetch_page` 分块自读，你零动作。
-- 必须二进制的（png/mp4/xlsx/FCStd）：单文件 **≤1MB → inbox**；>1MB → Drive（我登记 FILE_ID，等出网开放的沙盒再取，或聊天附件让我先看）。
-- 一律**别打包 zip 给我想要的单个文件**（zip 是二进制 = 我又瞎了；解包后原件再删，别同存——R12 容量教训）。
-
-## 已防重复（这些我已有结论，不用再传）
-- FCStd 拓扑计数 / `SX_DC_GAI_4` 包络 / Slider 运动边 / 15.18mm³ HOLD —— 来自 `111`（已入库 `PRODUCT_TRUTH.md` §1ab）。
-- 快照与删除史（355 files / 100.79MB / sha256 `a0300a56…`）—— `112`+`113`（容量规则已入库）。
-- claim 禁用清单 / 证据标签 / 银黑转换需确认 —— `01_EXP1-A01`（已入库，K11）。
-- 100 分 QA 制 / Stage0–6 / prompt 模板 —— `09_GTM_Visual...Method`（已替换 `QA_ledger.md` 自拟阈值）。
+## D. 我这边接下来自动做（你零动作）
+1. 单独一轮全文拉取 `sx-db-4.stp`（29 chunks）→ OCP（libGL stub 已打通，配方 `capacity.md` §4c）读+网格化+全 bbox → 对照 107/39.8 包络（含【问】：local bbox 43.09 vs 39.8 差异定论）。
+2. `battery_cover.step` 到位后：重建 107 §6 七步装配 → `105` §4 Step4 的 8 视图 → 与三张截图对照出四态结论。
+3. 出 A（31 视角保持遮挡）+ B（底部/后部确认）两图 + 100 分制 QA（≥95 才给你看）。
+4. 通过后：扩展 one-pager v0.1 → 双语。全程不 push 任何二进制、不占 GitHub。

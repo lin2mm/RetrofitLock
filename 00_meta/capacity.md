@@ -78,7 +78,17 @@ VERDICT: PASS（除 [7] 的 PDF 引擎已知缺口）
 | 本 session（Session 5） | ❌ 不行 | `drive.google.com`/`drive.usercontent`/`workspace.google.com` 全 000，而 github/npm/PyPI=200；同 FILE_ID 用 `fetch_page` = HTTP 500（同工具读 md 成功） |
 → 底层机制（本轮定位）：egress **白名单**，非白名单域名 TCP 能连上但 **TLS 握手被掐**（`Connected` 之后 `SSL_ERROR_SYSCALL`）；
   `/usr/local/share/ca-certificates/e2b-ca.crt` 说明流量过 E2B TLS 中间人。`fetch_page` 侧同样拿不到二进制（zip/png 都 HTTP 500，md 成功）。
-→ 实操结论：**md/txt 我自己读 Drive；二进制只走 GitHub inbox（实测 sha256 一致）**。
+→ 实操结论 v2（R13，用户指令「不占 GitHub 空间」）：**文本类（md/STEP/OBJ/SVG/csv）我直接从 Drive 自读；二进制不进沙盒也不推 GitHub（聊天附件=肉眼级证据；inbox=例外通道，仅当用户点名才用、当日删）**。
+## 4c. 渲染栈打通（2026-09-20 实测配方，下个 session 直接用）
+```text
+pip 装不了 libGL/libGLU 时（本沙盒 apt 源也被掐）：
+  1. gcc -shared -fPIC 空 stub，逐轮补齐 MISSING 的 libX*.so / libGLU.so.1 到 ~/.local/lib
+  2. from cadquery_ocp.libs/*.so 用 nm -D --undefined-only 提取全部 gl*/glu*/glX* 符号（本机 119 个），
+     编成空函数进 ~/.local/lib/libGL.so.1（headless 永不真调用）
+  3. export LD_LIBRARY_PATH=~/.local/lib → from OCP.STEPControl import STEPControl_Reader ✅
+验证：ReadFile 返回 IFSelect_ReturnStatus（STEP 读取/网格化可用）；gmsh 路线弃（PyPI wheel 无 native lib）。
+注意：stub 目录在 ~/.local/lib，若换沙盒丢失 → 按本配方 3 步重建（≈2 分钟）。
+```
 → 结论：**能力必须每次探测，不能记忆。探针：`bash 00_meta/scripts/probe-drive.sh [FILE_ID]`。
 
 ## 5. 回答"session 5 还需要空间提示吗"

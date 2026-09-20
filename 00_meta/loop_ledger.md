@@ -24,6 +24,8 @@
 
 | R12 | 五条：①问能否从旧方法论学「旧 session 怎么从 Drive 拿 STL」 ②澄清设计师面盖确认图已在 Drive（别再等聊天附件） ③**109 补投：做错——电池盖该在底部却被贴到上部圆弧面**（session4 未及投诉即容量爆） ④查 session3/4 容量爆根因并立方法论 ⑤要我列 CAD 文件清单；另问 product truth（A01）看没看到 | 新增 `binary-artifact-capacity-discipline`（累计 24）；109→`rejected-by-user` + QA 红项 K13（部件位置以 CAD 坐标系为准，图像方位禁止）；png 取像素再测（view/download 双 500）→ 通道答案写死：文本自读 / 二进制 inbox 或聊天附件 | 新建 `00_meta/REQUEST_FILES.md`（P0/P1/P2 + 格式换算约定）；`capacity.sh` §3 加二进制堆积计数；`CAD_LOG` 新增 §3d；`PRODUCT_TRUTH` §1ab 记 109 判废；`QA_ledger` K13；`DRIVE_INDEX`/`REUSABLE`/`README` 同步 | 更正我上轮一句：「109 等你批准」→ 你其实早已看过且**判废**，只是投诉被容量截断 |
 
+| R13 | 六条：①三张 FreeCAD 截图直接发在消息里（说明「定期删、本地有备份」）②别占 GitHub 空间 ③只留临时空间、结论后删 ④实拍视频在 session3 Drive、要我列抽帧需求 ⑤session5 folder 已更新 ⑥还缺什么文件；当前目标=**铝壳+确认面盖+正确电池盖的成品图** | 方法论 +1：`binary-starve-to-text`（#25）——STEP 222KB 文本可自读 + **OCP 渲染栈在沙盒内打通**（libGL stub×119 符号，配方入 capacity §4c）；截图=历史 image-1/2/3（94/101 登记件），视觉结论与 107/105 交叉一致：盖贴 +Z 端面、凸筋先入后压平、31 遮挡按 A/B 双图规则（K14） | `CAD_LOG` §3e（精确 bbox/体积/placement/两个子文件夹 id/STEP 头）；`PRODUCT_TRUTH` §1ac（电池盖定案+107§6 工序+94 组合唯一）；`QA_ledger` K14；`DRIVE_INDEX` 21 项重登记；`REQUEST_FILES` v2（含抽帧需求表）；`REUSABLE`/`LOOP_AUDIT`/`capacity` 同步 | 更正①：附件「落盘后定期删」→ 实测本沙盒**从不落盘**（第 4 次），无物可删，聊天附件仅肉眼级；更正②：上轮说「渲染要等出网 session」→ 错，stub 自修复后本沙盒就能渲 |
+
 ## 我此刻对你消息里那 3 个具体问题的答复去向
 - 「上传的 session3 md」→ 沙盒里不存在（`/home/user/uploads/` 无此目录，全盘 `find` 无匹配）→ 已把"别信 UI 成功标签"写成方法 `verify-artifact-not-status-label`，并配 `verify-upload.sh`。
 - 「Drive 是不是更好」→ 不是 Drive 更好，是**我之前判断错了**；两条通道都可用，Drive 直链成为你的默认通道（M8b）。

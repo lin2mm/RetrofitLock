@@ -27,11 +27,14 @@
 | `113_GTM_Workspace_Compression_And_Source_Delete_Completion_2026-09-20.md` | `1MoTjN3orsPf13ubAWdnrZiuZq8Cx9wX3` | 新 | md | ✅ `Agent read`：快照 92,354,796 B / 355 files / SHA256 a0300a56…；按需 refetch 六步法 |
 | `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | `1_9Tw4l9pijghc-LncTgZ8D7FeUuvx_E1` | 新 | md | ✅ `Agent read`：产品事实/claim 纪律/证据标签/**银黑转换需你确认** |
 | `09_GTM_Visual_FromFrozenProduct_ToAngles_ToScenes_Method_CN_v1.md` | `1WgowHv295WmU468KYtw5AK1dCgw97ROX` | 新 | md | ✅ `Agent read` **关键**：Stage0–6 + **100 分 QA 评分表** + 3 个 prompt 模板 |
-| `09_GTM_AI_CAD_Combination_Capability_Assessment_CN_v1.md` | `1qazu-EWL359lekGhzyY54BzzHrvZG_4B` | 新 | md | `User-reported`（要点已从 111/D66 获得） |
+| `09_GTM_AI_CAD_Combination_Capability_Assessment_CN_v1.md` | `1qazu-EWL359lekGhzyY54BzzHrvZG_4B` | 16KB | md | `User-reported`（要点已从 111/D66 覆盖，全文不阻塞） |
 | `00_EXP1-J09` / `00_MTH-J09` Drive 通道说明 | `1kvH9LNRVR-5eIIb_XOZcv2NHwwb1ld3R` | 2KB | md | ✅ 已读（旧沙盒通道） |
 | `00_EXP1-J90_Methodology_GapFix_Recommendations_CN_v1.md` | `1thWc6_dv07HdkzFJtEgk8xBUMxiQtWGG` | 17KB | md | ✅ 已读 2/2（**D01–D67**） |
 | `00_MTH-J07_Agent3_Start_Summary_Plan_CN_v2.md` | `1XsxEj_AO4pXERB2b4VPElN1MAlAjF0mZ` | 27KB | md | ✅ 已读 3/3 |
-| `00_EXP1-DRIVE_SourceOfTruth_Registry_CN_v1.md` | `1J8Qo7vJ9mScbkepnj2acbxLKGS8aABNJ` | 9KB | md | ✅ 已读 |
+| `00_EXP1-DRIVE_SourceOfTruth_Registry_CN_v1.md` | `1J8Qo7vJ9mScbkepnj2acbxLKGS8aABNJ` | 9KB | md | ✅ **09-20 重读**：§10 面盖优先级、§11 清理+按需 fetch；canonical folder `14Enb5EiikE_EbIqReAp-oEqqPqg4EtSi`＝session3 归档根（视频 1=实拍当前产品 / 视频 2=安装参考 / 5 STEP=同一装配） |
+| `sx-db-4.stp` | `1kcUb22aSBNMmsP5p2J7B8XdltalI7R8l` | **222KB 文本** | step | ✅ 头已读（SX-DB-4/Creo/AP242/2025-12-23）；**全文 29 chunks 我方可自读**（渲染轮执行，无需你任何动作） |
+| `装配- DB-4-DC-4-成功-3个FCStd/`（子文件夹） | `1iGXjZ4djXxYbSHr51WQdcsblDixtRp-B` | 17/45/40KB | FCStd×3 | `User-reported`：ids `1RloavfBnqEQgY6dI3CwR08Jcx0wPIP_6` / `1qacexo-Whomb3wdFqXjxGQyXdBZgTpwS` / `1FyznpYkXJ3PU7L3EOQUYH_T277fETLQ2`；几何结论已被 107 全文化，二进制暂不必修（107 内旧 id `1n5gFRP-AcLH8y1-Rqq9zKRueRgo3kIZ8` 以本条为准） |
+| `101` / `105` / `107` / `110` / `94` 五份 GTM 记录 | `1VUpnewuLlTiiwTEjFBdgys48jRlHkTn3` / `1eOiBiAyqlhkCEDpmcjEjPEgguXJxXR8_` / `10jGjXhu7B6Omfj84Cbk-spfytkRhaxkm` / `1OFIuujEu6UQlDksxO6Tn0rxnza_criex` / `182fMPluClFCx-E_zFULkbFKbG-1VvO0z` | 4–6KB | md | ✅ **全部读完**（09-20）；内容落点=`REUSABLE` §A/B、`CAD_LOG` §3e、`PRODUCT_TRUTH` §1ac |
 | `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` | `1ZiCFZwu9WtuGROTaGvDowwBIAweeZU6f` | 3KB | md | ✅ 已读 |
 | `00_EXP1-J00_Index_..._RunLog_CN_v1.xlsx` | `1dOaF7cZESaq7dC-S2DOb-OI-BSBWwHwX` | 27KB | xlsx | ⛔ 二进制类，未取 |
 | `00_EXP1-J90_..._Recommendations_CN_v1.xlsx` | `1ezj1dcVJ01cr4nYDpfmjXO3M4-ucJ4aC` | 23KB | xlsx | ⛔ 未取 |
