@@ -1,7 +1,7 @@
 # LOOP AUDIT — 全部 loop 的唯一清单（长期文件）
 
 > 你要的那个"包含全部 loop 说明的长期文件"就是这个。**回答"一共有多少 loop"以本页为准。**
-> 计数快照：2026-09-20（Session 5）· meta 规则 **11** 条 · 方法论条目 **20** 条 · 台账 **6** 轮 · 脚本 **5** 个。
+> 计数快照：2026-09-20（Session 5 · 第 7 轮消息后）· meta 规则 **11** 条（M0–M10）· 方法论 **20** 条 · 台账 **7** 轮 · 脚本 **5** 个 · 长期参考文件 **9** 份（含本页）。
 > 维护规则：新增/废弃任何 loop，只改本页 + 对应正文；本页与正文冲突时以正文为准并把本页修正。
 
 ## A. Meta 规则（`00_meta/META.md`，11 条）
@@ -50,6 +50,8 @@
 | `00_meta/session_log.md` | 每个 session 收尾三行（做了/下一步/还缺） |
 | `00_meta/intake/_READ_LOG.md` | Drive 读取台账：谁被 `Agent read`、谁只是 `Drive pointer stored` |
 | `00_meta/DRIVE_INDEX.md` | Drive 全量 FILE_ID 索引 + 取用纪律（**这就是"保留的文件夹 index"**） |
+| `00_meta/INDEX_session3_files.md` | **Session 3 文件索引（从已读文档重建）**：按 CAD 优先级列"该给我哪些旧文件" |
+| `00_meta/CAD_LOG.md` | CAD/视觉的**历史 + 分析 + 规则**（项目 D55–D67 原文规则 ⇄ 我上轮结论的对照表） |
 | `00_meta/PRODUCT_TRUTH.md` | 产品冻结事实 + 7 条禁止事项（优先级最高的真相源） |
 
 ## F. 已知漏洞（诚实列出，别假装 loop 完美）
@@ -58,3 +60,8 @@
    现在的对策是每条断言配一个可跑探针（`check-ignore`、`verify-upload.sh`、`fetch_page` 对照实验）。
 3. 沙盒缺 `libGL.so.1` → STEP 解析不可用；`.FCStd/.zip` 只能靠你附件或 `fetch-drive.sh` 送达。
 4. `web_search`/`fetch_page` 能出网但**不能写回 Drive**，所以"我帮你同步 Drive"永远不成立（registry §2 已写明，我不再承诺）。
+5. **Drive 二进制两条路都实测失败**（沙盒 curl = 000；`fetch_page` = HTTP 500，同一个 zip）→ 我**不能**自己从 Drive 取 CAD。
+   于是把项目自己的 D65（"无输入不得生成正式角度图"）用在我身上：我前几轮那 2 张 AI 基线图判为违规产物，
+   已标 `placeholder` + 待删。同时 `never-edit-docs-via-bash-strings` 本轮**再次触发**（一个补丁里反引号被当命令替换，
+   导致 LOOP_AUDIT 一处没写上）→ 说明这条规则还不够硬：文档改动今后**必须**走 `edit_file`/`write_file`，
+   `python3 - <<'PY'` 只用于无引号风险的纯逻辑。
