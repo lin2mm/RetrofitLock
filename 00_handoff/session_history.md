@@ -11,13 +11,19 @@
 
 ---
 
-## Session 5 — 2026-09-20 — 交接与骨架（本文件）
-- 做了什么：清点仓库发现 GitHub 上只有 `# RetrofitLock` 一行 README，四个 session 的产出**都没有 commit/push**，
-  新沙盒拿不到任何前作。于是建立交接骨架：目录结构、`HANDOFF.md`、`sku_master.csv` 模板、`40_images/slots.csv` 图位清单，
-  并盘点了本沙盒能力（Node 22 / ImageMagick / generate_image 支持图生图 / 零字体警告）。
-- 产出文件：`00_handoff/HANDOFF.md`、`00_handoff/session_history.md`、`10_product/sku_master.csv`、`40_images/slots.csv`
-- 下一步：等 Session 3 打包（SKU 表 + 真实产品图 + 旧目录）→ 定稿 SKU 主数据 → 建图像生成 pipeline → 目录排版 → 网站
-- 还缺什么：见 `HANDOFF.md` 第 4 节 A/B 两组
+## Session 5 — 2026-09-20 — 交接与骨架
+- 做了什么：清点仓库发现 GitHub 上只有 `# RetrofitLock` 一行 README，四个 session 的产出**都没 commit/push**，
+  新沙盒拿不到任何前作。于是建立交接骨架 + 逐项实测沙盒能力（结论见 `HANDOFF.md` 第 5 节）：
+  Drive/Figma/CDN/apt 源全不通、缺 libnss3（→ 沙盒内 `page.pdf()` 暂不可用）、中文字体走 npm `@fontsource/noto-sans-sc`、
+  `imageio-ffmpeg` 自带 static ffmpeg（→ **实拍视频抽帧可行**）、`generate_image` 支持传参考图做图生图。
+- **已确认的产品模型**（用户回答）：目录只做一款主机，靠**配件 + 装法 + ICP** 扩展成系列，适配全球各种锁；
+  素材现状 = 实拍半成品视频 + 成品设计稿；交付 = **中英双语 + 双语 PDF + 同款网页版**。
+  据此把 `sku_master.csv` 改成 `base_unit.md`（唯一数据源）+ `accessories.csv`（兼容矩阵），图位清单按"主机渲染一次"重排。
+- 产出文件：`00_handoff/{HANDOFF,session_history,assets_index}.md`、`10_product/{base_unit.md,accessories.csv,sku_master.csv}`、
+  `20_audience/{ICP,objections}.md`、`30_sales_assets/dm_templates.md`、`40_images/{slots.csv,README.md}`、`50_catalog/README.md`、`.gitignore`、README 指向 HANDOFF
+- 下一步：等 P1 设计稿 + P2 视频抽帧 + P3 配件清单 + C1 ICP → 定稿 `base_unit.md` → 锁风格出主图 → 双语目录 HTML → 网站
+- 还缺什么：`assets_index.md` 里标 🔴 的 P1–P5、C1；另有 3 个决策类问题待答（品牌名、PDF 走 print-ready 还是图片版式、首个 ICP 版本）
+
 
 ---
 

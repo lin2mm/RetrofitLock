@@ -37,40 +37,58 @@
 
 反了会怎样：先做图再改文案 = 图重做；先做网站 = 每个 SKU 改一次要改三处。
 
-## 4. 本 session 需要的输入清单（关键程度排序）
+## 4. 本 session 需要的输入（完整清单见 `assets_index.md`，编号对应）
 
-**A. 阻塞项 —— 没有就只能瞎编，必须给**
+**最小可开工组合**：`P1 成品设计稿` + `P2 实拍半成品视频(抽帧)` + `P3 配件清单` + `C1 ICP 定义`。
+这 4 个到位我就能出：`base_unit.md` 定稿、图位清单锁定、1 张锁风格主图、1 页双语目录样张。
 
-1. `10_product/sku_master.csv` — SKU 主数据：型号 / 适配锁体 / 材质颜色 / 规格 / MOQ / 阶梯价 / 认证 / 卖点。
-   模板已建好，把 session 3 目录里的表格贴进去即可。
-2. **真实产品图的原始文件**（`.obj/.fbx/.step/.blend/.stl` 或 CAD 截图 / 实拍照片 / 3ds Max・KeyShot・Blender 的 `.max/.blend` 源文件）。
-   渲染图必须**以真实图为输入**做生成/重打光，不能纯文字生成，否则每个 SKU 会长得不一样，客户一眼看穿。
-3. `50_catalog/*` — session 3 已做的那版目录（PDF / AI / Figma / HTML / PPT / 截图，任一形态都行），用来复刻版式与口径。
+**已按你的回答修正的两件事**：
+1. 不是"多 SKU 目录"，是 **1 款主机 → 配件/装法/ICP 组成系列**（见 5b）。`sku_master.csv` 已改成
+   `base_unit.md` + `accessories.csv` 两张表；目录结构随之从"每 SKU 一页"改成"兼容矩阵 + 按 ICP 选包"。
+2. 交付形态：**中英双语 + 双语 PDF + 同款网页版**（同一套 HTML 出三种，见第 5 节 PDF 坑位）。
 
-**B. 强烈建议 —— 决定图怎么拍、文案往哪打**
+**⚪ 不用重复给的**（防重复，别浪费时间）：session 1 的完整研究稿（结论已固化进目录/ICP/话术）、
+session 1 的原始爬取数据集（只有要做价格带对比图时才要那一小段）、任何 `.ai/.psd/.blend` 源文件（本沙盒没有对应软件，给我导出图就行）。
 
-4. `20_audience/ICP.md` — 客户画像 + 卖点优先级（决定哪张图放首页、哪句当大标题）。
-5. `20_audience/objections.md` — 客户提问/异议实录（直接变成图上标注和 FAQ）。
-6. `30_sales_assets/dm_templates.md` — DM 话术（目录要能和话术接得上，客户点开不要断层）。
+## 5. 本沙盒能力（已实测，别再猜）
 
-**C. 可选 —— 用到再说**
+**通**：`github.com` / `api.github.com` / `codeload` / npm registry / PyPI。Node 22、Python 3.11、
+ImageMagick 6、git+`gh`（有 push 权限）、gcc/make、`generate_image`（**支持传参考图做图生图编辑**）、
+`present_file`、`start_process`（起 dev server 给你实时预览）。
 
-7. session 1 的原始爬取数据（只在要做价格带/竞品对比图时才需要）。
-8. GlobalLockSummary 的源码或线上 URL（第 ④ 步要复用时才需要）。
+**已装好可用**：`Pillow` / `fonttools` / `fpdf2`（pip --user）、`@fontsource/noto-sans-sc`（npm，中文字体！）、
+`imageio-ffmpeg`（**自带 static ffmpeg 7.0.2**：`python3 -c "import imageio_ffmpeg as f;print(f.get_ffmpeg_exe())"`）
+→ 所以**实拍视频抽帧完全可行**，不用你另外装东西。
 
-## 5. 本沙盒的能力与坑（先读，避免提做不到的需求）
+**不通 / 没有（已实测，别浪费时间去试）**：Google Drive、Figma、Dropbox、`raw.githubusercontent.com`、
+`media.githubusercontent.com`（GitHub LFS）、`storage.googleapis.com`、`fonts.gstatic.com`、`unpkg`/`jsdelivr`、
+conda 源、**所有 apt 源**（且无 root）。没有 Blender/KeyShot/CAD/pandoc/LaTeX/LibreOffice，系统字体为 0。
 
-**有**：Node 22 + npm（可装任何包）、Python 3.11、ImageMagick 6、`gh`/git、外网可访问、
-`generate_image`（文生图 + **图生图编辑**：传参考图进 `images` 参数即可改图/换背景/重打光）、
-`present_file`（把成品开到你的预览器）、`start_process`（起 dev server，你能实时看到网站预览）。
+- ⚠️ **PDF 排版有坑**：headless Chromium 我跑起来了（`@sparticuz/chromium` + `puppeteer-core`，209MB 二进制能解出），
+  但缺 `libnss3.so / libnspr4.so / libnssutil3.so`，apt 装不了、源也不通 → **沙盒内 `page.pdf()` 暂时不可用**。
+  已排期解决的三条路：① 交付 **print-ready HTML**（A4 `@page` 已写好）由你浏览器 Ctrl+P 导出，字体最正、最像设计稿；
+  ② `fpdf2` 生成**图片版式 PDF**（每页一张高清 PNG，客户能收，但文字不可选）；
+  ③ 从 GitHub 仓库里捞 `.so` 补进 `LD_LIBRARY_PATH`（未验证，若成则 ①② 都升级成真矢量双语 PDF）。
+  → **网站不受影响**：它是 HTML，本来就在你浏览器里跑，`start_process` 直接给你实时预览。
+- ⚠️ **零系统字体**：图上/PDF 里的任何中文都必须走 `@fontsource` 的 woff2（浏览器排版）或先 `fonttools` 转 ttf（PIL/fpdf2）。
+- 中英双语 + PDF + 网页版**同一套 HTML 代码**出（见第 5 节坑位说明），Step ④ 的网站直接白捡。
 
-**没有 / 要现装**：Blender、KeyShot、CAD、ffmpeg、pandoc、LaTeX、LibreOffice、**任何字体（含中文字体）**。
+## 5b. 产品架构（已确认 2026-09-20）
+一款主机，**不是一堆 SKU**：`1 主机 × N 配件 × M 装法 × K 个 ICP 版本 = 一个系列`。
+含义：目录按"兼容矩阵 + 按 ICP 的选配件包"组织；图片只把主机渲染一次，换配件/门型/背景做延展。
+详见 `10_product/base_unit.md` 与 `10_product/accessories.csv`。
 
-- ⚠️ **零字体**：任何要在图上/PDF 里出现文字（尤其中文）的渲染，必须先装字体或走浏览器排版（Tailwind + Playwright `page.pdf()`，文字用 webfont）。
-  纯 PIL 画图会出豆腐块。中文排版请提前说，我先装 Noto Sans CJK。
-- 目录 PDF 走 HTML→Playwright，好处是同一份代码既能出 PDF 又能出网页版目录，Step ④ 直接白捡。
+## 6. 素材怎么进这个沙盒
+见 `00_handoff/assets_index.md` 最后一节（Drive 链接读不了 → 用聊天附件 / 抽帧 / base64 兜底 /
+或让别的 session push 到 `lin2mm/RetrofitLock` 分支让我 fetch）。
 
-## 6. 协作约定（请每个 session 都遵守）
+## 6c. 待你回答的 3 个决策（不答我只能默认）
+1. **品牌名**：客户看到的品牌名/Logo/联系方式是什么？GlobalLockSummary 是内部工程师库，目录上能不能挂它？
+2. **PDF 路线**：沙盒内出不了真矢量 PDF（缺 libnss3）。默认走 **print-ready HTML（你浏览器 Ctrl+P 导出，双语排版最干净）**；
+   要"我直接给你一个可下载 PDF"就得走图片版式（文字不可选、放大略糊）。
+3. **第一个 ICP 版本**：目录 v1 先对谁说话 —— installer / dealer / property manager / hospitality？（决定封面大字与配件包排序）
+
+## 7. 协作约定（请每个 session 都遵守）
 
 1. **一切以 `10_product/sku_master.csv` 为准**。图片和网页不许自己发明参数。
 2. 每张图都要在 `40_images/slots.csv` 里有登记：属于哪个 SKU、哪种图型、用了哪张参考图、状态。
@@ -78,11 +96,11 @@
 4. 目录/网站文案默认**英文**（给客户看），内部注释用中文。
 5. 每轮结束：`git commit` + `git push origin <本分支>`，并在 `session_history.md` 记三行：做了什么、下一步、还缺什么。
 
-## 7. 目录结构
+## 8. 目录结构
 
 ```
-00_handoff/    HANDOFF.md (本文件) · session_history.md · 本 session 待补清单
-10_product/    sku_master.csv  ← 唯一数据源
+00_handoff/    HANDOFF.md (本文件) · assets_index.md (上传清单+送达方式) · session_history.md
+10_product/    base_unit.md (唯一数据源) · accessories.csv (配件/兼容矩阵) · sku_master.csv (旧模板，待废)
 20_audience/   ICP.md · objections.md
 30_sales_assets/ dm_templates.md · 已发出的目录版本
 40_images/     refs/ (真实参考图输入) · slots.csv (图位清单) · out/ (生成结果)
