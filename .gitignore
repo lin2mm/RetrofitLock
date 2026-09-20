@@ -1,20 +1,9 @@
+# ---- 通用排除（必须写在前面，negation 才能生效：gitignore 后者覆盖前者）----
 node_modules/
 .cache/
 *.tmp
 .DS_Store
-# 大素材与临时物（见 00_meta/capacity.md 预算）
-40_images/video/*
-!40_images/video/.gitkeep
-!40_images/video/.ffmpeg_path
-90_archive/**
-!90_archive/README.md
-!90_archive/cad/
-!90_archive/cad/*.zip
-!90_archive/cad/*.FCStd
-!90_archive/cad/*.stl
-!90_archive/cad/*.obj
-!90_archive/**/_manifest.md
-!90_archive/**/_manifest.md
+__pycache__/
 *.mp4
 *.mov
 *.zip
@@ -23,5 +12,25 @@ node_modules/
 *.blend
 *.psd
 *.ai
+
+# 大素材不进仓库（预算见 00_meta/capacity.md §2）
+40_images/video/*
+
+# 90_archive 只保留清单与小体积 CAD（CAD 是产品真相源，必须持久）
+90_archive/**
+
+# ---- negations 一律放在最后 ----
+!40_images/video/.gitkeep
+!40_images/video/.ffmpeg_path
+!90_archive/README.md
+!90_archive/cad/
+!90_archive/cad/*.zip
+!90_archive/cad/*.FCStd
+!90_archive/cad/*.stl
+!90_archive/cad/*.obj
+!90_archive/**/_manifest.md
+
 60_website/node_modules/
 60_website/dist/
+60_website/.cache/
+60_website/out/
