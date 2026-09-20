@@ -1,0 +1,12 @@
+slot_id,sku_id,shot_type,purpose,catalog_page,asset_size_px,composition_prompt_draft,input_ref_image,status,output_path
+IMG-001,ALL,hero_lifestyle,"目录封面：手装锁的特写 + 门 + 品牌名",cover,2400x1350,"close-up of a technician's hand fitting a retrofit smart lock onto an existing door handle plate, warm interior light, shallow DOF, no text",40_images/refs/hero_ref.jpg,blocked-no-ref,
+IMG-002,GL-RETRO-01,packshot_white,"电商/目录产品主图，纯白底",p2,1600x1600,"product on pure white, 3/4 front view, soft top light, subtle floor shadow, 1:1",40_images/refs/GL-RETRO-01_front.jpg,blocked-no-ref,
+IMG-003,GL-RETRO-01,exploded_fitment,"证明'不用拆门'：锁体与门剖面的分解图",p2,1600x1200,"exploded view of retrofit lock body vs existing mortise lockcase, cutaway door section, clean technical render, grey studio bg",,blocked-no-cad,
+IMG-004,GL-RETRO-01,install_steps,"3 步安装图（对应 DM 里'5 分钟装好'的承诺）",p3,1200x1200,"3-panel install sequence, same door and same hand, gloves, minimal, no text",,blocked-no-ref,
+IMG-005,GL-RETRO-01,finish_options,"颜色/表面处理可选，一张图放 3 个色",p3,1600x900,"three identical units in matte black / nickel / brushed gold in a row on white",,blocked-no-ref,
+IMG-006,GL-DEADB-02,packshot_white,"同上，cylinder 型号主图",p4,1600x1600,"product on pure white, side view showing cylinder length, 1:1",,blocked-no-ref,
+IMG-007,GL-DEADB-02,dims_annotated,"带尺寸标注的技术图（工程师看这张）",p4,1600x1200,"orthographic side view with dimension leader lines [文字后期用 HTML/SVG 叠，不要 AI 画数字]",,blocked-no-cad,
+IMG-008,GL-DEADB-02,lifestyle_door,"场景：公寓入户门 + 手机解锁",p4,1600x1000,"apartment front door, phone in hand unlocking, evening light, realistic",,blocked-no-ref,
+IMG-009,GL-KIT-03,kit_flatlay,"整箱/整套平铺，让 dealer 一眼看懂装什么",p5,1600x1200,"top-down flat lay of carton contents neatly arranged + open shipping box, white bg",,blocked-no-ref,
+IMG-010,ALL,trust_badges,"认证与质保条（CE/FCC/质保年限），横条",back,2400x600,"clean horizontal band, badge-style icons only, no invented logos — 认证标志必须由你确认可用",,needs-permission,
+IMG-011,ALL,comparison,"vs 换整套智能锁：省钱/省时间/不伤门 的对比图",p2,1600x900,"split frame: left 'full lock replacement' messy drill, right 'retrofit kit' clean 5-min install",,ready-to-generate,
