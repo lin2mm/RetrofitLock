@@ -98,3 +98,9 @@
 上面 B 组三条是从你口述的 session 1–3 流程**反推**的，等 `00_meta/index_sessions1-4.md` 的 S2-A/S2-B/S3-E/S3-F 原文到齐后校对措辞；
 如果原方法和我写的不同，以你的原文为准，我的版本改成 `已废弃`。
 
+
+### self-export-at-source
+问题：跨 session 要拿回前序成果，但沙盒互不可见、外部网盘不通
+做法：在每个旧 session 里粘一段固定提示词，让它自己把经验压成 00_meta/intake/sessionN_*.md 并 push 到仓库公共着陆区；新 session 只需 git merge 进来
+为什么：让最了解那段工作的是产出它的 session；用户复述必然丢信息，人工搬运必然漏文件，而 push 通道是实测唯一稳定可写的口
+出处：Session 5 — 2026-09-20 | 状态：有效
