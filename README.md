@@ -8,6 +8,7 @@
 详见 `00_meta/PRODUCT_TRUTH.md` §0；待确认清单见 `00_meta/CAD_LOG.md` §3c。
 
 **新 session 开局顺序（固定，别跳）**：
+-1. **[`00_meta/SESSION_BOOTSTRAP.md`](00_meta/SESSION_BOOTSTRAP.md) — 新 session 系统顶层（loop/空间/命名体系/限制编造，R20：每个新 session 先读这页）** · **禁编造约束总集 = [`00_meta/NO_INVENT.md`](00_meta/NO_INVENT.md)**
 0. **[`00_meta/PRODUCT_TRUTH.md`](00_meta/PRODUCT_TRUTH.md) — 产品冻结事实（优先级最高，先读这份再读别的）**
 1. [`00_meta/META.md`](00_meta/META.md) — 顶层规则：持久化、每轮沉淀 loop、**merge 闸门**、命名与容量红线
 2. [`00_meta/LOOP_AUDIT.md`](00_meta/LOOP_AUDIT.md) — **全部 loop 的唯一清单**（几条规则、几个循环、多少方法论） · **要文件看 [`00_meta/REQUEST_FILES.md`](00_meta/REQUEST_FILES.md)**（P0/P1/P2，按它传、别盲传）

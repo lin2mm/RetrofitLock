@@ -28,7 +28,7 @@
 | `105_..._BottomBatteryCover_Geometry_Verification_Plan` / `107_..._FCStd_Downloaded_And_BottomCover_Geometry_Read` | 电池盖装配关系的读取与验证记录 | 我从 0 推断电池盖（历史翻车点） | **电池盖唯一合法依据之一**；拿到后我只需确认"与 O8 一致" | 指针 |
 | `96_GTM_V4_Knob_Error_Cleanup_Manifest_2026-09-19.md` | 旋钮错误的清理清单（哪些别再引用） | 我重新踩同一批坑 | 并入我的禁止清单 | 指针 |
 | `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` | 8 条禁止事项 + 8 个必读文件 | 我起草自己的禁忌 | ✅ 已全文抄进 `PRODUCT_TRUTH.md` §3（现按铁律加了"旋钮/logo 待重判"两条修正） | 已读 |
-| `66_GTM_FrozenClosedCover_Knob_And_Envelope_Proportions_v1_2026-09-19.md` | 旋钮/包络比例记录 | — | ⚠️ **依据已被新稿取代**，只作差异对照 | 已读要点 |
+| `66_GTM_FrozenClosedCover_Knob_And_Envelope_Proportions_v1_2026-09-19.md` | 旋钮/包络比例记录 | — | ✅ **旋钮规格唯一有效依据**（并入 `KNOB_LOG.md` §1，R18 恢复有效） | 已读要点 |
 
 ## B. 目录 / 宣传（第③步要用）
 | 旧资产 | 内容 | 免掉的重复工作 | 状态 |
@@ -54,7 +54,7 @@
 2. 独立"发明" CAD-to-render 管线 → 等于 **D66** → 改为引用。
 3. 自拟 QA 阈值"不过就不给看" → 项目已有 **≥95/100（D64）** → 采用他们的。
 4. 生成 2 张 AI 基线图 → 违反 **D65/R-22** → 已删除并记违规。
-5. 沿用 R19/R20 冻结底稿与"旋钮=近直角长条""无 logo"两条规则 → 你判定**全部有问题** → 已降级 `superseded`。
+5. 沿用 R19/R20 冻结底稿与"无 logo"规则 → 你判定有问题 → 已降级 `superseded`；"旋钮=近直角长条"规则当时被误标作废，R18 已更正（规格有效，见 `KNOB_LOG.md` §1）。
 6. 把本沙盒 000 写成 Drive 普遍不通 → 真相是**每个沙盒策略不同** → 已改成"每次探测"。
 7. 差点自己重跑「电池盖装配关系」分析 → `107`/`101` 已把 FCStd 解析完（placement/体积/bbox 全给了）→ R12/R13 扫记录截停，`consult-before-build` 生效（本轮连 8 视图清单都省了：`105` §4 现成）。
 8. 差点自拟「渲染要等出网 session」的限制 → 实际 gcc stub 119 个 GL 符号就打通 OCP headless → R13 立成 `binary-starve-to-text`（#25）：限制要么当场实测要么写明沙盒，禁止写成项目规则。

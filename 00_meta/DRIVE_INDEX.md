@@ -35,8 +35,8 @@
 | `sx-db-4.stp` | `1kcUb22aSBNMmsP5p2J7B8XdltalI7R8l` | **222KB 文本** | step | ✅ 头已读（SX-DB-4/Creo/AP242/2025-12-23）；**全文 29 chunks 我方可自读**（渲染轮执行，无需你任何动作） |
 | `装配- DB-4-DC-4-成功-3个FCStd/`（子文件夹） | `1iGXjZ4djXxYbSHr51WQdcsblDixtRp-B` | 17/45/40KB | FCStd×3 | `User-reported`：ids `1RloavfBnqEQgY6dI3CwR08Jcx0wPIP_6` / `1qacexo-Whomb3wdFqXjxGQyXdBZgTpwS` / `1FyznpYkXJ3PU7L3EOQUYH_T277fETLQ2`；几何结论已被 107 全文化，二进制暂不必修（107 内旧 id `1n5gFRP-AcLH8y1-Rqq9zKRueRgo3kIZ8` 以本条为准） |
 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` | `13ixlQ8Nv03b1Meg3fN91hgmufQzTZQjG` | 新 | md | ✅ 已读：**zip 实为 5 STEP（无 STL）**全单实体 mm；两视频已解码+关键帧已抽；明细在 3 份报告（Keyframe Inspection / Asset Audit / Geometry Inspection.json，**均不在 folder**） |
-| `102_GTM_..._TwoImageGate_And_HistoricalCleanupPlan` | `1vuNo74mOWWNg9xEormjg5sg1XJ6I0_40` | 新 | md | ✅ 已读（2/2）：双图闸门全流程 + 清理 6 步安全检 + 不可变禁令；其 66/旋钮规则受 09-20 O2 裁决覆盖 |
-| `70_GTM_CAD_ClosedCover_KnobPanel_..._v1` | `12O_DeOpmDItQMTNYQUSIsAcQV_OxiIwd` | 新 | md | ✅ 已读：三源锁（壳=STEP、面盖=确认稿、旋钮=66）+「禁止从面盖稿反推壳厚/R角」——与现行一致；旋钮 4.30:1 细则按 O2 覆盖 |
+| `102_GTM_..._TwoImageGate_And_HistoricalCleanupPlan` | `1vuNo74mOWWNg9xEormjg5sg1XJ6I0_40` | 新 | md | ✅ 已读（2/2）：双图闸门全流程 + 清理 6 步安全检 + 不可变禁令；**§3.C 旋钮硬规则=现行有效唯一规格**（并入 `KNOB_LOG.md` §1，R18 更正） |
+| `70_GTM_CAD_ClosedCover_KnobPanel_..._v1` | `12O_DeOpmDItQMTNYQUSIsAcQV_OxiIwd` | 新 | md | ✅ 已读：三源锁（壳=STEP、面盖=确认稿、旋钮=66）+「禁止从面盖稿反推壳厚/R角」——与现行一致；**旋钮 4.30:1 细则=现行有效**（并入 `KNOB_LOG.md` §1，R18 更正） |
 | `sx-dc-gai-4.stp`（电池盖实体） | `14DuUTk1ZIi0xwA-Mn8p9op72zLBy3STV` | ~130KB 文本 | step | ✅ 头已验（SX-DC-GAI-4/Creo/AP242）登记；几何数值已按 R16 裁出仓库，Tier 1 时回 Drive 取原文 |
 | `101` / `105` / `107` / `110` / `94` 五份 GTM 记录 | `1VUpnewuLlTiiwTEjFBdgys48jRlHkTn3` / `1eOiBiAyqlhkCEDpmcjEjPEgguXJxXR8_` / `10jGjXhu7B6Omfj84Cbk-spfytkRhaxkm` / `1OFIuujEu6UQlDksxO6Tn0rxnza_criex` / `182fMPluClFCx-E_zFULkbFKbG-1VvO0z` | 4–6KB | md | ✅ **全部读完**（09-20）；内容落点=`REUSABLE` §A/B、`CAD_LOG` §3e、`PRODUCT_TRUTH` §1ac |
 | `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` | `1ZiCFZwu9WtuGROTaGvDowwBIAweeZU6f` | 3KB | md | ✅ 已读 |

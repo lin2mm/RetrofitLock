@@ -15,7 +15,7 @@
 | 1 | ~~battery_cover.step~~ ✅ **已到位**：`sx-dc-gai-4.stp`（~130KB 文本，头+首块与 107 几何一致，id 见 DRIVE_INDEX） | ~~P0~~ | 外壳+电池盖文本几何闭环；全文 17 chunks 由我在渲染轮自读，你零动作 |
 | 2 | ~~09_GTM_Visual_Input_Inventory~~ ✅ 已读 | — | 它指认：**抽帧明细其实在 3 份报告里**（见 #3） |
 | 3 | 从你本地 `CAD_LongTerm_Workspace_2026-09-19.zip` **解出 5 份小文本**（zip 本体别传，二进制我打不开）：`09_GTM_Video_Media_Keyframe_Inspection_2026-09-15.md`、`09_GTM_Input_Asset_Audit_2026-09-15.md`、`09_GTM_CAD_Geometry_Inspection_2026-09-15.json`、`66_GTM_FrozenClosedCover_Knob_And_Envelope_Proportions_v1_2026-09-19.md`、（有就带）`95/96_GTM_..._Cleanup_Manifest` | **P0（文本）** | Asset_Audit 确认已随 09-20 清理删除（不在 113 保留清单）→ 你手里 09-19 zip 快照是唯一副本；前两份=抽帧清单本体；json=5 STEP 逐件几何数据（等效我已解析） |
-| 4 | ~~70~~ ✅ 已读；~~102~~ ✅ 已读；66 并入 #3 解出 | — | 66/70 里的旋钮 4.30:1 细则按 09-20 O2 裁决覆盖，只作历史引用 |
+| 4 | ~~70~~ ✅ 已读；~~102~~ ✅ 已读；66 并入 #3 解出 | — | 66/70 里的旋钮规格（近直角条/≈4.30:1/接近90°端部/普通塑料）=**现行有效**，已并入 `KNOB_LOG.md` §1（R18 更正） |
 | 7 | `确认设计稿-闭合面盖-带Logo字.png` + **B 版（不带 LOGO）** | P1·像素受限 | 我肉眼已看过 A 版（O1–O9 已记录）；**正式像素 QA** 二选一：出网开放的 session 直读 / 你批准的例外 inbox（359KB，当日删）——**默认都不用，我按肉眼级继续推进** |
 | 8 | 实拍视频 1 选帧 png（≤6 张，见 C 表） | P2 | 等 #3 的 Keyframe 报告到位，我列精确帧号你再挑；png=肉眼级够用 |
 | 9 | `compute_common.py`（同目录若有 `97_prepare...py` 等渲染/QA 脚本一并） | P1（文本） | 旧管线计算母本：相机/投影/QA 实现照抄不重造；py=文本，投 folder 我直读 |
