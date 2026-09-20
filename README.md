@@ -11,6 +11,7 @@
 0. **[`00_meta/PRODUCT_TRUTH.md`](00_meta/PRODUCT_TRUTH.md) — 产品冻结事实（优先级最高，先读这份再读别的）**
 1. [`00_meta/META.md`](00_meta/META.md) — 顶层规则：持久化、每轮沉淀 loop、**merge 闸门**、命名与容量红线
 2. [`00_meta/LOOP_AUDIT.md`](00_meta/LOOP_AUDIT.md) — **全部 loop 的唯一清单**（几条规则、几个循环、多少方法论） · **要文件看 [`00_meta/REQUEST_FILES.md`](00_meta/REQUEST_FILES.md)**（P0/P1/P2，按它传、别盲传）
+2b. **出图先分型**：[`00_meta/SHORTPATH_IMAGES_CN_v1.md`](00_meta/SHORTPATH_IMAGES_CN_v1.md) — Tier 0 外观图三步法（零新文件），Tier 1 工程图才动用 CAD 链；**禁止把 Tier 1 当前置闸门**
 3. [`00_meta/REUSABLE.md`](00_meta/REUSABLE.md) — **先查旧记录再动手**（可复用清单，防重复劳动）
 4. [`00_meta/CAD_LOG.md`](00_meta/CAD_LOG.md) — CAD/视觉的历史·分析·规则 + 你的五条确认（O2/O3/O4/O5/O8）
 4. [`00_meta/DRIVE_INDEX.md`](00_meta/DRIVE_INDEX.md) + [`INDEX_session3_files.md`](00_meta/INDEX_session3_files.md) — Drive 有什么、Session 3 该给哪些旧文件

@@ -58,6 +58,7 @@
 - 外壳尺寸只认 `sx-db-4.stp`（222KB 文本，可全量自读）；**不得从视觉稿反推厚度/R 角**。
 - 通道现状：本沙盒渲染栈已打通（OCP + libGL stub，配方在 `capacity.md` §4c）；
   二进制品（png/FCStd）在沙盒外——面盖像素 QA 需用户裁决（默认：肉眼 + Drive 原件，GitHub 不动）。
+- **Tier 0 外观图候选（2026-09-20 R15，用户裁定：外观图只以「已锁定尺寸+版式事实」出，死磕 CAD 判为不必要）**：`.scratch/hero_v2_A_logo.png`（A=带 LOGO）与 `.scratch/hero_v2_B_clean.png`（B=无 LOGO，one-pager 用）为受约束生成的方向稿，待用户目检；方法=`SHORTPATH_IMAGES_CN_v1.md`；**不得**据其写工程尺寸。
 - 状态机（105 §4 输出词）：`CAD verified / CAD-screenshot consistent / discrepancy / geometry incomplete`——
   当前电池盖 = **CAD-screenshot consistent（几何源已到手：sx-dc-gai-4.stp，渲染级待网格化）**；
   对外资格词表按 `102` §6：图2 未过 = 客户 FINAL BLOCKED；图2 过但子 BREP 未全 = `Approved visual asset` + `partial verification`（两词不互认）。
