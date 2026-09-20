@@ -42,16 +42,23 @@ CAPACITY CHECK — 2026-09-20 (Session 5)
 VERDICT: PASS（除 [7] 的 PDF 引擎已知缺口）
 ```
 
-## 4. 网络白名单（实测 2026-09-20，别浪费时间试）
+## 4. 网络：沙盒与工具走的是两条不同网络（2026-09-20 更正，重要）
 
-| 通 | 不通（返回 000） |
-|----|------------------|
-| `github.com`、`api.github.com`、`codeload.github.com` | `drive.google.com`、`figma.com`、`dropbox.com` |
-| `registry.npmjs.org` | `raw.githubusercontent.com`、`media.githubusercontent.com`(LFS) |
-| `pypi.org`（含 `pip download`） | `storage.googleapis.com`、`fonts.googleapis.com`、`fonts.gstatic.com` |
-| `git ls-remote` / `git fetch` / `git push`（本仓库） | `unpkg.com`、`esm.sh`、`jsdelivr`、`npmmirror`、`conda.anaconda.org`、**所有 apt 源**、`openai.com`、`ftp.mozilla.org` |
+**同一域名会有两种结果，取决于用哪个工具。** 本 session 做过对照实验：
 
-→ 所以：外部素材只能靠**聊天附件**或**别的 session push 到本仓库分支**；`fetch_page` 只对能解析的公开页有效（GitHub 系、公开站点），Drive/Figma 分享页拿不到内容。
+| 途径 | `example.com` | Google 域名 | 结论 |
+|------|---------------|-------------|------|
+| `bash` / `curl`（沙盒内） | **000 不通** | `drive.google.com` 000 不通 | 沙盒是白名单：只有 `github.com`/`api.github.com`/`codeload`/npm/PyPI |
+| `fetch_page` / `web_search`（工具侧，沙盒外） | **可读** | `workspace.google.com` 可读 | **不是白名单，能上公网** → Drive 直链可读（见下） |
+
+→ 两条收件通道都成立，按用户偏好选：
+1. **Drive 直链**（零门槛，用户在用）：我读得到，但必须是"取到文件内容"的 URL，配方见 `META.md` M8b。
+   坑：Drive 的 HTML 预览页抓不到正文，要用导出/下载直链。
+2. **git 通道**：源 session push 到 `main`/`inbox`，我 `git fetch`（适合成堆文件、源码、要保真度的东西）。
+
+**沙盒内做不到的（真限制，别试）**：`curl`/pip 从 GitHub 之外抓文件、npm 从非官方源、
+`apt`（无 root + 源不通）、chromium 的 CDN（`cdn.playwright.dev`/`storage.googleapis.com`）、
+`raw.githubusercontent.com` 与 GitHub LFS —— **但 `gh api repos/.../contents/<path>` 可用，单文件 ≤1MB**。
 
 ## 5. 回答"session 5 还需要空间提示吗"
 

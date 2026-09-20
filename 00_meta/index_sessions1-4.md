@@ -4,11 +4,13 @@
 1. 你只看**「状态」列**为 `❓待你上传` 的行，按「送达方式」把文件丢进聊天即可（一条消息发一组同 ID 的）。
 2. 我拿到后会：归档进 `90_archive/<session>/` → 派生进 `10_product/`、`40_images/refs/` → 把该行状态改成 `✅已入库(路径)`。
 3. 标 `⚪不用给` 的**别花时间找**，我这边已有等价物或不影响第 ①②③ 步。
-4. 送达方式（实测）：**Drive 链接我打不开**（Drive/Figma/Dropbox/各 CDN 在本沙盒不通）。
-   可行：① 聊天附件；② 让源 session `git push` 到 `lin2mm/RetrofitLock` 某分支，我 fetch（大批量首选）；
+4. 送达方式（2026-09-20 更正）：**Drive 直链可以**——我读链接走工具网络（非沙盒白名单），
+   但必须按 `META.md` M8b 的 `uc?export=download&id=` 形式，预览页链接抓不到正文。
+   可行：① **Drive 直链（用户首选，零门槛）**；② 聊天附件（注意：本轮实测附件**可能落不到沙盒**，务必让我用 `verify-upload.sh` 验）；
+   ③ 让源 session `git push` 到 `lin2mm/RetrofitLock` 某分支，我 fetch（大批量首选）；
    ③ 视频先抽帧（`ffmpeg -i v.mp4 -vf "fps=1,scale=1600:-1" f_%03d.jpg`，20–30 张够）；
    ④ `.ai/.psd/.blend/.max` 源文件不用传（我没这些软件），传导出图（PNG ≥1600px，最好带透明底）；
-   ⑤ >25MB 单文件一律不进 git（GitHub 会拒），只传缩略/抽帧版。
+   ⑤ `git push` 时 >25MB 单文件不进 git（GitHub 会拒），只传缩略/抽帧版；Drive 不受此限。
 
 状态图例：`✅沙盒已有` · `❓待你上传` · `⚪不用给` · `🔶只缺关键片段`
 

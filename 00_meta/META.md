@@ -80,9 +80,11 @@
 
 ## M8. 前序 session 的交接方式（本项目唯一的"记忆通道"）
 
-要拿回旧 session 的东西，**不要让用户复述、不要指望外部网盘链接**（Drive/Figma/Dropbox 实测不通）。
-标准做法：让**那个 session 自己**把经验蒸馏成 `00_meta/intake/session<N>_<topic>.md` 并 push（提示词见
-`00_meta/distill_prompts.md`），收件目录就是 `00_meta/intake/`。
+要拿回旧 session 的东西，**不要让用户复述**。两条通道都成立，用户偏好优先（用户已在用 Drive）：
+- **通道一 · Drive 直链**（零门槛）：配方见 M8b；我读它用 `fetch_page`，**不要**用沙盒 `curl`（沙盒网络是白名单，工具网络不是 —— 已实测，见 `capacity.md` 第 4 节）。
+- **通道二 · git**（成堆文件/源码/要保真度）：让**那个 session 自己**把经验蒸馏成 `00_meta/intake/session<N>_<topic>.md` 并 push（提示词见
+`00_meta/distill_prompts.md`），push 到 `main`/`inbox`，收件目录就是 `00_meta/intake/`。
+两条通道拿到的东西**都必须落进仓库并 commit** 才算收到 —— Drive 读到的内容要另存进 `00_meta/intake/`；只在对话里读过 = 没收到（这是 S1–S4 反复丢成果的同一个病）。
 分工：`main` 是**公共着陆区**（旧 session 只往它 push，本 session 不直接往它 push 自己的成果）；
 `inbox` 是备用收件分支；本 session 的成果只走 `arena/01a0bd80-retrofitlock`。
 我这边收到后的动作固定：`git fetch origin` → `git merge origin/main`（把蒸馏稿并进我的工作分支）→
@@ -92,6 +94,23 @@
 否则我就是在重复 S1–S4 犯过的错（成果留在沙盒里蒸发）。
 收尾同步顺序：① push 工作分支 → ② 把工作分支 fast-forward 到 `main` 与 `inbox`（让下一个 session 直接看得到规则）
 → ③ 用户同意后才把工作分支 merge 进 main（真正的发布，见 M3）。
+
+## M8b. Drive 直链收件配方（用户发链接时照这个要 / 判）
+
+- Drive 里**上传原文件**（`.md`/`.pdf`/`.png`/`.jpg`）→ 共享设成「任何拥有链接的人 = 查看者」→ 发这条：
+  `https://drive.google.com/uc?export=download&id=<FILE_ID>`（`<FILE_ID>` = 分享链接里 `/d/` 与 `/view` 之间那串）
+- 若用 Google Docs 排版：发 `https://docs.google.com/document/d/<ID>/export?format=txt`
+- ❌ 只发预览页 `.../file/d/<ID>/view?usp=sharing` 抓不到正文（只有 JS 壳）；发来了我会回一句「换成 uc?export=download」
+- 多份一起给：一行一个链接 + 对应 ID（例 `S3-C 配件清单: https://drive.google.com/uc?export=download&id=...`），我好对号入座
+- 我收到后的固定动作：存进 `00_meta/intake/` 或 `90_archive/` → **`bash 00_meta/scripts/verify-upload.sh` 确认落地** → 才回「已收到」
+- 视频：链接留作备份即可，**干活靠抽帧的图**（沙盒放不了 mp4）；设计稿/渲染图直接发图片直链
+
+## M9. 台账 —— 证明 loop 真的转了（不是自我感觉良好）
+
+`00_meta/loop_ledger.md`：**每条用户消息一行**，写清「输入要点 → 沉淀成哪条方法论 / 改了哪些文件 / 撤回或更正了什么」。
+没有增量也要写一行「本轮无方法论增量（原因：…）」。
+为什么：本 session 已两次栽在"我记得 / 我以为成功"上（成果没入库、网络结论写反）；台账是唯一能被审计的证据，
+也逼我在动手前先答一次"这条消息该改哪条规则"。
 
 ## M7. 长期学习的记录格式（methodology.md 怎么写）
 
