@@ -37,7 +37,7 @@
 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` | `13ixlQ8Nv03b1Meg3fN91hgmufQzTZQjG` | 新 | md | ✅ 已读：**zip 实为 5 STEP（无 STL）**全单实体 mm；两视频已解码+关键帧已抽；明细在 3 份报告（Keyframe Inspection / Asset Audit / Geometry Inspection.json，**均不在 folder**） |
 | `102_GTM_..._TwoImageGate_And_HistoricalCleanupPlan` | `1vuNo74mOWWNg9xEormjg5sg1XJ6I0_40` | 新 | md | ✅ 已读（2/2）：双图闸门全流程 + 清理 6 步安全检 + 不可变禁令；其 66/旋钮规则受 09-20 O2 裁决覆盖 |
 | `70_GTM_CAD_ClosedCover_KnobPanel_..._v1` | `12O_DeOpmDItQMTNYQUSIsAcQV_OxiIwd` | 新 | md | ✅ 已读：三源锁（壳=STEP、面盖=确认稿、旋钮=66）+「禁止从面盖稿反推壳厚/R角」——与现行一致；旋钮 4.30:1 细则按 O2 覆盖 |
-| `sx-dc-gai-4.stp`（电池盖实体） | `14DuUTk1ZIi0xwA-Mn8p9op72zLBy3STV` | ~130KB 文本 | step | ✅ 头已验（SX-DC-GAI-4/Creo/AP242）；chunk0 坐标已见 -13.8…+18.6 / ±9.2，**与 107 记的 local bbox（X-14.055…19.047、Z±9.447）一致**；全文 17 chunks 留渲染轮专轮拉 |
+| `sx-dc-gai-4.stp`（电池盖实体） | `14DuUTk1ZIi0xwA-Mn8p9op72zLBy3STV` | ~130KB 文本 | step | ✅ 头已验（SX-DC-GAI-4/Creo/AP242）登记；几何数值已按 R16 裁出仓库，Tier 1 时回 Drive 取原文 |
 | `101` / `105` / `107` / `110` / `94` 五份 GTM 记录 | `1VUpnewuLlTiiwTEjFBdgys48jRlHkTn3` / `1eOiBiAyqlhkCEDpmcjEjPEgguXJxXR8_` / `10jGjXhu7B6Omfj84Cbk-spfytkRhaxkm` / `1OFIuujEu6UQlDksxO6Tn0rxnza_criex` / `182fMPluClFCx-E_zFULkbFKbG-1VvO0z` | 4–6KB | md | ✅ **全部读完**（09-20）；内容落点=`REUSABLE` §A/B、`CAD_LOG` §3e、`PRODUCT_TRUTH` §1ac |
 | `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` | `1ZiCFZwu9WtuGROTaGvDowwBIAweeZU6f` | 3KB | md | ✅ 已读 |
 | `00_EXP1-J00_Index_..._RunLog_CN_v1.xlsx` | `1dOaF7cZESaq7dC-S2DOb-OI-BSBWwHwX` | 27KB | xlsx | ⛔ 二进制类，未取 |
@@ -54,21 +54,8 @@
 → 所以对你的问题「能不能自己从 Drive 读那 2 个 CAD 文件」：**不能**。二进制只有 ①聊天附件 ②你本机 `fetch-drive.sh`。
 → 这条边界就是项目自己 **D65** 的结论：无输入只能标"用户报告、尚未验证"，不得据此出正式角度图。
 
-## 4. 从 `111` 拿到的 CAD 几何事实（**我原本要从 STL/FCStd 重新算，现已完成**）
-```text
-装配-db-4.FCStd  : 1 solid / 159 faces / 866 edges / 1732 vertices
-装配-DC-4.FCStd  : 1 solid /  82 faces / 408 edges /  816 vertices
-子件 SX_DC_GAI_4 : 局部包络 ≈ 33.1025 × 6.4001 × 18.8945 mm（主装配位置 + X 轴 +90° 旋转已应用）
-装配关系        : 主件链接 SX_DB_4 与 SX_DC_GAI_4；SX_DB_4 已接地；运动副 = Slider（DC_GAI_4.Edge30 ↔ DB_4.Edge49）
-电池盖形状      : 平板 + 端部圆弧区 + 导轨/加强筋 + 滑动装配（CAD QA 可见）
-HOLD 待判       : 公共体积 ≈ 15.18 mm³ —— 是设计配合还是干涉？（工程结论前不得对外宣称）
-已生成物        : 103/104 视觉候选（含确认面盖+旋钮，电池盖未被接受）；106/108 CAD QA 图（内部用，非对外渲染）；
-                 109 整合候选（用 31 左前 25° + 真实 BREP 电池盖）= CANDIDATE/HOLD，需你批准
-Gate 现状       : Drive 子文件 PASS · 子 BREP PASS · 装配位置 PASS · 配合/间隙解释 HOLD · 用户确认 PENDING · 历史清理 BLOCKED
-禁止引用（历史错误保护）：v4 旋钮资产 / 71–93 底部塑料推断链 / 97–100 错误成品渲染链 /
-                          AI 发明的下部圆形结构、外框、电池门、接口、内部件
-```
-> 相机/构图起点 = `31_GTM_AngleSet_R1_Black_LeftFront25_CADRatioHypothesis.png`（**构图参考，非几何权威**）。
+## 4. CAD 几何事实（已迁出）
+> R16 合并：本节数字已删出仓库（防干扰外观图）。唯一来源=`CAD_LOG.md`；工程级数值 Tier 1 时从 Drive `107/111` 原文重取。
 
 ## 5. 通道结论（本轮实测，回答"为什么还要 push"）
 | 做法 | 本沙盒结果 | 证据 |

@@ -43,25 +43,12 @@
 > **取用通道（已验证）**：你或旧 session 跑 `bash 00_meta/scripts/push-inbox.sh 确认设计稿.png`（≤1MB）→ 我 `pull-inbox.py` 按字节取回（本轮实测 sha256 一致）。
 > 或告诉我它在 Drive 哪个 folder/FILE_ID，我先登记进 `DRIVE_INDEX.md` §0（长期保存）。
 
-### 1ab. 09-20 由 `111` 确认的 CAD 事实（**无需重做，直接引用**）
-- 电池盖几何**已从 FCStd 读出**：`装配-DC-4.FCStd` = 1 solid / 82 faces / 408 edges / 816 vertices；子件 `SX_DC_GAI_4` 包络 ≈ `33.1025 × 6.4001 × 18.8945 mm`。
-- 装配关系已知：`SX_DB_4` 接地 + `Slider(DC_GAI_4.Edge30 ↔ DB_4.Edge49)`；形状 = 平板 + 圆弧端 + 导轨/加强筋 + 滑动装配。
-- **待你/工程师判定**：公共体积 ≈ `15.18 mm³` 是配合还是干涉 → 在此之前**不做任何工程口径表述**（状态 HOLD）。
-- **109 整合候选 = rejected-by-user（2026-09-20 补投）**：电池盖应在**底部**，被贴到了**上部圆弧面**。（你 session4 想投诉时被容量爆掉截断，本轮补上裁决。）原「109 批准→历史清理」计划随之作废。**禁止以任何形式复活 109。**
-- 新硬规则 K13：部件位置一律以 **CAD 坐标系**（底面/重力方向）为准；QA 渲染必含「底面标记视图」；「底部件出现在画面上半部」= 红项直接拒。**构图参考（31 左前 25°）永远不等于几何位置。**
-- 禁止引用清单（新增到 §3）：`97–100` 错误成品渲染链、AI 发明的下部圆形结构/外框/电池门/接口/内部件。
-
-### 1ac. 电池盖 = 已定案几何（2026-09-20，107/105/101 + 三张截图互证）
-- 权威 = `装配-DC-4.FCStd` 内 `SX-DC-GAI-4` 真实 BREP（107 精确 bbox/体积/placement 已录入 `CAD_LOG` §3e）；
-  渲染工序 = **107 §6 七步**（真实 BREP→主装配 placement→31 仅相机→塑料磨砂材质→面盖/旋钮独立层→禁止生成模型猜轮廓→遮挡保持+另出 B 图）。
-- 成品图组合唯一（94 硬规则）：真实铝合金外壳 + 确认面盖 + 确认旋钮 + 用户确认的唯一底部电池盖；内部件不得出现。
-- 外壳尺寸只认 `sx-db-4.stp`（222KB 文本，可全量自读）；**不得从视觉稿反推厚度/R 角**。
-- 通道现状：本沙盒渲染栈已打通（OCP + libGL stub，配方在 `capacity.md` §4c）；
-  二进制品（png/FCStd）在沙盒外——面盖像素 QA 需用户裁决（默认：肉眼 + Drive 原件，GitHub 不动）。
-- **Tier 0 外观图候选（2026-09-20 R15，用户裁定：外观图只以「已锁定尺寸+版式事实」出，死磕 CAD 判为不必要）**：`.scratch/hero_v2_A_logo.png`（A=带 LOGO）与 `.scratch/hero_v2_B_clean.png`（B=无 LOGO，one-pager 用）为受约束生成的方向稿，待用户目检；方法=`SHORTPATH_IMAGES_CN_v1.md`；**不得**据其写工程尺寸。
-- 状态机（105 §4 输出词）：`CAD verified / CAD-screenshot consistent / discrepancy / geometry incomplete`——
-  当前电池盖 = **CAD-screenshot consistent（几何源已到手：sx-dc-gai-4.stp，渲染级待网格化）**；
-  对外资格词表按 `102` §6：图2 未过 = 客户 FINAL BLOCKED；图2 过但子 BREP 未全 = `Approved visual asset` + `partial verification`（两词不互认）。
+### 1ab. CAD 事实 → 已合并至单一来源（2026-09-20 R16）
+- **本文件不再存 CAD 数字**。铝壳外观尺寸、面盖 O1–O9 比对表、电池盖外观结论、干扰台账、Tier 1 指针
+  = 唯一来源 [`CAD_LOG.md`](CAD_LOG.md)（R16 把旧 §1ab/§1ac 的内部数字全部裁出仓库，原件在 Drive 107/111）。
+- 仍属 truth 的裁决（一行版）：109 = rejected-by-user（电池盖必须在底部，禁止复活）；
+  K13/K14 = 位置与遮挡红线；成品图组合唯一（真实铝壳+确认面盖+确认旋钮+底部电池盖，内部件不出现）；
+  壳尺寸只认 `sx-db-4.stp`，不得从视觉稿反推；Tier 0 外观候选 `.scratch/hero_v2_*` 已被 R16 判"跑偏"→ v3 重做，方法见 `SHORTPATH_IMAGES_CN_v1.md`。
 
 ### 1b. 其余历史事实（CAD 侧仍有效；外观侧以 1a 为准）
 

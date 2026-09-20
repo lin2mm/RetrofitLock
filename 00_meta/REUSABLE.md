@@ -11,11 +11,11 @@
 |--------|------|-------------------|-----------|------|
 | `09_GTM_Visual_FromFrozenProduct_ToAngles_ToScenes_Method_CN_v1.md`（D64） | **✅ 已读（Drive 新件）**：Stage0–6 全流程 + **100 分 QA 评分表（8 维 + 6 红项）** + 3 个现成 prompt 模板（探索/合成/拒绝）+ 8 模块学习节奏 | 我自己定 QA 阈值、自拟 prompt、自创分阶段流程 | **整套直接采用**：`QA_ledger` 已换成他们的 100 分制；prompt 用他们的 A/B/C 模板 | **已读** |
 | `09_GTM_AI_CAD_Combination_Capability_Assessment_CN_v1.md`（D66） | CAD=几何真源 / 视频=外观参考 / 冻结图=对外基准 / AI=助手与合成 | 我上轮独立写了 `cad-verified-render-pipeline` | **改为引用 D66**，我的脚本只是它的实现 | 指针（id 已知） |
-| `111_GTM_Workspace_Refresh_Summary_2026-09-20.md` | **FCStd 已解析完**：db-4/DC-4 的 solid/face/edge/vertex、`SX_DC_GAI_4` 包络、Slider 运动副、103/104/106/108/109 产物、Gate 状态、历史错误保护清单 | 我要从 STL/FCStd 重算几何、重做电池盖 QA | **直接引用为事实**（已写进 `PRODUCT_TRUTH.md` §1ab）→ 我**不必再解 FCStd** | **已读** |
+| `111_GTM_Workspace_Refresh_Summary_2026-09-20.md` | **FCStd 已解析完**：db-4/DC-4 的 solid/face/edge/vertex、`SX_DC_GAI_4` 包络、Slider 运动副、103/104/106/108/109 产物、Gate 状态、历史错误保护清单 | 我要从 STL/FCStd 重算几何、重做电池盖 QA | **仅 Tier 1 引用**（数字已按 R16 裁出仓库，原件在 Drive）；Tier 0 出图**不碰**本节 | **已读** |
 | `105_GTM_External_FCStd_..._Verification_Plan` | **9 步最短路径 + 8 视图清单 + 四态输出词 + A/B 双图规则 + battery_cover.step 替代方案**（§3/§5 原文） | 我重造 QA 流程和视图清单 | **逐字采用**（已入 CAD_LOG §3e / QA K14） | **已读** |
-| `107_GTM_External_FCStd_..._Geometry_Read` | db-4/DC-4 精确 bbox、体积、placements、15.18mm³ 定性（仅诊断）、§6 七步渲染工序 | 我从零解 FCStd；或找不到的二进制干等 | **数字直接引用**；工序=电池盖管线；FCStd 本体无需我再解 | **已读** |
+| `107_GTM_External_FCStd_..._Geometry_Read` | 内部几何数值（**已裁出仓库**）+ §6 七步渲染工序 | 我从零解 FCStd；或找不到的二进制干等 | **仅 Tier 1 引用数值**；工序=电池盖管线；Tier 0 一律不引 | **已读** |
 | `101_GTM_Drive_FCStd_..._Render_Delete_QA` | 装配树 13 objects/Slider 引用边；6 条「旧图为何错」；97–100 删除链；**渲染前 6 步新闸门** | 我自己总结 109 教训、自定闸门 | 错误清单直接并入禁止事项；闸门=成品图前置 | **已读** |
-| `94_..._Compacted_LongTermMemory` | 唯一工作范围 + **10 条后续硬规则**（组合唯一/内部件不出现/尺寸只认 sx-db-4.stp…） | 我重立视觉规则 | truth §1ac 逐条指针化，不重述 | **已读** |
+| `94_..._Compacted_LongTermMemory` | 唯一工作范围 + **10 条后续硬规则**（组合唯一/内部件不出现/尺寸只认 sx-db-4.stp…） | 我重立视觉规则 | truth/§1ac 已指针化（R16 合并进 `CAD_LOG.md` 单源） | **已读** |
 | `110_GTM_Workspace_Refresh_..._Protocol` | refresh 9 触发条件 + 「AI 说不能=强制 A–I 流程」+ 事实/判断/建议/待确认四分 | 我把它当新要求 | META M0/M9 与它对表；四分法即我【源/证/推/问】的母本 | **已读** |
 | `102_..._TwoImageGate_And_HistoricalCleanupPlan` | 双图闸门（图1 最小变化验证→QA→图2 受控确认→用户闸门）+ 清理 6 步安全检 + 8 条不可变禁令 + 状态词表 | 我自定「一张候选图直接给你」的节奏；删档无安全检查 | **两图节奏照搬**；清理时执行 6 步检（M10 加严） | **已读** |
 | `70_..._Verification` | 三源锁定表（壳=STEP/面盖=确认稿/旋钮=66）+ 禁反推条款 | — | 与我现行 §0 铁律逐条同构 → 引用即可 | **已读** |
