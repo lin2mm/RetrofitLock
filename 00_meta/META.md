@@ -83,10 +83,15 @@
 要拿回旧 session 的东西，**不要让用户复述、不要指望外部网盘链接**（Drive/Figma/Dropbox 实测不通）。
 标准做法：让**那个 session 自己**把经验蒸馏成 `00_meta/intake/session<N>_<topic>.md` 并 push（提示词见
 `00_meta/distill_prompts.md`），收件目录就是 `00_meta/intake/`。
-我这边收到后的动作固定：`git fetch` → 记下 push 的 commit SHA 作出处 → 方法论进 `methodology.md` →
+分工：`main` 是**公共着陆区**（旧 session 只往它 push，本 session 不直接往它 push 自己的成果）；
+`inbox` 是备用收件分支；本 session 的成果只走 `arena/01a0bd80-retrofitlock`。
+我这边收到后的动作固定：`git fetch origin` → `git merge origin/main`（把蒸馏稿并进我的工作分支）→
+记下 push 的 commit SHA 作出处 → 方法论进 `methodology.md` →
 资产清单进 `index_sessions1-4.md` → 事实进 `10_product/`·`20_audience/`·`30_sales_assets/` → 回报"省了哪几步、还缺什么"。
 **反向义务**：本 session 结束时，也要给自己写一份 `00_meta/intake/session5_images_catalog_website.md`，
 否则我就是在重复 S1–S4 犯过的错（成果留在沙盒里蒸发）。
+收尾同步顺序：① push 工作分支 → ② 把工作分支 fast-forward 到 `main` 与 `inbox`（让下一个 session 直接看得到规则）
+→ ③ 用户同意后才把工作分支 merge 进 main（真正的发布，见 M3）。
 
 ## M7. 长期学习的记录格式（methodology.md 怎么写）
 
