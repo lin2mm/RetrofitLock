@@ -1,5 +1,7 @@
 # HANDOFF — RetrofitLock / GlobalLock 项目交接文件
 
+> Session 10（2026-09-23）：本页进度叙述降为待筛选。当前入口是 `00_meta/session10_method.md`。未裁定冲突前，不按本页顺序新做网站或目录。
+
 > **给任何一个新 session 的第一份读物。** 先读完这一页，再决定要不要读别的。
 > 规则：每个 session 结束时，把本页和 `session_history.md` 更新 + commit + push。
 > 只有 push 到 GitHub 的东西才存在；沙盒里的工作成果不 commit 就会永久消失。

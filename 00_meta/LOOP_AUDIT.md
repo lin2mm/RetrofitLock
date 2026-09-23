@@ -1,9 +1,10 @@
 # LOOP AUDIT — 全部 loop 的唯一清单（长期文件）
 
 > 你要的那个"包含全部 loop 说明的长期文件"就是这个。**回答"一共有多少 loop"以本页为准。**
-> 计数快照：2026-09-20（Session 5 · R21 后）· meta 规则 **11** 条（M0–M10）· 方法论 **27** 条 · 台账 **23** 行 · 脚本 **8** 个 · 长期参考文件 **16** 份（含本页、`REQUEST_FILES.md`、`SHORTPATH_IMAGES_CN_v1.md`、**`NO_INVENT.md`**、**`SESSION_BOOTSTRAP.md`**；CAD 记录=`CAD_LOG.md` 单源，R17 已按 `sx-db-4.stp` 原文复核轮廓）。
+> 计数快照：2026-09-23（Session 10 · S10-R5）· meta 规则 **11** 条（M0–M10）· 方法论 **33** 条（Session 5 的 27 + Session 10 的 6）· 台账已追加 S10-R1–R5（其中 R1–R3 为事后补记）· 新增入口 `session10_method.md`。
+> Session 10 起：实质轮必须跑消息台账 loop + 方法论 loop，回复末尾留轮检。旧 Verified / FINAL / Validated 标签降为待筛选。
 > R10/R11 新增 `root-cause-before-rule`；R12 新增 `binary-artifact-capacity-discipline`（109 判废 + 容量考古）；R13 新增 `binary-starve-to-text`（STEP 文本自读 + OCP stub 配方，渲染栈本沙盒打通）。
-> **当前最高优先级 = `PRODUCT_TRUTH.md` §0 铁律**（最新设计师稿 + CAD 铝壳），历史冻结全部 `superseded`。
+> Session 10 更正：`PRODUCT_TRUTH.md` 的冻结值已降为待筛选。最高优先级改看 `session10_method.md` 的未裁定冲突，不把旧铁律当成当前事实。
 > 维护规则：新增/废弃任何 loop，只改本页 + 对应正文；本页与正文冲突时以正文为准并把本页修正。
 
 ## A. Meta 规则（`00_meta/META.md`，11 条）
@@ -24,7 +25,7 @@
 
 ## B. 四个循环（周期不同，都要跑）
 1. **开局 loop（每 session 1 次）**：读 5 份 → `capacity.sh`（新沙盒先 `--fix`）→ 读 `00_meta/DRIVE_INDEX.md` 看 Drive 有什么 → 才开工。
-2. **消息 loop（每条用户消息 1 次，M9）**：查已有规则（项目 D44 元规则）→ 干活 → 台账一行 → 方法论该加就加（`learn.sh`，delta 续编 D56+）→ commit+push。
+2. **消息 loop（每条用户消息 1 次，M9）**：查 `session10_method.md` 与已有方法 → 干活 → 台账一行 → 有新流程才追加方法论（Session 10 起不用 `learn.sh`，避免出处被写成 Session 5）→ 回复末尾轮检 → commit+push 工作分支，不 merge。
 3. **取用 loop（每个外部文件 1 次，M10）**：
    `fetch`（文本我读 / 二进制你附件或 `fetch-drive.sh`）→ 存 `.scratch/` → 分析 → **结论 md 落仓库** →
    `scratch.sh clean`（删源，留结论与 sha256）→ 更新 `DRIVE_INDEX.md` 状态列 → commit。**永不 push 二进制。**

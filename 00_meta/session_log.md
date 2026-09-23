@@ -12,6 +12,13 @@
 
 ---
 
+### S10-R5 — 2026-09-23 — 有用文件瘦成 Session 10 方法卡
+做了：从文件名索引挑出可继承的仓库规则，和 Drive 上尚未入库的草案。读了通用启动、B15、B16、one-pager、两份目录草稿。不重写文案，不把草稿数字写入产品事实。
+决策：冲突不自行选边。因为通用启动文件要求先问，而用户也要求旧文件待筛选。暂停新网站、新目录、正式出图。
+方法论：新增 historical-label-not-evidence、extend-named-draft-not-rewrite、three-bucket-slim、conflict-ask-not-third-system、no-drive-id-in-new-git、substantive-turn-visible-ledger。
+容量：见本轮 capacity.sh。
+下轮起点：等你裁定 session10_method.md 第 4 节的五条冲突。未裁定前不新写网站。
+
 ### R2 — 2026-09-20 — 建"旧 session 自导出"通道（不再要用户复述/网盘）
 做了：确认远端 `main` 只有 15B README、除工作分支外无其他 ref → 我对 S1–S4 零知识，已如实说明。
   写 `00_meta/distill_prompts.md`：4 段复制即用的提示词，让 S1–S4 各自把经验压成 `00_meta/intake/sessionN_*.md` 并自己 push。
