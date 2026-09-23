@@ -1,6 +1,8 @@
 # How to extract the question comparison
 
-This is the method. It is not a result. No wording has won. No country is selected.
+Plain meaning: H08 is not a product. It is an old private log of sales replies, stored outside this repo. The short name H08 was unclear. You do not need to find it unless you later want the exact sentences people replied to.
+
+This file is the method. It is not a result. No wording has won. No country is selected.
 
 ## What to read
 

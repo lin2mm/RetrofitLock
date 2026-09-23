@@ -1,6 +1,6 @@
 # 目录 → 品牌标识／型号 → 网站准备（内部待裁决提案）
 
-2026-09-23 · S10-R11 · **提案，不是已核准品牌／型号，不是可外发目录或网站。** 通用方法入口仍为 `方法论.md`，本页只保存本次候选与下一步闸门。
+2026-09-23 · S10-R11 · **提案，不是已核准品牌／型号，不是可外发目录或网站。** 通用方法入口仍为 `METHOD_CURRENT.md`，本页只保存本次候选与下一步闸门。
 
 ## 0. 证据边界与纠错
 
@@ -67,15 +67,15 @@
 
 ## 5. 本轮索引刷新后的定位、网站客群和 GEO（仍为内部提案）
 
-**来源及口径**：文件名树见 `Drive索引树_2026-09-23.md`；`20260923-Session10/58_commercial_icp_and_overnight.md` 的工具解析文本倾向商用安装商／安防集成商，`55_master_opportunity_ranking.md` 承认多数规模／成功概率是主观推断；`07_SL-H08_Outreach_Status_Feedback_Log_NoSend_CN_v1.md` 记录一次索目录回复，但不代表该人已成交。`20260909-Session2/11_线索与集成商/53_progress_update.md`（解析文本）自报某些历史网页抓取曾把页脚词当品牌。`20260923-Session10/54_qualified_leads.xlsx` **仅解析 1/6 块**：第一张汇总表报告“有邮箱、商用分≥25”的 A 129；另一个目录同名 `54` 显示大小 79 KB（此处 25 KB），未读其内容。`20260920-LockSession5/00_MTH-J07_Agent3_Start_Summary_Plan_CN_v2.md` 与 `20260923-Session10/07_SL-H02_SalesExecution_NukiLikeRetrofit_NoSend_CN_v1.md` 的另一轮 A 536／六国 UK177、AU35、US249、CA37、IE27、NZ11 属不同池或分级待核；其 Wave1 UK10、AU8、US5、CA1 是**筛选样本**，不是人口、需求或市场份额。本页不把这些 A、抽样、产品线候选相加成“当前客户数”。
+**来源及口径**：文件名树见 `DRIVE_NAME_TREE.md`；`20260923-Session10/58_commercial_icp_and_overnight.md` 的工具解析文本倾向商用安装商／安防集成商，`55_master_opportunity_ranking.md` 承认多数规模／成功概率是主观推断；`07_SL-H08_Outreach_Status_Feedback_Log_NoSend_CN_v1.md` 记录一次索目录回复，但不代表该人已成交。`20260909-Session2/11_线索与集成商/53_progress_update.md`（解析文本）自报某些历史网页抓取曾把页脚词当品牌。`20260923-Session10/54_qualified_leads.xlsx` **仅解析 1/6 块**：第一张汇总表报告“有邮箱、商用分≥25”的 A 129；另一个目录同名 `54` 显示大小 79 KB（此处 25 KB），未读其内容。`20260920-LockSession5/00_MTH-J07_Agent3_Start_Summary_Plan_CN_v2.md` 与 `20260923-Session10/07_SL-H02_SalesExecution_NukiLikeRetrofit_NoSend_CN_v1.md` 的另一轮 A 536／六国 UK177、AU35、US249、CA37、IE27、NZ11 属不同池或分级待核；其 Wave1 UK10、AU8、US5、CA1 是**筛选样本**，不是人口、需求或市场份额。本页不把这些 A、抽样、产品线候选相加成“当前客户数”。
 
 | 阶段 | `[P]` 给用户裁决的最小产物 | 发布／进入下一步的门槛 |
 |---|---|---|
 | 目录 | 英中 PDF 按**产品实体**核对的条目－机械结构－兼容门型－声称证据表，而非按语言文件数推 SKU。S1 现有锁芯与 S2 更换欧标锁芯分开说明；特别清除将“保留原钥匙”泛化到 S2 的冲突。 | 两份当前 PDF 的实际页／图／声明须逐项核对；参数、图像权利、认证、软件集成、联系人和占位文字未审则不外发。 |
 | Branding | 暂拟定位：**给专业安装商的可核门型的旧门智能化硬件选择**；卖点先用“核门、选路径、索规格与样品”而非保证安装时长、全门通用或平台兼容。英文品牌候选仍见 §2；“蔚蓝创芯”仅中文公司名候选，英文公司名、品牌、系列、型号四层分开。 | 与 2–3 个真实买家问题／已核回复核对痛点后选文案；商标、读音、域名和生产资料未过闸前不定品牌，不在 `Product` 数据填猜测的品牌／MPN。 |
 | 网站 ICP | **主受众**：商用锁匠／专业安装商、安防集成商；看重现有门型能否安装、安装步骤、售后和可供货规格。**次受众**：门五金分销／白牌采购；看重已有型号、可出示的证书与样品／定制边界。物业／短租运营者可作场景入口而非全站主画像。 | 每个 ICP 至少有对应已核产品条目、问答与一条可执行 CTA（如“提交门型信息以核兼容性”）；客户反馈只用经许可、脱敏的共性问题，不发布明细。 |
-| 区域 | **更正**：工程区域页已经存在，不因销售证据未齐而否定。`[S]` 用户确认 Session 4 的 `globallocksummary.pages.dev` 现供工程师研究各区域夹爪／固定方式；分类见 `GlobalLockSummary_工程适配_分类汇总.md`。**销售国家页和消费者选配承诺**仍先服务已核路径：UK／AU 可作英文试点候选，US 并行核门型与适用认证，暂不做“US 全适配／UL 认证”销售页。CA／IE／NZ 不按名单数量自动投放。 | 工程站可继续按区域维护候选资料。对外销售或消费者“能装／已认证”承诺，仍须逐市场核 ①门型／锁芯与样机，②适用认证及法律声称，③去重后可联系的目标数，④真实回复与样品意愿。 |
-| 信息架构和 GEO | **三条站不能并成一条**。①既有工程站：区域锁型与夹具工作台。②`[S]` 用户计划另做的消费者公益选配站：这才是面向消费者的 GEO 载体，只发布已核事实、适用／不适用和未知项。③另议的安装商商业站：`for-installers/`、已确认产品规格页、`for-distributors/` 与商务咨询；避免批量城市页。AccessX／Axess 是软件线，见 `AccessX_Axess_西门子对标_分类汇总.md`，不把演示门禁数据写成锁具适配事实。 | Google 对 AI Overviews／AI Mode 说明沿用普通搜索的可索引、摘要资格及有用内容要求，**无需特殊 AI schema／`ai.txt`**，展示也不保证。[1](https://developers.google.com/search/docs/appearance/ai-features) 多语页面只在确有等价版本时使用互相指向的 `hreflang`，不能靠标签制造本地化产品事实。[1](https://developers.google.com/search/docs/specialty/international/localized-versions) 产品结构化数据须与页面可见真实信息相符；品牌、SKU／MPN、价格和评价未确认不编造。[1](https://developers.google.com/search/docs/appearance/structured-data/product-snippet) |
+| 区域 | **更正**：工程区域页已经存在，不因销售证据未齐而否定。`[S]` 用户确认 Session 4 的 `globallocksummary.pages.dev` 现供工程师研究各区域夹爪／固定方式；分类见 `ENGINEER_SITE_CLASSIFICATION.md`。**销售国家页和消费者选配承诺**仍先服务已核路径：UK／AU 可作英文试点候选，US 并行核门型与适用认证，暂不做“US 全适配／UL 认证”销售页。CA／IE／NZ 不按名单数量自动投放。 | 工程站可继续按区域维护候选资料。对外销售或消费者“能装／已认证”承诺，仍须逐市场核 ①门型／锁芯与样机，②适用认证及法律声称，③去重后可联系的目标数，④真实回复与样品意愿。 |
+| 信息架构和 GEO | **三条站不能并成一条**。①既有工程站：区域锁型与夹具工作台。②`[S]` 用户计划另做的消费者公益选配站：这才是面向消费者的 GEO 载体，只发布已核事实、适用／不适用和未知项。③另议的安装商商业站：`for-installers/`、已确认产品规格页、`for-distributors/` 与商务咨询；避免批量城市页。AccessX／Axess 是软件线，见 `ACCESSX_CLASSIFICATION.md`，不把演示门禁数据写成锁具适配事实。 | Google 对 AI Overviews／AI Mode 说明沿用普通搜索的可索引、摘要资格及有用内容要求，**无需特殊 AI schema／`ai.txt`**，展示也不保证。[1](https://developers.google.com/search/docs/appearance/ai-features) 多语页面只在确有等价版本时使用互相指向的 `hreflang`，不能靠标签制造本地化产品事实。[1](https://developers.google.com/search/docs/specialty/international/localized-versions) 产品结构化数据须与页面可见真实信息相符；品牌、SKU／MPN、价格和评价未确认不编造。[1](https://developers.google.com/search/docs/appearance/structured-data/product-snippet) |
 
 **评估信号** `[P]`：按产品路径 × 市场 × ICP 记录询盘中愿意提供门型资料的比例、兼容核验通过率、合格样品需求及经确认的回复；不把浏览、抓取候选、Wave1 抽样或 AI 搜索曝光当成交。先取得目录／声称与品牌架构的用户裁决，再申请建站／外发的独立授权；本轮仅索引与内部建议。
 

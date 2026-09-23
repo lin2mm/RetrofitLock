@@ -1,6 +1,6 @@
 # 仓库记录总结 — 已查范围的结束节点
 
-版本：2026-09-23 · Session 10。这里只收**已查验的仓库记录及其证据边界**，不复制产品事实，不代替实时 `git status`。方法只查 `方法论.md`；外部文件的目录核验只查 `Drive索引总结.md`。
+版本：2026-09-23 · Session 10。这里只收**已查验的仓库记录及其证据边界**，不复制产品事实，不代替实时 `git status`。方法只查 `METHOD_CURRENT.md`；外部文件的目录核验只查 `DRIVE_INDEX_SUMMARY.md`。
 
 > source_filename：`00_meta/methodology.md`、`00_meta/META.md`、`00_meta/LOOP_AUDIT.md`、`00_meta/loop_ledger.md`、`00_meta/session_log.md`、`00_meta/SESSION_BOOTSTRAP.md`、`00_meta/session10_method.md`、`00_meta/NO_INVENT.md`、`00_meta/PRODUCT_TRUTH.md`、`00_meta/REUSABLE.md`、`00_meta/CATALOG_METHOD.md`、`00_meta/index_sessions1-4.md`、`00_meta/DRIVE_INDEX.md`、`00_meta/intake/_READ_LOG.md`、`00_meta/scripts/capacity.sh`、`00_meta/scripts/learn.sh`、`README.md`、`00_handoff/HANDOFF.md`、`20_audience/ICP.md`、`20_audience/objections.md`、`30_sales_assets/dm_templates.md`。部分只查名称／标题／相关段落，见下表；没有通读仓库的全部业务文件。
 
@@ -8,8 +8,8 @@
 
 | 来源 | 查验层级和结论 | 不能据此断言 |
 |---|---|---|
-| `00_meta/methodology.md` | `[E]` 逐标题计数 **35**：A 3、B 2、C 3、D 19、E 8；旧条目的结案映射已写入 `方法论.md`。 | 35 条都仍有效、各旧能力测试在今天仍成立。 |
-| `00_meta/META.md` | `[E]` 12 个主条目加 M8b 细则；旧 M0/M2 曾要求自动 commit+push，与用户本轮裁决冲突，现行闸门只看 `方法论.md` L5。 | 旧 Git/Drive/产品措辞仍可直接执行。 |
+| `00_meta/methodology.md` | `[E]` 逐标题计数 **35**：A 3、B 2、C 3、D 19、E 8；旧条目的结案映射已写入 `METHOD_CURRENT.md`。 | 35 条都仍有效、各旧能力测试在今天仍成立。 |
+| `00_meta/META.md` | `[E]` 12 个主条目加 M8b 细则；旧 M0/M2 曾要求自动 commit+push，与用户本轮裁决冲突，现行闸门只看 `METHOD_CURRENT.md` L5。 | 旧 Git/Drive/产品措辞仍可直接执行。 |
 | `00_meta/LOOP_AUDIT.md`、`SESSION_BOOTSTRAP.md` | `[E]` 旧 L0–L7、旧开局／消息循环和历史摘要已见；作为来源快照冻结。 | 两份历史步骤表仍是新的并行入口。 |
 | `00_meta/loop_ledger.md`、`session_log.md` | `[E]` 本仓库有早期 R 轮及 Session 10 的 S10-R 行；早期与 S10 的编号不可混同。S10-R1–R3 标为事后补记；截至 2026-09-23 此次更新已续写 S10-R9。 | 台账写“已完成”就等于本轮验证了文件或历史结果。 |
 | `00_meta/index_sessions1-4.md` | `[E]` 索引里有 S2-B Methods 原文的待取得指针；是查找线索，不是该原文的验收。 | 仓库已拥有全部 Session 1–4 方法正文。 |
@@ -42,8 +42,8 @@
 
 ## 4. 以后怎么用这个结束节点
 
-1. 查**现行方法**：只读 `方法论.md`；此页不是第二套步骤表。
+1. 查**现行方法**：只读 `METHOD_CURRENT.md`；此页不是第二套步骤表。
 2. 查**以前仓库里实际有什么／哪些标签有误**：读本页；需要逐字原文时，先点名路径、按当轮授权读取，不批量重扫。
-3. 查**历史 Drive 源与今天两份目录的来源裁决**：读 `Drive索引总结.md`；不从旧产品档或文件名自行推断规格。
+3. 查**历史 Drive 源与今天两份目录的来源裁决**：读 `DRIVE_INDEX_SUMMARY.md`；不从旧产品档或文件名自行推断规格。
 
 旧记录保留以供追溯，不删、不重命名、不把其自动 Git 或产品状态重新变成当前指令。

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# 历史 Session 5 追加脚本：2026-09-23 起禁用。唯一当前方法入口为 00_meta/方法论.md，
+# 历史 Session 5 追加脚本：2026-09-23 起禁用。唯一当前方法入口为 00_meta/METHOD_CURRENT.md，
 # 新条目须先查重／核对用户授权并用文件编辑工具修改，不得向旧 methodology.md 自动追加。
-printf '%s\n' '已停用 learn.sh：方法只维护 00_meta/方法论.md；本脚本没有修改任何文件。' >&2
+printf '%s\n' '已停用 learn.sh：方法只维护 00_meta/METHOD_CURRENT.md；本脚本没有修改任何文件。' >&2
 exit 2
 # 以下旧实现只为审计保留，不会执行。
 # 把一条经验按 META M7 的四行格式追加进 methodology.md（保证格式统一、可被后续 session 引用）

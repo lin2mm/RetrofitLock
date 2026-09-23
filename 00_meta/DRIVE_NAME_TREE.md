@@ -1,6 +1,6 @@
 # 授权 Drive 索引树（文件名层）
 
-2026-09-23 · 对 `forArena-PublicSharing` 授权父目录的**本轮可见快照**。`[E]` = 本轮目录页面列出的名称／界面大小；`[S]` = 用户或文件内的陈述；`[U]` = 未核；`[P]` = 待执行。方法只查 `方法论.md`，目录版本裁决查 `Drive索引总结.md`；本页不是第二份方法或客户数据副本。
+2026-09-23 · 对 `forArena-PublicSharing` 授权父目录的**本轮可见快照**。`[E]` = 本轮目录页面列出的名称／界面大小；`[S]` = 用户或文件内的陈述；`[U]` = 未核；`[P]` = 待执行。方法只查 `METHOD_CURRENT.md`，目录版本裁决查 `DRIVE_INDEX_SUMMARY.md`；本页不是第二份方法或客户数据副本。
 
 **核验边界**：通过真实父子目录页面逐级列举；以下每个文件名均来自相应文件夹页面，保留原名。`source_filename` 是下文相对于授权父目录的路径，而不是推测原 ZIP 中央目录。用户已把原四个顶层 ZIP 换成 `20260909-Session2` 下四个文件夹；当前 44 个可见文件**不能证明**旧 ZIP 的内容或字节与新文件夹一一相同。本页主要列名称及界面大小。已读的工具解析文本只包括：`49_commercial_gtm_plan.md` 第 1/3 块、`53_progress_update.md` 1/1 块、`20260923-Session10/03_SL-F02_ChannelRanking_Retrofit_SiemensMidMarket_CN_v1.md` 1/1 块，以及 Siemens 目录三份 Excel（见 C）。未将原始文件字节落地、未解压、未获得 SHA-256、未读取客户明细；F02 排名表中的公司名不抄入派生记录。Drive 的 `Jan 1, 1980`／`1/1/80` 日期异常，不作为业务时间排序依据。本页不保存 Drive 链接、文件／文件夹标识、客户联系人或邮箱。
 
@@ -17,7 +17,7 @@
 | `20260923-Session10/` | `[E]` 19 文件 | 一级逐名见 C；曾按需解析其中少数文本／Excel 的局部，详见 D |
 | `siemens related source from previous agent/` | `[E]` 一级 3 个 Excel、1 个 `accessapp/`；`accessapp/` 一级 7 文件、3 子目录 | 仅这些层级见 C；**不进入** `data/`、`drivers/`、`public/`，不读应用源码 |
 
-补录：用户本轮明确提出既有工程网站及 AccessX 应用，故只对相关的 Siemens 目录与 `accessapp/` **第一级**补列文件名，并对 73／75／77 三份相关 Excel 读取工具解析文本；当前网页则从用户给出的公开地址只读查看。其分类与读取界限分别见 `GlobalLockSummary_工程适配_分类汇总.md`、`AccessX_Axess_西门子对标_分类汇总.md`。仍没有进入任何 `accessapp/data`、`drivers`、`public`，也没有访问上述未展开的子目录或其它 ZIP 内容。父目录其余名称／修改时间不等于这些文件的内容已核。
+补录：用户本轮明确提出既有工程网站及 AccessX 应用，故只对相关的 Siemens 目录与 `accessapp/` **第一级**补列文件名，并对 73／75／77 三份相关 Excel 读取工具解析文本；当前网页则从用户给出的公开地址只读查看。其分类与读取界限分别见 `ENGINEER_SITE_CLASSIFICATION.md`、`ACCESSX_CLASSIFICATION.md`。仍没有进入任何 `accessapp/data`、`drivers`、`public`，也没有访问上述未展开的子目录或其它 ZIP 内容。父目录其余名称／修改时间不等于这些文件的内容已核。
 
 ## B. 四个替代文件夹：逐文件索引
 

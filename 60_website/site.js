@@ -1,9 +1,12 @@
 (function () {
   var names = {
     pending: "Name pending",
-    avoriqo: "Avoriqo",
-    zavleniq: "Zavleniq",
-    kerveniq: "Kerveniq"
+    evorin: "Evorin",
+    senvor: "Senvor",
+    pavren: "Pavren",
+    lorvic: "Lorvic",
+    ardven: "Ardven",
+    yavren: "Yavren"
   };
   var root = document.documentElement;
   var stored = localStorage.getItem("brand-draft-name") || "pending";

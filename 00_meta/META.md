@@ -1,32 +1,30 @@
 # META — 顶层规则（跨 session 长期有效）
 
-> **先看这一段。** 用户已确认能看到本页，以及同目录的 `OLD_SUMMARY_INDEX.md`。列表里的空格只是显示，磁盘上的名字用下划线。
+> **最高原则：** 只在 `arena/01a0cc8f-retrofitlock` 工作。不向 `main` 提交或推送，不 merge 进 `main`。merge 进 `main` 会结束这个对话。
 >
-> 本轮明确授权：按旧方法 `stage-gate-without-merge`，只把本轮列出的文件提交并推送到工作分支 `arena/01a0cc8f-retrofitlock`。不提交到 `main`，不合并，不改默认分支。
->
-> 数量正好是 5 的新文件都在 `60_website/`：`README.md`、`catalog.html`、`index.html`、`site.js`、`styles.css`。若剩下的 5 个 unknown 在这个文件夹，就是这 5 个。候选名看 `BRAND_CANDIDATES.md`。问法怎么抽看 `QUESTION_COMPARE.md`。封面仍是 Name pending。不选第一销售国家。
+> 含中文的 9 个文件名已改成英文，对照见 `UNKNOWN_FILE_MAP.md`。现行方法是 `METHOD_CURRENT.md`。封面仍是 Name pending。Avoriqo、Zavleniq、Kerveniq 已否。新预览在 `BRAND_CANDIDATES.md`，未选定。
 
-> **历史规则档，非当前方法论入口。** 2026-09-23 用户要求把方法收束到唯一的 `方法论.md`；以后查方法、循环及 Git 执行门槛只看该文件。仓库记录／Drive 来源分别见 `仓库记录总结.md`、`Drive索引总结.md`。
+> **历史规则档，非当前方法论入口。** 2026-09-23 用户要求把方法收束到唯一的 `METHOD_CURRENT.md`；以后查方法、循环及 Git 执行门槛只看该文件。仓库记录／Drive 来源分别见 `REPO_RECORD_SUMMARY.md`、`DRIVE_INDEX_SUMMARY.md`。
 > 为什么改：用户明确取消每轮自动 Git，要求三份结束节点。以下旧 M0/M1/M2/M3/M8 的自动提交、推送、合并或固定旧分支流程均不可当作当前授权；其它旧条目保留供追溯。
 
 ---
 
 ## M0. 存在公理
 
-1. **本地文件与 Git 远端是两种状态。** 本工作区改动可在本会话保存；是否写入 Git 历史／远端由用户本轮单独授权。不能因“需要持久化”自行 `git add`、`commit` 或 `push`。现行门槛见 `方法论.md` L5。
+1. **本地文件与 Git 远端是两种状态。** 本工作区改动可在本会话保存；是否写入 Git 历史／远端由用户本轮单独授权。不能因“需要持久化”自行 `git add`、`commit` 或 `push`。现行门槛见 `METHOD_CURRENT.md` L5。
 2. **`/home/user` 之外一律不持久。** `/tmp`、`~/.cache` 里的东西（哪怕我辛苦装好的 209MB chromium）下个 session 全没。
    工具可以重装，靠 `bash 00_meta/scripts/capacity.sh --fix`。
 3. **交接靠文件，不靠对话。** 任何"我记住了"都无效，写进 md/csv 才算数。
 
 ## M1. 开局入口（2026-09-23 收束）
 
-方法论与循环只读 `00_meta/方法论.md`。需要仓库／Drive 的历史覆盖情况，再**按需**查 `仓库记录总结.md`／`Drive索引总结.md`；产品正文不自动纳入开局。可按需运行 `capacity.sh` 只读体检；未提交或未推送只是状态，不是自动 Git 的授权或停止方法工作的一票否决。
+方法论与循环只读 `00_meta/METHOD_CURRENT.md`。需要仓库／Drive 的历史覆盖情况，再**按需**查 `REPO_RECORD_SUMMARY.md`／`DRIVE_INDEX_SUMMARY.md`；产品正文不自动纳入开局。可按需运行 `capacity.sh` 只读体检；未提交或未推送只是状态，不是自动 Git 的授权或停止方法工作的一票否决。
 
 ## M2. 每一轮的节奏（用户要求：每条消息都要沉淀）
 
-每条用户消息在 `loop_ledger.md` 记一行，实质轮在 `session_log.md` 记要点；可复用且经过查重／确认的方法只写入 `方法论.md`，否则记“无新增”的原因。按需做容量自检并报告状态。**默认不执行 `git add`、`commit`、`push` 或合并；用户在本轮明确给出相应动作及已列文件范围才可执行**（见 `方法论.md` L5）。
+每条用户消息在 `loop_ledger.md` 记一行，实质轮在 `session_log.md` 记要点；可复用且经过查重／确认的方法只写入 `METHOD_CURRENT.md`，否则记“无新增”的原因。按需做容量自检并报告状态。**默认不执行 `git add`、`commit`、`push` 或合并；用户在本轮明确给出相应动作及已列文件范围才可执行**（见 `METHOD_CURRENT.md` L5）。
 
-> 以下旧格式／`learn.sh`／Dxx 续编说明是来源档案。新方法只在 `方法论.md` 中查重和更新；不得用旧工具把方法继续追加到 `methodology.md`。文档编辑安全约束仍适用。
+> 以下旧格式／`learn.sh`／Dxx 续编说明是来源档案。新方法只在 `METHOD_CURRENT.md` 中查重和更新；不得用旧工具把方法继续追加到 `methodology.md`。文档编辑安全约束仍适用。
 
 **硬约束（本 session 两次踩坑后写死）**：改文档正文**只允许** `write_file` / `edit_file`；
 `bash -c` 里**禁止**出现含反引号、`$()`、`<占位符>`、成对双引号的文档内容 —— 会被 shell 展开，**静默吃掉文件名甚至把文档当重定向目标**。
@@ -44,7 +42,7 @@
 
 - **默认不执行 `git add`、`commit`、`push` 或合并。** 仅当用户在**本轮**明确授权具体动作时执行，且只处理其授权范围内、已列出的文件。提交不隐含推送；推送不隐含合并。
 - 本 Arena 会话仅在固定的 `arena/01a0cc8f-retrofitlock` 分支工作。不得切换／创建其它分支，不自动 merge、PR merge、rebase、force-push、改默认分支或部署。任何合并都须本轮明确指明来源、目标及动作，且仍受当前会话分支限制。
-- 旧 Session 5 的分支名、自动 push、部署以及索取凭据的说法是历史内容，不是本轮指令。不要向用户索要或在聊天、文档中存放凭据；需要 GitHub 连接时按平台配置处理。完整现行规则只见 `方法论.md` L5。
+- 旧 Session 5 的分支名、自动 push、部署以及索取凭据的说法是历史内容，不是本轮指令。不要向用户索要或在聊天、文档中存放凭据；需要 GitHub 连接时按平台配置处理。完整现行规则只见 `METHOD_CURRENT.md` L5。
 
 ## M4. 目录与命名体系（细则见 `00_meta/naming.md`）
 
@@ -79,7 +77,7 @@
 
 ## M8. 前序 session 交接的历史记录（不可作为当前动作授权）
 
-> 本节及 M8b 是旧通道方案的原文归档。其“读到就 commit”“自动 merge／push”“照旧索引取标识”均由 `方法论.md` L5/L6 取代；不得据此执行 Git、扩大 Drive 范围或在新文件复制私有标识。
+> 本节及 M8b 是旧通道方案的原文归档。其“读到就 commit”“自动 merge／push”“照旧索引取标识”均由 `METHOD_CURRENT.md` L5/L6 取代；不得据此执行 Git、扩大 Drive 范围或在新文件复制私有标识。
 
 要拿回旧 session 的东西，**不要让用户复述**。两条通道都成立，用户偏好优先（用户已在用 Drive）：
 - **通道一 · Drive 直链**（零门槛）：配方见 M8b；我读它用 `fetch_page`，**不要**用沙盒 `curl`（沙盒网络是白名单，工具网络不是 —— 已实测，见 `capacity.md` 第 4 节）。
@@ -139,7 +137,7 @@
 
 ## M7. 长期学习格式（历史条目）
 
-> 仅用于理解旧 `methodology.md`，不再向旧库或 `learn.sh` 追加新规则。现行方法的查重、晋级和更新只在 `方法论.md`。
+> 仅用于理解旧 `methodology.md`，不再向旧库或 `learn.sh` 追加新规则。现行方法的查重、晋级和更新只在 `METHOD_CURRENT.md`。
 
 每条方法论固定四行，带出处，可被后续 session 引用：
 ```
