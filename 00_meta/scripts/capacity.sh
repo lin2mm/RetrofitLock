@@ -34,19 +34,19 @@ bincount=$(find -maxdepth 4 . /home/user \( -path "./.git" -o -path "*/node_modu
 echo "    binary-ish files (CAD/video/zip/obj): $bincount"
 [[ "$bincount" -gt 12 ]] && { echo "    WARN R12: zip-xor-unpack / one gen per asset / frames->contact sheet / snapshot must leave box"; warn=1; }
 
-# 4. 未提交改动（沙盒一销毁就丢）
-echo "[4] 未提交改动（不 commit = 下个 session 看不见）"
+# 4. Git 未提交状态（仅信息；不自动 add/commit）
+echo "[4] Git 未提交状态（本轮明确授权之前不做写操作）"
 dirty=$(git status --porcelain | wc -l | tr -d ' ')
-[[ "$dirty" == "0" ]] && echo "    ✅ 干净" || { echo "    ⚠️ $dirty 个文件未提交"; warn=1; }
+[[ "$dirty" == "0" ]] && echo "    ✅ 干净" || echo "    ℹ️ $dirty 个文件未提交／未跟踪；仅报告，非 commit 授权"
 
-# 5. 与远端是否同步
-echo "[5] 本地 vs 远端"
-l=$(git rev-parse HEAD); r=$(git rev-parse -q --verify "refs/remotes/origin/$(git rev-parse --abbrev-ref HEAD)" || echo "-")
-rr=$(git ls-remote origin "refs/heads/$(git rev-parse --abbrev-ref HEAD)" 2>/dev/null | cut -f1)
-echo "    local=${l:0:8} remote=${rr:-?}" | sed 's/$/  /'
-if [[ -z "$rr" ]]; then echo "    ⚠️ 远端无此分支 → 立即 push"; warn=1;
-elif [[ "$l" != "$rr" ]]; then echo "    ⚠️ 未推送，成果不在 GitHub 上"; warn=1;
-else echo "    ✅ 已同步"; fi
+# 5. 本地分支与已缓存的远端引用（不连接 GitHub，不自动 push）
+echo "[5] 本地 vs 已缓存的远端引用（非实时远端证明）"
+l=$(git rev-parse HEAD)
+r=$(git rev-parse -q --verify "refs/remotes/origin/$(git rev-parse --abbrev-ref HEAD)" 2>/dev/null || true)
+echo "    local=${l:0:8} origin-tracking=${r:0:8}"
+if [[ -z "$r" ]]; then echo "    ℹ️ 无远端跟踪缓存；不自动 push"
+elif [[ "$l" != "$r" ]]; then echo "    ℹ️ HEAD 与远端跟踪缓存不同；需要本轮明确授权才可 push"
+else echo "    ✅ 与本地缓存引用一致（未查询实时远端）"; fi
 
 # 6. /tmp 里的临时物（不会被持久化）
 echo "[6] 易失区（/tmp 与 ~/.local/.npm 不进快照）"
@@ -72,7 +72,7 @@ probe "playwright/puppeteer(缺 libnss3，可选)" "node -e 'require(\"puppeteer
 hr
 if [[ "$warn" == "0" && "$twarn" == "0" ]]; then echo "VERDICT: ✅ PASS — 空间、持久化、工具链都健康"
 elif [[ "$warn" == "0" ]]; then echo "VERDICT: ✅ PASS（带提示）— 空间/持久化健康，仅工具链有可选项缺失，需要时跑 --fix"
-else echo "VERDICT: ⚠️ BLOCK — 先处理未提交[4]/未推送[5]/超大文件[3]，再产出新东西"; fi
+else echo "VERDICT: ⚠️ HOLD — 空间或大文件触及红线；[4]/[5] 只报告状态，不构成 Git 写授权"; fi
 
 if [[ "$FIX" == "1" ]]; then
   hr; echo "FIX 模式：补齐缺失依赖"
