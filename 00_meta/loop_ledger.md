@@ -41,6 +41,7 @@
 | S10-R3 | 总文件夹只建文件名索引；仓库索引单独摘要；合并后全部待筛选 | 事后补记。目录可读，约 85 个文件名。未下载产品文件 | 当时未写入台账 | 不把同名文件当成同一份 |
 | S10-R4 | 要求补上消息台账 loop 和方法论 loop，筛选、总结、瘦身，开始沉淀 Session 10 | 与 S10-R5 一并落地，避免写两套卡 | 见 S10-R5 | 无 |
 | S10-R5 | 从 Drive 与仓库文件名里挑有用的，学习后瘦成新方法，不重造轮子 | 新增 6 条流程方法；有用文件与冲突收成一页 | `session10_method.md`；`methodology.md` §E；本台账；`session_log.md`；`LOOP_AUDIT.md`；README / HANDOFF / PRODUCT_TRUTH 只加待筛选横幅 | 不把目录草稿的 Validated 和工程目标升格为产品事实；不抄 Drive 标识进 Git |
+| S10-R6 | 只归纳方法论 loop；学习旧消息台账；每轮回复要给更多建议；问历史里还有哪些 loop 可总结 | 新增 `reply-suggestions-loop`、`loop-registry-single-source`；loop 收成 L0–L7 | `META.md` M11；`LOOP_AUDIT.md` §B/§B2；`methodology.md`；`session10_method.md` §0 改为指针 | 不进入产品或 GTM。不把 D43「每条回复都新写方法」复活 |
 ## 我此刻对你消息里那 3 个具体问题的答复去向
 - 「上传的 session3 md」→ 沙盒里不存在（`/home/user/uploads/` 无此目录，全盘 `find` 无匹配）→ 已把"别信 UI 成功标签"写成方法 `verify-artifact-not-status-label`，并配 `verify-upload.sh`。
 - 「Drive 是不是更好」→ 不是 Drive 更好，是**我之前判断错了**；两条通道都可用，Drive 直链成为你的默认通道（M8b）。

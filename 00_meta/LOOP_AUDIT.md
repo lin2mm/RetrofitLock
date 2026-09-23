@@ -1,13 +1,14 @@
 # LOOP AUDIT — 全部 loop 的唯一清单（长期文件）
 
 > 你要的那个"包含全部 loop 说明的长期文件"就是这个。**回答"一共有多少 loop"以本页为准。**
-> 计数快照：2026-09-23（Session 10 · S10-R5）· meta 规则 **11** 条（M0–M10）· 方法论 **33** 条（Session 5 的 27 + Session 10 的 6）· 台账已追加 S10-R1–R5（其中 R1–R3 为事后补记）· 新增入口 `session10_method.md`。
-> Session 10 起：实质轮必须跑消息台账 loop + 方法论 loop，回复末尾留轮检。旧 Verified / FINAL / Validated 标签降为待筛选。
+> 计数快照：2026-09-23（Session 10 · S10-R6）· meta 规则 **12** 条（M0–M11）· 方法论 **35** 条 · 台账含 S10-R1–R6（R1–R3 事后补记）。
+> **loop 全清单以本节 B 为准。** 其他文件只放指针，不再各写一套步骤。
+> 当前里程碑 = 只建方法论 loop。不处理产品，不进入 GTM 执行。
 > R10/R11 新增 `root-cause-before-rule`；R12 新增 `binary-artifact-capacity-discipline`（109 判废 + 容量考古）；R13 新增 `binary-starve-to-text`（STEP 文本自读 + OCP stub 配方，渲染栈本沙盒打通）。
 > Session 10 更正：`PRODUCT_TRUTH.md` 的冻结值已降为待筛选。最高优先级改看 `session10_method.md` 的未裁定冲突，不把旧铁律当成当前事实。
 > 维护规则：新增/废弃任何 loop，只改本页 + 对应正文；本页与正文冲突时以正文为准并把本页修正。
 
-## A. Meta 规则（`00_meta/META.md`，11 条）
+## A. Meta 规则（`00_meta/META.md`，12 条。步骤不在这里展开，看 §B）
 | ID | 一句话 | 执行方式 | 状态 |
 |----|--------|----------|------|
 | M0 | 没进 GitHub 的东西不存在；`/home/user` 之外不持久 | 每轮末 commit+push | 有效 |
@@ -20,17 +21,42 @@
 | M7 | 方法论四行格式 + 出处 + 状态 | learn.sh / 直接编辑 | 有效 |
 | M8 | 跨 session 交接双通道：Drive 文本直链（`fetch_page`）+ git（`main`/`inbox`） | 要资料时 | 有效 |
 | M8b | Drive 直链配方：folder→列 id→`uc?export=download`；预览页读不到正文 | 收链接时 | 有效（实测跑通） |
-| M9 | **每条消息必须进台账**，无增量也要写原因 | `loop_ledger.md` | 有效 |
+| M9 | 每条消息必须进台账 | `loop_ledger.md` | 有效 = L1 |
+| M11 | 每轮回复给 2–4 条建议，不写成事实 | 回复中的「建议」节 | 有效 = L3 |
 | **M10** | **workspace 卫生循环（你本轮要的）**：Drive/附件取源 → `.scratch/` 分析 → **只留结论 md + 文件夹索引** → 删源 → 需要时重新 fetch；**CAD/视频/压缩包永不 push GitHub** | `scratch.sh` + `fetch-drive.sh` | **新增·有效** |
 
-## B. 四个循环（周期不同，都要跑）
-1. **开局 loop（每 session 1 次）**：读 5 份 → `capacity.sh`（新沙盒先 `--fix`）→ 读 `00_meta/DRIVE_INDEX.md` 看 Drive 有什么 → 才开工。
-2. **消息 loop（每条用户消息 1 次，M9）**：查 `session10_method.md` 与已有方法 → 干活 → 台账一行 → 有新流程才追加方法论（Session 10 起不用 `learn.sh`，避免出处被写成 Session 5）→ 回复末尾轮检 → commit+push 工作分支，不 merge。
-3. **取用 loop（每个外部文件 1 次，M10）**：
-   `fetch`（文本我读 / 二进制你附件或 `fetch-drive.sh`）→ 存 `.scratch/` → 分析 → **结论 md 落仓库** →
-   `scratch.sh clean`（删源，留结论与 sha256）→ 更新 `DRIVE_INDEX.md` 状态列 → commit。**永不 push 二进制。**
-4. **阶段 loop（每个交付阶段 1 次）**：产出 → QA（如 `40_images/QA_ledger.md` K1–K8）→ 阶段总结 `00_handoff/stage_N_*.md` →
-   push 工作分支 → **停在 S1/S5 类停止点等你**（发送批准、FINAL、merge），不自行合并、不自行标 FINAL。
+## B. 当前要跑的 loop（2026-09-23 收束。旧的四段描述降为指针）
+
+每条实质消息按这个顺序。产品阶段的检查不插进这个顺序。
+
+| ID | 名字 | 何时 | 做到哪算跑过 | 规则 |
+|---|---|---|---|---|
+| L0 | 开局 | 每个 session 一次 | 读本页 + 台账最后 3 行 + 方法名列表 | M1。方法论阶段不打开产品正文 |
+| L1 | 消息台账 | 每条用户消息 | `loop_ledger.md` 一行；漏记标明事后补记 | M9 |
+| L2 | 方法论捕获 | 同一轮，做事之后 | 有新流程才追加；没有就在台账写原因 | M2 / M7。先查重。不用 `learn.sh` |
+| L3 | 建议 | 每一轮回复 | 回复里有「建议」节，2–4 条，标建议不标事实 | M11 |
+| L4 | 轮检 | 实质轮回复末尾 | 一行轮检 | 通用启动文件的可见记录，不另抄 7 步 |
+| L5 | 合并闸门 | 任何 merge / 推 main 之前 | 默认否。用户本轮写「合并」才动 | M3 |
+| L6 | 取用 | 只在授权读某个外部文件时 | 结论进文本；二进制不入库 | M10。本里程碑不触发 |
+| L7 | 阶段 | 一个交付阶段结束时 | 报告并停。不自行标 FINAL | `stage-gate-without-merge`。本里程碑不触发 |
+
+历史里同义、不再各写步骤的名字：M2 三件套、M9 台账、D43/D44、通用启动文件 4.1、`substantive-turn-visible-ledger`。它们都指向 L1+L2+L4。
+
+## B2. 历史 loop 摘要（只谈循环，不谈产品）
+
+| 来源 | 当时建立的 loop | 现在怎么用 |
+|---|---|---|
+| 2026-09-14 D43 | 每条消息检查要不要固化成方法，每条回复回写日志 | 太重，造成平行文档。收成 L2：没有新流程就写「无新增」 |
+| 2026-09-14 D44 | 先查已有，再新增 | 仍有效。等于 `consult-before-build` |
+| Session 5 M0–M2 | 不 push 等于不存在；开局阅读；每轮日志+方法+容量 | 仍有效。开局清单以 L0 为准，不在这里再列一份 |
+| Session 5 M9 | 消息台账。R1/R2 是事后补记，因为当时还没有这页 | 仍有效。Session 10 的 R1–R3 又漏了，所以加 L4 轮检 |
+| Session 5 M3 | 不提前 merge | 仍有效 = L5 |
+| Session 5 M10 | 外部文件用完即删，二进制不入库 | 仍有效 = L6。没授权就不跑 |
+| Session 5 阶段闸门 | 阶段完只报告，不合并、不标 FINAL | 仍有效 = L7 |
+| 通用启动 v4 | 实质轮 7 步 + 回复末尾轮检；冲突先问 | 7 步不整份再存。留下 L4，冲突规则已有 `conflict-ask-not-third-system` |
+| Session 10 S10-R5 | 把漏跑的台账补上，并写成可见 loop | 被本节替代为唯一清单。方法条保留，步骤不再复制 |
+
+已知重复失败：台账规则写在文件里，回复没有可见步骤，就会漏跑。Session 5 一次，Session 10 一次。L3 和 L4 是针对这次重复的补丁。
 
 ## C. 方法论库（`00_meta/methodology.md`，20 条 = 有效 17 · 待验证 3 · 本 session 新增 13）
 分组：A 跨 session 连续性（6）· B 获客链路（3，沿用项目 GEN/SL 的 M01–M13，待原文校正）· C 产品定义（4）· D 交付工程（7）。
