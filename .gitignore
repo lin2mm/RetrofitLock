@@ -1,6 +1,9 @@
 # 临时取用区：分析完即删（见 META M10 / scratch.sh）
 .scratch/
 
+# Session 10 入口只留本地，不进 Git
+00_meta/session10_drive_locators.local
+
 # ---- 通用排除（必须写在前面，negation 才能生效：gitignore 后者覆盖前者）----
 node_modules/
 .cache/

@@ -1,40 +1,68 @@
-# LOOP AUDIT — 全部 loop 的唯一清单（长期文件）
+# LOOP AUDIT — 历史循环审计快照（非当前入口）
 
-> 你要的那个"包含全部 loop 说明的长期文件"就是这个。**回答"一共有多少 loop"以本页为准。**
-> 计数快照：2026-09-20（Session 5 · R21 后）· meta 规则 **11** 条（M0–M10）· 方法论 **27** 条 · 台账 **23** 行 · 脚本 **8** 个 · 长期参考文件 **16** 份（含本页、`REQUEST_FILES.md`、`SHORTPATH_IMAGES_CN_v1.md`、**`NO_INVENT.md`**、**`SESSION_BOOTSTRAP.md`**；CAD 记录=`CAD_LOG.md` 单源，R17 已按 `sx-db-4.stp` 原文复核轮廓）。
+> **2026-09-23 用户要求将全部现行方法和循环收束到 [`METHOD_CURRENT.md`](METHOD_CURRENT.md)。** 本页旧 L0–L7 与历史统计仅供溯源；以后只维护新文件 §1 的唯一现行循环，不用本页旧 M0/M2 自动 Git 说法。
+> 计数快照：2026-09-23（Session 10 · S10-R7）· `META.md` **12 个主条目（M0–M11）+ M8b 细则 1 条** · `methodology.md` **35 个标题**（非 35 条已复核的有效规则）· 台账含 S10-R1–R7（R1–R3 事后补记）。
+> **loop 全清单以本节 B 为准。** 其他文件只放指针，不再各写一套步骤。
+> 当前里程碑 = 只建方法论 loop。不处理产品，不进入 GTM 执行。
 > R10/R11 新增 `root-cause-before-rule`；R12 新增 `binary-artifact-capacity-discipline`（109 判废 + 容量考古）；R13 新增 `binary-starve-to-text`（STEP 文本自读 + OCP stub 配方，渲染栈本沙盒打通）。
-> **当前最高优先级 = `PRODUCT_TRUTH.md` §0 铁律**（最新设计师稿 + CAD 铝壳），历史冻结全部 `superseded`。
+> Session 10 更正：`PRODUCT_TRUTH.md` 的冻结值已降为待筛选。最高优先级改看 `session10_method.md` 的未裁定冲突，不把旧铁律当成当前事实。
 > 维护规则：新增/废弃任何 loop，只改本页 + 对应正文；本页与正文冲突时以正文为准并把本页修正。
 
-## A. Meta 规则（`00_meta/META.md`，11 条）
+## A. 当时的 Meta 规则快照（12 主项 + M8b；有效性以今天 `METHOD_CURRENT.md` 为准）
 | ID | 一句话 | 执行方式 | 状态 |
 |----|--------|----------|------|
-| M0 | 没进 GitHub 的东西不存在；`/home/user` 之外不持久 | 每轮末 commit+push | 有效 |
-| M1 | 开局固定顺序：META → **PRODUCT_TRUTH** → Drive 索引 → 方法论 → HANDOFF → 自检 | 每个 session 开头 | 有效 |
-| M2 | 每轮三件事：写日志 / 沉淀方法论 / 跑 capacity + commit | 每条消息末 | 有效 |
-| M3 | **merge 闸门**：阶段完成只 push 工作分支；合 main 必须用户明确同意（否则 session 被终结） | 阶段末 | 有效 |
+| M0 | 历史：曾要求每轮远端持久化 | 曾每轮 commit+push | 自动 Git 已由 `METHOD_CURRENT.md` L5 废止 |
+| M1 | 历史开局：曾列多个方法与项目文件 | 曾每个 session 开头 | 现只查 `METHOD_CURRENT.md`；其它按需 |
+| M2 | 历史节奏：日志／方法判断／空间自检 | 每条消息末 | 自动 commit 已废止；新方法只写现行入口 |
+| M3 | 历史 merge 闸门 | 阶段末 | 新 L5 扩大为 add／commit／push／合并均需本轮授权 |
 | M4 | 目录段与命名体系（数字前缀、图片文件名即元数据、状态码） | 建文件时 | 有效 |
 | M5 | 单向数据流：90_archive → 10_product(真相源) → 图 → 目录 → 网站 | 任何派生前 | 有效 |
 | M6 | 容量红线：工作树≤60MB、单文件≤25MB、交付图≤400KB、**二进制不入库** | capacity.sh | 有效（本轮按你指令强化） |
 | M7 | 方法论四行格式 + 出处 + 状态 | learn.sh / 直接编辑 | 有效 |
 | M8 | 跨 session 交接双通道：Drive 文本直链（`fetch_page`）+ git（`main`/`inbox`） | 要资料时 | 有效 |
 | M8b | Drive 直链配方：folder→列 id→`uc?export=download`；预览页读不到正文 | 收链接时 | 有效（实测跑通） |
-| M9 | **每条消息必须进台账**，无增量也要写原因 | `loop_ledger.md` | 有效 |
+| M9 | 每条消息必须进台账 | `loop_ledger.md` | 有效 = L1 |
+| M11 | 每轮回复给 2–4 条建议，不写成事实 | 回复中的「建议」节 | 有效 = L3 |
 | **M10** | **workspace 卫生循环（你本轮要的）**：Drive/附件取源 → `.scratch/` 分析 → **只留结论 md + 文件夹索引** → 删源 → 需要时重新 fetch；**CAD/视频/压缩包永不 push GitHub** | `scratch.sh` + `fetch-drive.sh` | **新增·有效** |
 
-## B. 四个循环（周期不同，都要跑）
-1. **开局 loop（每 session 1 次）**：读 5 份 → `capacity.sh`（新沙盒先 `--fix`）→ 读 `00_meta/DRIVE_INDEX.md` 看 Drive 有什么 → 才开工。
-2. **消息 loop（每条用户消息 1 次，M9）**：查已有规则（项目 D44 元规则）→ 干活 → 台账一行 → 方法论该加就加（`learn.sh`，delta 续编 D56+）→ commit+push。
-3. **取用 loop（每个外部文件 1 次，M10）**：
-   `fetch`（文本我读 / 二进制你附件或 `fetch-drive.sh`）→ 存 `.scratch/` → 分析 → **结论 md 落仓库** →
-   `scratch.sh clean`（删源，留结论与 sha256）→ 更新 `DRIVE_INDEX.md` 状态列 → commit。**永不 push 二进制。**
-4. **阶段 loop（每个交付阶段 1 次）**：产出 → QA（如 `40_images/QA_ledger.md` K1–K8）→ 阶段总结 `00_handoff/stage_N_*.md` →
-   push 工作分支 → **停在 S1/S5 类停止点等你**（发送批准、FINAL、merge），不自行合并、不自行标 FINAL。
+## B. 2026-09-23 S10-R6 的历史 loop 快照（当前执行见 `METHOD_CURRENT.md` §1）
 
-## C. 方法论库（`00_meta/methodology.md`，20 条 = 有效 17 · 待验证 3 · 本 session 新增 13）
-分组：A 跨 session 连续性（6）· B 获客链路（3，沿用项目 GEN/SL 的 M01–M13，待原文校正）· C 产品定义（4）· D 交付工程（7）。
-本轮关键新增：`cad-verified-render-pipeline`、`failure-ledger-before-retry`、`two-network-paths`、
-`drive-direct-link-intake`、`verify-artifact-not-status-label`、`never-edit-docs-via-bash-strings`、`self-export-at-source`。
+下表保留旧审计轨迹，**不再指导每条消息**；尤其旧 L5 只提 merge，已被新文件中涵盖 add／commit／push／合并的闸门替换。
+
+| ID | 名字 | 何时 | 做到哪算跑过 | 规则 |
+|---|---|---|---|---|
+| L0 | 开局 | 每个 session 一次 | 读本页 + 台账最后 3 行 + 方法名列表 | M1。方法论阶段不打开产品正文 |
+| L1 | 消息台账 | 每条用户消息 | `loop_ledger.md` 一行；漏记标明事后补记 | M9 |
+| L2 | 方法论捕获 | 同一轮，做事之后 | 有新流程才追加；没有就在台账写原因 | M2 / M7。先查重。不用 `learn.sh` |
+| L3 | 建议 | 每一轮回复 | 回复里有「建议」节，2–4 条，标建议不标事实 | M11 |
+| L4 | 轮检 | 实质轮回复末尾 | 一行轮检 | 通用启动文件的可见记录，不另抄 7 步 |
+| L5 | 合并闸门 | 任何 merge / 推 main 之前 | 默认否。用户本轮写「合并」才动 | M3 |
+| L6 | 取用 | 只在授权读某个外部文件时 | 结论进文本；二进制不入库 | M10。本里程碑不触发 |
+| L7 | 阶段 | 一个交付阶段结束时 | 报告并停。不自行标 FINAL | `stage-gate-without-merge`。本里程碑不触发 |
+
+历史里同义、不再各写步骤的名字：M2 三件套、M9 台账、D43/D44、通用启动文件 4.1、`substantive-turn-visible-ledger`。它们都指向 L1+L2+L4。
+
+## B2. 历史 loop 摘要（只谈循环，不谈产品）
+
+| 来源 | 当时建立的 loop | 现在怎么用 |
+|---|---|---|
+| 2026-09-14 D43 | 每条消息检查要不要固化成方法，每条回复回写日志 | 太重，造成平行文档。收成 L2：没有新流程就写「无新增」 |
+| 2026-09-14 D44 | 先查已有，再新增 | 仍有效。等于 `consult-before-build` |
+| Session 5 M0–M2 | 不 push 等于不存在；开局阅读；每轮日志+方法+容量 | 仍有效。开局清单以 L0 为准，不在这里再列一份 |
+| Session 5 M9 | 消息台账。R1/R2 是事后补记，因为当时还没有这页 | 仍有效。Session 10 的 R1–R3 又漏了，所以加 L4 轮检 |
+| Session 5 M3 | 不提前 merge | 仍有效 = L5 |
+| Session 5 M10 | 外部文件用完即删，二进制不入库 | 仍有效 = L6。没授权就不跑 |
+| Session 5 阶段闸门 | 阶段完只报告，不合并、不标 FINAL | 仍有效 = L7 |
+| 通用启动 v4 | 实质轮 7 步 + 回复末尾轮检；冲突先问 | 7 步不整份再存。留下 L4，冲突规则已有 `conflict-ask-not-third-system` |
+| Session 10 S10-R5 | 把漏跑的台账补上，并写成可见 loop | 被本节替代为唯一清单。方法条保留，步骤不再复制 |
+
+已知重复失败：台账规则写在文件里，回复没有可见步骤，就会漏跑。Session 5 一次，Session 10 一次。L3 和 L4 是针对这次重复的补丁。
+
+## C. 方法论索引与当前起点（不复制 §B 的步骤）
+
+[E] `methodology.md` 共 35 个标题：A 3、B 2、C 3、D 19、E 8。这里只数标题，不代表全部已核实或适用于当前里程碑；旧的“20 条／17 有效／3 待验证”计数不再使用。
+[S] 此段记录了当时的 L0–L5 归纳；2026-09-23 用户要求把现行方法统一收在 `METHOD_CURRENT.md`，此处不再当开局步骤。旧四条通用方法已在新文件结案映射。
+[U] 仓库索引指向若干历史方法文件与台账来源，但文件名、索引状态和旧的“已读”标签不证明已经完成逐条核对；仓库外的历史覆盖率尚未知。只按用户授权范围，先建文件名／出处对应，再选必要的原文段落检查；产品主题的方法不在本阶段筛选。
 
 ## D. 脚本（10 个，幂等，可重复跑）
 | 脚本 | 干什么 |
@@ -42,7 +70,7 @@
 | `capacity.sh [--fix]` | 空间/持久化/未提交/未推送/工具链自检；`--fix` 装缺失依赖（字体、ffmpeg） |
 | `scratch.sh status\|clean\|purge` | `.scratch` 生命周期 + **证明二进制没被 git 跟踪** |
 | `fetch-drive.sh <FILE_ID> <名>` | 你本机跑：把 Drive 文件拉进 `.scratch/`（沙盒 curl 不通，实测 000）并记 sha256 |
-| `learn.sh <name> <板块> "问题" "做法" "为什么"` | 按 M7 格式追加方法论（内容别放反引号/`$`，会被 shell 吃掉） |
+| `learn.sh`（历史） | 2026-09-23 已改为安全停用：不再向旧方法库追加或提示自动 Git；新方法只写 `METHOD_CURRENT.md`。 |
 | `verify-upload.sh` | 附件是否真落地（不信 UI 的 "successful"） |
 | `push-inbox.sh 文件...` | 把文件送进 `inbox` 分支（**不碰 main/会话分支**）——本沙盒唯一可靠的二进制入口，≤1MB |
 | `pull-inbox.py [--get inbox/<名>]` | 按字节取回并打印 sha256（实测往返一致） |

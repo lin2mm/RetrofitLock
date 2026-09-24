@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# 历史 Session 5 追加脚本：2026-09-23 起禁用。唯一当前方法入口为 00_meta/METHOD_CURRENT.md，
+# 新条目须先查重／核对用户授权并用文件编辑工具修改，不得向旧 methodology.md 自动追加。
+printf '%s\n' '已停用 learn.sh：方法只维护 00_meta/METHOD_CURRENT.md；本脚本没有修改任何文件。' >&2
+exit 2
+# 以下旧实现只为审计保留，不会执行。
 # 把一条经验按 META M7 的四行格式追加进 methodology.md（保证格式统一、可被后续 session 引用）
 # 注意：内容里别放反引号/$()/尖括号 URL —— 走 bash 双引号会被 shell 展开静默损坏（见 methodology never-edit-docs-vash-strings）。
 #       复杂内容改用 edit_file/write_file 直接写 methodology.md。

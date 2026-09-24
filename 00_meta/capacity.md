@@ -1,6 +1,8 @@
 # CAPACITY — 空间与容量红线（Arena + GitHub）
 
-> 本页是**约束**，不是笔记。`00_meta/META.md` M6 引用它。自检脚本：`00_meta/scripts/capacity.sh`。
+> 本页是容量说明。现行执行入口仍是 `METHOD_CURRENT.md`。自检脚本：`00_meta/scripts/capacity.sh`。
+>
+> 2026-09-23 更正：下面表里的 21 GB 是这台沙箱的磁盘，不是会话能留下的额度。能留下的大约是 128 MB 或 1 万个文件。脚本 `[1b]` 量这个。云端原件不删；本地 Drive 下载在结论写入后删除，需要时再取。
 
 ## 1. 硬限制（平台侧，不可调）
 

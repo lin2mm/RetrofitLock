@@ -12,11 +12,38 @@ warn=0
 echo "CAPACITY CHECK — $(date -u '+%F %TZ') — repo=$(basename "$PWD") branch=$(git rev-parse --abbrev-ref HEAD)"
 hr
 
-# 1. 磁盘
-echo "[1] 磁盘 /home/user"
+# 1. 磁盘（虚拟机磁盘，不是会话能留下的额度）
+echo "[1] 虚拟机磁盘 /home/user（约 21GB 是这台沙箱的盘，不是可留下的 128MB）"
 df -h /home/user | awk 'NR==2{printf "    总 %s  已用 %s(%s)  可用 %s\n",$2,$3,$5,$4}'
 avail_kb=$(df -Pk /home/user | awk 'NR==2{print $4}')
 [[ "$avail_kb" -lt 1048576 ]] && { echo "    ⚠️ 可用 <1GB，别再 npm i 大依赖"; warn=1; }
+
+# 1b. 可持久快照。平台排除的目录名不计入。不删除任何云端文件。
+echo "[1b] 可持久快照（约 128MB 或 10,000 文件；超出可能静默变少）"
+durable_kb=$(find /home/user \
+  \( -name .arena -o -name .cache -o -name .local -o -name .mypy_cache -o -name .next \
+     -o -name .nox -o -name .npm -o -name .nuxt -o -name .output -o -name .parcel-cache \
+     -o -name .pytest_cache -o -name .ruff_cache -o -name .svelte-kit -o -name .tox \
+     -o -name .turbo -o -name .venv -o -name .vite -o -name __pycache__ -o -name build \
+     -o -name coverage -o -name dist -o -name node_modules -o -name out -o -name target \
+  \) -prune -o -type f -printf '%s\n' | awk '{s+=$1} END{printf "%d", s/1024}')
+durable_n=$(find /home/user \
+  \( -name .arena -o -name .cache -o -name .local -o -name .mypy_cache -o -name .next \
+     -o -name .nox -o -name .npm -o -name .nuxt -o -name .output -o -name .parcel-cache \
+     -o -name .pytest_cache -o -name .ruff_cache -o -name .svelte-kit -o -name .tox \
+     -o -name .turbo -o -name .venv -o -name .vite -o -name __pycache__ -o -name build \
+     -o -name coverage -o -name dist -o -name node_modules -o -name out -o -name target \
+  \) -prune -o -type f -print | wc -l | tr -d ' ')
+printf "    可留下约 %sKB / %s 个文件（不含平台排除目录）\n" "$durable_kb" "$durable_n"
+[[ "$durable_kb" -gt 81920 ]] && { echo "    ⚠️ 已过 80MB，接近 128MB 快照上限"; warn=1; }
+[[ "$durable_kb" -gt 122880 ]] && { echo "    ⚠️ 已过 120MB，停止新增大文件"; warn=1; }
+[[ "$durable_n" -gt 8000 ]] && { echo "    ⚠️ 文件数接近 10,000"; warn=1; }
+if [[ -d .scratch ]]; then
+  printf "    本地下载副本 .scratch = %s\n" "$(du -sh .scratch | cut -f1)"
+else
+  echo "    本地下载副本 .scratch = 无"
+fi
+echo "    云端原件不由本脚本删除。结论已写入仓库后，才可删本地副本，需要时再取。"
 
 # 2. 仓库体积（Arena 快照 / patchset 关心的是这个）
 echo "[2] 仓库体积（Arena patchset 上限约 128MB / 10,000 文件）"
@@ -34,19 +61,19 @@ bincount=$(find -maxdepth 4 . /home/user \( -path "./.git" -o -path "*/node_modu
 echo "    binary-ish files (CAD/video/zip/obj): $bincount"
 [[ "$bincount" -gt 12 ]] && { echo "    WARN R12: zip-xor-unpack / one gen per asset / frames->contact sheet / snapshot must leave box"; warn=1; }
 
-# 4. 未提交改动（沙盒一销毁就丢）
-echo "[4] 未提交改动（不 commit = 下个 session 看不见）"
+# 4. Git 未提交状态（仅信息；不自动 add/commit）
+echo "[4] Git 未提交状态（本轮明确授权之前不做写操作）"
 dirty=$(git status --porcelain | wc -l | tr -d ' ')
-[[ "$dirty" == "0" ]] && echo "    ✅ 干净" || { echo "    ⚠️ $dirty 个文件未提交"; warn=1; }
+[[ "$dirty" == "0" ]] && echo "    ✅ 干净" || echo "    ℹ️ $dirty 个文件未提交／未跟踪；仅报告，非 commit 授权"
 
-# 5. 与远端是否同步
-echo "[5] 本地 vs 远端"
-l=$(git rev-parse HEAD); r=$(git rev-parse -q --verify "refs/remotes/origin/$(git rev-parse --abbrev-ref HEAD)" || echo "-")
-rr=$(git ls-remote origin "refs/heads/$(git rev-parse --abbrev-ref HEAD)" 2>/dev/null | cut -f1)
-echo "    local=${l:0:8} remote=${rr:-?}" | sed 's/$/  /'
-if [[ -z "$rr" ]]; then echo "    ⚠️ 远端无此分支 → 立即 push"; warn=1;
-elif [[ "$l" != "$rr" ]]; then echo "    ⚠️ 未推送，成果不在 GitHub 上"; warn=1;
-else echo "    ✅ 已同步"; fi
+# 5. 本地分支与已缓存的远端引用（不连接 GitHub，不自动 push）
+echo "[5] 本地 vs 已缓存的远端引用（非实时远端证明）"
+l=$(git rev-parse HEAD)
+r=$(git rev-parse -q --verify "refs/remotes/origin/$(git rev-parse --abbrev-ref HEAD)" 2>/dev/null || true)
+echo "    local=${l:0:8} origin-tracking=${r:0:8}"
+if [[ -z "$r" ]]; then echo "    ℹ️ 无远端跟踪缓存；不自动 push"
+elif [[ "$l" != "$r" ]]; then echo "    ℹ️ HEAD 与远端跟踪缓存不同；需要本轮明确授权才可 push"
+else echo "    ✅ 与本地缓存引用一致（未查询实时远端）"; fi
 
 # 6. /tmp 里的临时物（不会被持久化）
 echo "[6] 易失区（/tmp 与 ~/.local/.npm 不进快照）"
@@ -72,7 +99,7 @@ probe "playwright/puppeteer(缺 libnss3，可选)" "node -e 'require(\"puppeteer
 hr
 if [[ "$warn" == "0" && "$twarn" == "0" ]]; then echo "VERDICT: ✅ PASS — 空间、持久化、工具链都健康"
 elif [[ "$warn" == "0" ]]; then echo "VERDICT: ✅ PASS（带提示）— 空间/持久化健康，仅工具链有可选项缺失，需要时跑 --fix"
-else echo "VERDICT: ⚠️ BLOCK — 先处理未提交[4]/未推送[5]/超大文件[3]，再产出新东西"; fi
+else echo "VERDICT: ⚠️ HOLD — 空间或大文件触及红线；[4]/[5] 只报告状态，不构成 Git 写授权"; fi
 
 if [[ "$FIX" == "1" ]]; then
   hr; echo "FIX 模式：补齐缺失依赖"

@@ -1,8 +1,9 @@
-# HANDOFF — RetrofitLock / GlobalLock 项目交接文件
+# HANDOFF — RetrofitLock / GlobalLock 历史项目交接文件
 
-> **给任何一个新 session 的第一份读物。** 先读完这一页，再决定要不要读别的。
-> 规则：每个 session 结束时，把本页和 `session_history.md` 更新 + commit + push。
-> 只有 push 到 GitHub 的东西才存在；沙盒里的工作成果不 commit 就会永久消失。
+> **2026-09-23 更新：**本页是历史进度档案，方法论只读 `00_meta/METHOD_CURRENT.md`；仓库与 Drive 来源结案见两份总结。旧自动 commit+push、旧分支名和产品冻结叙述不再作为当前授权；今天两份目录的用户裁决见 `00_meta/DRIVE_INDEX_SUMMARY.md`，但本轮不展开产品内容。
+
+> 以下为 Session 5 的历史交接叙述，非新 session 的第一份必读物。
+> 历史要求曾是每轮更新交接并 commit+push；**已被 2026-09-23 用户授权闸门取代**。工作区成果与 Git 远端同步状态分开报告，未获当轮明确授权不执行 Git 写操作。
 
 - 仓库：`lin2mm/RetrofitLock`
 - 本分支：`arena/01a0bd80-retrofitlock`（Session 5）

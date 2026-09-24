@@ -1,7 +1,9 @@
-# SESSION_BOOTSTRAP — 新 session 系统顶层（2026-09-20 R20 建档）
+# SESSION_BOOTSTRAP — 2026-09-20 历史启动页（非现行入口）
+
+> **2026-09-23 更新：方法论／Git 闸门的唯一入口是 [`METHOD_CURRENT.md`](METHOD_CURRENT.md)。** 下方旧“开局五步”“每轮 commit+push”“未提交先 push”均为历史记录，不执行；来源状态按需看两份总结。
 
 > 用户指令（R20）：**以后所有新开的 session 都要有系统顶层的 loop、空间、命名体系、限制编造**。
-> 本页 = 新 session 的第一页。四要素：① Loop（§1）② 空间（§2）③ 命名体系（§3）④ 限制编造（§4）。
+> 当时本页作为开局读物；现四要素已筛选进 `METHOD_CURRENT.md`，本页只是历史来源。
 
 ## 0. 开局五步（固定顺序，没走完不接活）
 ```
@@ -24,8 +26,8 @@
    - `loop_ledger.md` 加一行（无增量也要写原因）
    - 新方法论 → `methodology.md`（learn.sh 追加，先查重）
    - 空间/计数快照 → `LOOP_AUDIT.md`
-   - `commit + push`（没进 GitHub = 不存在，M0）
-**闸门**：merge 默认答案=否（M3，用户永久指令）；阶段完成只报告不合并。
+   - 历史记载曾要求 `commit + push`；**现已废止自动 Git**，以 `METHOD_CURRENT.md` L5 的当轮授权为准。
+**闸门**：默认不执行 add／commit／push／合并；本页其余旧图像检查只作历史。
 
 ## 2. 空间（工作区纪律：什么放哪、什么不留）
 | 位置 | 放什么 | 纪律 |
@@ -36,7 +38,7 @@
 | inbox 通道 | 唯一字节级文件传输（`push-inbox.sh`/`pull-inbox.py`，≤1MB，sha256 校验） | 送完即删源；登记进 `DRIVE_INDEX.md` |
 | Drive | 用户的长期原件（CAD/确认稿/编号 md） | 只读；文本我 `fetch_page` 直读；二进制登记 FILE_ID 待通道 |
 
-**红线**：`capacity.sh` 报 [4][5] 告警 → 先 commit/push 再做别的；128MB patchset 上限，大数据集/视频不进仓库（binary-artifact-capacity-discipline）。
+**容量红线**：`capacity.sh` 的 [4][5] 只是 Git 状态提示，不是自动提交／推送指令；容量与二进制限制见 `METHOD_CURRENT.md`。
 
 ## 3. 命名体系（细则 `naming.md`，新增先登记，不自由发挥）
 - **目录段（稳定不改名）**：`00_meta`(规则) · `00_handoff`(进度) · `10_product`(事实源) · `20_audience` · `30_sales_assets` · `40_images`(图) · `50_catalog`(目录) · `60_website`(站) · `90_archive`(只读原件)

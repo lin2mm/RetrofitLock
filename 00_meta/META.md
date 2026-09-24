@@ -1,37 +1,30 @@
 # META — 顶层规则（跨 session 长期有效）
 
-> 这一页不是产品文档，是**这个项目怎么运转**的规则。优先级高于任何 session 的临时想法。
-> 改这一页必须写清「为什么改」，因为它被所有后续 session 继承。
-> 最近更新：2026-09-20（Session 5 建立）
+> **最高原则：** 只在 `arena/01a0cc8f-retrofitlock` 工作。不向 `main` 提交或推送，不 merge 进 `main`。merge 进 `main` 会结束这个对话。
+>
+> 含中文的 9 个文件名已改成英文，对照见 `UNKNOWN_FILE_MAP.md`。现行方法是 `METHOD_CURRENT.md`。封面仍是 Name pending。取名规则和未选定预览在 `BRAND_CANDIDATES.md`。商业草稿的访客选择在 `VISITOR_REGION.md`。销售国家未定。
+
+> **历史规则档，非当前方法论入口。** 2026-09-23 用户要求把方法收束到唯一的 `METHOD_CURRENT.md`；以后查方法、循环及 Git 执行门槛只看该文件。仓库记录／Drive 来源分别见 `REPO_RECORD_SUMMARY.md`、`DRIVE_INDEX_SUMMARY.md`。
+> 为什么改：用户明确取消每轮自动 Git，要求三份结束节点。以下旧 M0/M1/M2/M3/M8 的自动提交、推送、合并或固定旧分支流程均不可当作当前授权；其它旧条目保留供追溯。
 
 ---
 
 ## M0. 存在公理
 
-1. **没进 GitHub 的东西不存在。** Arena 沙盒每个 session 独立、会销毁；只有 commit + push 到
-   `lin2mm/RetrofitLock` 的产出才能被下一个 session 读到。
+1. **本地文件与 Git 远端是两种状态。** 本工作区改动可在本会话保存；是否写入 Git 历史／远端由用户本轮单独授权。不能因“需要持久化”自行 `git add`、`commit` 或 `push`。现行门槛见 `METHOD_CURRENT.md` L5。
 2. **`/home/user` 之外一律不持久。** `/tmp`、`~/.cache` 里的东西（哪怕我辛苦装好的 209MB chromium）下个 session 全没。
    工具可以重装，靠 `bash 00_meta/scripts/capacity.sh --fix`。
 3. **交接靠文件，不靠对话。** 任何"我记住了"都无效，写进 md/csv 才算数。
 
-## M1. Session 开局固定顺序（不要先干活）
+## M1. 开局入口（2026-09-23 收束）
 
-```
-① 00_meta/META.md              ← 规则（本页）
-② 00_meta/index_sessions1-4.md ← 有什么资料、缺什么
-③ 00_meta/methodology.md        ← 可复用的方法论（长期沉淀的目标文件）
-④ 00_handoff/HANDOFF.md         ← 当前进度与在办事项
-⑤ bash 00_meta/scripts/capacity.sh   ← 空间/持久化/工具链自检（10 秒）
-```
-只有 ⑤ 报 ✅ PASS 才开始产出。⑤ 报 [4][5] 告警时，先补 commit/push 再做别的。
+方法论与循环只读 `00_meta/METHOD_CURRENT.md`。需要仓库／Drive 的历史覆盖情况，再**按需**查 `REPO_RECORD_SUMMARY.md`／`DRIVE_INDEX_SUMMARY.md`；产品正文不自动纳入开局。可按需运行 `capacity.sh` 只读体检；未提交或未推送只是状态，不是自动 Git 的授权或停止方法工作的一票否决。
 
 ## M2. 每一轮的节奏（用户要求：每条消息都要沉淀）
 
-每个回合结束时，在动手写代码之外做三件事：
-1. **append 到 `00_meta/session_log.md`**：本轮我做了什么（1–3 行，含关键决策与**为什么**）。
-2. **判断是否产生了方法论**：凡是「换个产品/换个 session 仍然有用」的经验 → 写进
-   `00_meta/methodology.md` 对应板块；只对本产品有效的写成败事实 → 写进 `10_product/`，**不污染方法论**。
-3. **跑 capacity.sh 并 commit + push**（含 `00_meta/capacity.md` 的快照更新）。
+每条用户消息在 `loop_ledger.md` 记一行，实质轮在 `session_log.md` 记要点；可复用且经过查重／确认的方法只写入 `METHOD_CURRENT.md`，否则记“无新增”的原因。按需做容量自检并报告状态。**默认不执行 `git add`、`commit`、`push` 或合并；用户在本轮明确给出相应动作及已列文件范围才可执行**（见 `METHOD_CURRENT.md` L5）。
+
+> 以下旧格式／`learn.sh`／Dxx 续编说明是来源档案。新方法只在 `METHOD_CURRENT.md` 中查重和更新；不得用旧工具把方法继续追加到 `methodology.md`。文档编辑安全约束仍适用。
 
 **硬约束（本 session 两次踩坑后写死）**：改文档正文**只允许** `write_file` / `edit_file`；
 `bash -c` 里**禁止**出现含反引号、`$()`、`<占位符>`、成对双引号的文档内容 —— 会被 shell 展开，**静默吃掉文件名甚至把文档当重定向目标**。
@@ -45,22 +38,11 @@
 判定标准（什么才算方法论）：能改写成「以后凡是遇到 X，就做 Y，因为 Z」的句子才算；
 只是「这次这个 SKU 的孔距是 60mm」不算，那是数据。
 
-## M3. 分支与 merge 闸门（**用户硬性要求**）
+## M3. 分支与 Git 动作闸门（2026-09-23 用户重新裁定）
 
-- 本 session 全程只在 `arena/01a0bd80-retrofitlock` 上工作、push。
-- **禁止**：合并进 main、创建并合并 PR、删除任何分支、`rebase`/`force push`。
-  合并会结束这个 session，而用户要在**同一个 session 里连做** 产品图 → 目录 → 网站。
-- 阶段完成时只说："阶段 X 完成，已 push 到 `arena/01a0bd80-retrofitlock`（未 merge）。
-  要 merge 请明确说'合并'。" —— **拿到用户明确同意才动 merge**。
-- 三个大阶段（图 / 目录 / 网站）之间**不 merge、不换 session**，用本页 + HANDOFF 做内部续接。
-- 若平台侧出现自动合并/分支清理迹象，立刻告知用户并停止 merge 类操作。
-- **⛔ 用户永久指令（2026-09-20 再次强调）**：本项目**长期只在 `arena/01a0bd80-retrofitlock` 上工作，绝不提前 merge**。
-  走到最后一步（网站）也一样：**用 Cloudflare Pages 的"分支构建 / Preview URL"直接映射本分支**，
-  每次 push 自动出一个可预览站点，持续调整；**不需要**为了上线而合进 main。
-  → 部署链路：`60_website/` 构建产物 → Cloudflare Pages（生产分支设为本分支，或每次取 Preview URL）。
-  → 我可以代劳：建 Cloudflare 项目需要 `CLOUDFLARE_API_TOKEN`（你在沙盒里给我环境变量或直接贴 token 我就配 `wrangler`），
-     没有 token 时我就只准备 `wrangler.toml` + 构建脚本，你点两下即可。
-  → 规则含义：**任何"要不要 merge"的默认答案都是否**。只有你在本轮明确说"合并"，我才动 main。
+- **默认不执行 `git add`、`commit`、`push` 或合并。** 仅当用户在**本轮**明确授权具体动作时执行，且只处理其授权范围内、已列出的文件。提交不隐含推送；推送不隐含合并。
+- 本 Arena 会话仅在固定的 `arena/01a0cc8f-retrofitlock` 分支工作。不得切换／创建其它分支，不自动 merge、PR merge、rebase、force-push、改默认分支或部署。任何合并都须本轮明确指明来源、目标及动作，且仍受当前会话分支限制。
+- 旧 Session 5 的分支名、自动 push、部署以及索取凭据的说法是历史内容，不是本轮指令。不要向用户索要或在聊天、文档中存放凭据；需要 GitHub 连接时按平台配置处理。完整现行规则只见 `METHOD_CURRENT.md` L5。
 
 ## M4. 目录与命名体系（细则见 `00_meta/naming.md`）
 
@@ -93,7 +75,9 @@
 - 视频/模型/字体包这类大件**一律不进仓库**；需要时按 `index_sessions1-4.md` 的"送达方式"走。
 - 每轮末跑 `capacity.sh`；连续两轮出现同一告警 → 停下先修健康度，别继续产出。
 
-## M8. 前序 session 的交接方式（本项目唯一的"记忆通道"）
+## M8. 前序 session 交接的历史记录（不可作为当前动作授权）
+
+> 本节及 M8b 是旧通道方案的原文归档。其“读到就 commit”“自动 merge／push”“照旧索引取标识”均由 `METHOD_CURRENT.md` L5/L6 取代；不得据此执行 Git、扩大 Drive 范围或在新文件复制私有标识。
 
 要拿回旧 session 的东西，**不要让用户复述**。两条通道都成立，用户偏好优先（用户已在用 Drive）：
 - **通道一 · Drive 直链**（零门槛）：配方见 M8b；我读它用 `fetch_page`，**不要**用沙盒 `curl`（沙盒网络是白名单，工具网络不是 —— 已实测，见 `capacity.md` 第 4 节）。
@@ -138,7 +122,22 @@
 - 保留物 = ①分析结论 md ②文件夹/文件索引（含大小、SHA256、状态）；**不保留原件副本**。
 - 理由：CAD 属临时分析件、非长期资产；而 Arena patchset 有 128MB 累计上限，二进制会把后半程（网站）预算吃光。
 
-## M7. 长期学习的记录格式（methodology.md 怎么写）
+## M11. 建议 loop（Session 10，2026-09-23 用户要求）
+
+每一轮回复都要给建议，不能只答问题。
+
+1. 放在结论之后，单独一节，标题写「建议」。
+2. 2–4 条。每条标「建议」，不写成事实，不写成已执行。
+3. 每条写：建议做什么、为什么、会改哪条 loop。不展开当前里程碑以外的执行。
+4. 方法论阶段的建议只谈 loop 与规则。GTM、产品、目录、网站，等用户明确进入下一里程碑再建议。
+5. 建议不等于新规则。同一条建议被用户接受，或第二次独立出现，才写入 `methodology.md`。
+6. 已有规则能覆盖的，引用，不新开一条。
+
+为什么：只回答问题，loop 只会在被追问时才补。建议 loop 把「下一步可以收紧什么」变成每轮可见动作。
+
+## M7. 长期学习格式（历史条目）
+
+> 仅用于理解旧 `methodology.md`，不再向旧库或 `learn.sh` 追加新规则。现行方法的查重、晋级和更新只在 `METHOD_CURRENT.md`。
 
 每条方法论固定四行，带出处，可被后续 session 引用：
 ```
