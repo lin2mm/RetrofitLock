@@ -40,13 +40,9 @@
 
 ## 4. 本 session 需要的输入（完整清单见 `assets_index.md`，编号对应）
 
-**最小可开工组合**：`P1 成品设计稿` + `P2 实拍半成品视频(抽帧)` + `P3 配件清单` + `C1 ICP 定义`。
-这 4 个到位我就能出：`base_unit.md` 定稿、图位清单锁定、1 张锁风格主图、1 页双语目录样张。
+旧的“最小可开工还在等设计稿、视频、配件清单和 ICP”已覆盖。英中目录已经完成。下一步见 `00_meta/NEXT_STEP.md`。不重做第二份目录。
 
-**已按你的回答修正的两件事**：
-1. 不是"多 SKU 目录"，是 **1 款主机 → 配件/装法/ICP 组成系列**（见 5b）。`sku_master.csv` 已改成
-   `base_unit.md` + `accessories.csv` 两张表；目录结构随之从"每 SKU 一页"改成"兼容矩阵 + 按 ICP 选包"。
-2. 交付形态：**中英双语 + 双语 PDF + 同款网页版**（同一套 HTML 出三种，见第 5 节 PDF 坑位）。
+旧的“一款主机加配件才是系列”已覆盖。现行架构见下一节。
 
 **⚪ 不用重复给的**（防重复，别浪费时间）：session 1 的完整研究稿（结论已固化进目录/ICP/话术）、
 session 1 的原始爬取数据集（只有要做价格带对比图时才要那一小段）、任何 `.ai/.psd/.blend` 源文件（本沙盒没有对应软件，给我导出图就行）。
@@ -74,10 +70,8 @@ conda 源、**所有 apt 源**（且无 root）。没有 Blender/KeyShot/CAD/pan
 - ⚠️ **零系统字体**：图上/PDF 里的任何中文都必须走 `@fontsource` 的 woff2（浏览器排版）或先 `fonttools` 转 ttf（PIL/fpdf2）。
 - 中英双语 + PDF + 网页版**同一套 HTML 代码**出（见第 5 节坑位说明），Step ④ 的网站直接白捡。
 
-## 5b. 产品架构（已确认 2026-09-20）
-一款主机，**不是一堆 SKU**：`1 主机 × N 配件 × M 装法 × K 个 ICP 版本 = 一个系列`。
-含义：目录按"兼容矩阵 + 按 ICP 的选配件包"组织；图片只把主机渲染一次，换配件/门型/背景做延展。
-详见 `10_product/base_unit.md` 与 `10_product/accessories.csv`。
+## 5b. 产品架构
+现行架构是一个驱动核心、两条机械路径。旧的“一款主机加配件”不再作为现行结构。外壳只认 CAD 日志第一节。面盖和旋钮只认旋钮日志第一节。出图不从旧索引找回已删除的配色记录。
 
 ## 6. 规则、方法论、命名、容量、S1–S4 全量索引 → 都在 `00_meta/`
 本页只讲进度；**跨 session 的长期规则在 `00_meta/META.md`（开局必读）**：
@@ -86,25 +80,24 @@ conda 源、**所有 apt 源**（且无 root）。没有 Blender/KeyShot/CAD/pan
 `00_meta/capacity.md` = 空间红线 · `bash 00_meta/scripts/capacity.sh` = 自检。
 `00_handoff/assets_index.md` 是本 session 的**精简版**（先给哪 4 个），全量以 `00_meta/` 为准。
 
-## 6c. 待你回答的 3 个决策（不答我只能默认）
-1. **品牌名**：客户看到的品牌名/Logo/联系方式是什么？GlobalLockSummary 是内部工程师库，目录上能不能挂它？
-2. **PDF 路线**：沙盒内出不了真矢量 PDF（缺 libnss3）。默认走 **print-ready HTML（你浏览器 Ctrl+P 导出，双语排版最干净）**；
-   要"我直接给你一个可下载 PDF"就得走图片版式（文字不可选、放大略糊）。
-3. **第一个 ICP 版本**：目录 v1 先对谁说话 —— installer / dealer / property manager / hospitality？（决定封面大字与配件包排序）
+## 6c. 已由后来的决定覆盖，不再默认
+1. 品牌名暂停。封面是 Name pending。工程站不挂到目录封面上。
+2. 英中目录已经有语言稿。不另做一份目录。
+3. 安装商草稿已经对着安装商说话。不另选一个 ICP 当默认。
 
 ## 7. 协作约定（请每个 session 都遵守）
 
-1. **一切以 `10_product/sku_master.csv` 为准**。图片和网页不许自己发明参数。
+1. 外壳只认 CAD 日志第一节。面盖和旋钮只认旋钮日志第一节。对外句子只认已读目录。图片和网页不许自己发明参数。
 2. 每张图都要在 `40_images/slots.csv` 里有登记：属于哪个 SKU、哪种图型、用了哪张参考图、状态。
 3. 未确认的信息一律标 `[待确认]`，不要写成事实。价格尤其不要猜。
 4. 目录/网站文案默认**英文**（给客户看），内部注释用中文。
-5. 每轮结束：`git commit` + `git push origin <本分支>`，并在 `session_history.md` 记三行：做了什么、下一步、还缺什么。
+5. 没有本轮“提交”二字，不提交、不推送。合并进 main 会结束对话，不做。
 
 ## 8. 目录结构
 
 ```
 00_handoff/    HANDOFF.md (本文件) · assets_index.md (上传清单+送达方式) · session_history.md
-10_product/    base_unit.md (唯一数据源) · accessories.csv (配件/兼容矩阵) · sku_master.csv (旧模板，待废)
+10_product/    base_unit.md (未确认商业字段) · accessories.csv (猜行已删) · sku_master.csv (旧模板，不采用)
 20_audience/   ICP.md · objections.md
 30_sales_assets/ dm_templates.md · 已发出的目录版本
 40_images/     refs/ (真实参考图输入) · slots.csv (图位清单) · out/ (生成结果)
