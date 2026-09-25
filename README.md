@@ -25,5 +25,5 @@
 6. [`00_handoff/HANDOFF.md`](00_handoff/HANDOFF.md) — 当前进度与在办事项
 7. `bash 00_meta/scripts/capacity.sh` — 空间/持久化/工具链自检（新沙盒加 `--fix` 重装依赖）
 
-**唯一数据源：`00_meta/PRODUCT_TRUTH.md` + `10_product/base_unit.md` + `10_product/accessories.csv`**（`sku_master.csv` 已废弃）。
+现行来源：外壳只认 `00_meta/CAD_LOG.md` 第一节。面盖和旋钮只认 `00_meta/KNOB_LOG.md` 第一节。对外句子只认已读目录。`10_product/` 只留未确认商业字段。`sku_master.csv` 已废弃。
 产品图必须分目录标状态：`Hypothesis_Not_ProductTruth/`（AI 推测，禁外发）vs `CAD_Verified/`（几何 QA 通过）。
