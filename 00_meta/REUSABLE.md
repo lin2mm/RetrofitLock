@@ -23,7 +23,7 @@
 | `70_..._Verification` | 三源锁定表（壳=STEP/面盖=确认稿/旋钮=66）+ 禁反推条款 | — | 与我现行 §0 铁律逐条同构 → 引用即可 | **已读** |
 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` | CAD 包真相=**5 STEP 无 STL**（全单实体 mm）；视频已抽帧，明细在 3 份待解出的报告 | 我以为 zip 里是 STL 网格 | 渲染轮按 STEP（NURBS）处理，OCP 正合适 | **已读** |
 | `113_GTM_Workspace_Compression_..._Completion.md` | 快照 92,354,796B / 355 files / SHA256 `a0300a56…`；按需 refetch 六步法 | 我另造一套取用流程 | 我的 M10 与它**对齐**（先读 index→只取所需→校验→做→删） | **已读** |
-| `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | 产品事实表 + **claim 禁用清单**（HomeKit/Matter/Thread/Airbnb/BHMA/ANSI/world's smallest）+ 证据标签【源/证/代/推/问】+ 统计闸门 + 对外语气规范 + **银黑转换需确认** | 我重做 claim 纪律、重定文案口径 | 直接采用；已加 K11（银黑需确认） | **已读** |
+| `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | 产品事实表 + **claim 禁用清单**（HomeKit/Matter/Thread/Airbnb/BHMA/ANSI/world's smallest）+ 证据标签【源/证/代/推/问】+ 统计闸门 + 对外语气规范 | 我重做 claim 纪律、重定文案口径 | 直接采用。不另做第二套外壳配色 | **已读** |
 | `ImmutableCrop_Extract_v2.py` + `QA_Score_v2`（R20） | 1:1 原生像素裁剪（禁重绘/缩放/旋转/透视/重采样）+ 逐像素评分脚本 | 我重写一套裁剪与比对脚本 | **要文件本体**（≤1MB，走 `inbox` 通道）；拿到即用 | 指针 |
 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` / `09_GTM_Input_Asset_Audit_2026-09-15.md` | 输入清单+审计的**字段格式**（CAD 格式/单位/历史、视频遮挡/反光/比例一致性） | 我自拟登记表 | 用他们的字段做我的 `.scratch` 取用记录 | 指针 |
 | `70_GTM_CAD_ClosedCover_KnobPanel_Frozen_And_AluminumCAD_Verification_v1_2026-09-19.md` | 面盖+旋钮+铝壳的验证清单与结论 | 我重新设计验证项 | **K1–K10 就是它的可判定化**；拿到原文后对齐措辞 | 指针 |
@@ -35,7 +35,7 @@
 ## B. 目录 / 宣传（第③步要用）
 | 旧资产 | 内容 | 免掉的重复工作 | 状态 |
 |--------|------|----------------|------|
-| `09_GTM_OnePager_RetrofitSmartLock_Content_Draft_EN_CN_v0.1.md` + Silver/Black `.docx` | **已经写好的第①步交付物**（白底/大留白/银黑独立/单一 CTA，NoSend） | 我原计划新写一页文案 → 改为**扩展 v0.1** | 指针（**请优先给我这份**） |
+| `09_GTM_OnePager_RetrofitSmartLock_Content_Draft_EN_CN_v0.1.md` | **已经写好的第①步交付物**（白底/大留白/单一 CTA，NoSend） | 我原计划新写一页文案 → 改为**扩展 v0.1** | 指针。旧配色文稿文件名已从本页删除 |
 | `02_SL-B15_Marketing_AssetAudit_Plan_CN_v1.md/.xlsx` | 资产分层：当前可用/待恢复/仅参考/禁止公开 | 我不必自己盘点素材 | 指针 |
 | `02_SL-B16_Marketing_CopyDraft_Catalogue_Website_Email_EN_CN_v1.md/.xlsx` | 12 天计划 + EN-CN 文案草案 + website/email readiness | 我不必重写文案与站点结构 | 指针 |
 | `03_SL-C01_MarketLegal`(14 市场认证矩阵) / `04_SL-K01` 成本模型 | 认证入场顺序与价格基线（中国成品 $59.20 vs 美本地组装 $69.32） | 目录 P8/P9 页不必重查 | 指针 |

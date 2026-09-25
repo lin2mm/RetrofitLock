@@ -162,15 +162,13 @@
 - `GTM_Catalogue_QuickDecision_EN_draft_v0.4_2026-09-23.pdf`
 - `GTM_Catalogue_QuickDecision_ZH_engineering_draft_v0.6_2026-09-23.pdf`
 
-`20260922-image to Catalogue/M1-20260922/` — 12 文件（只列名）：
+`20260922-image to Catalogue/M1-20260922/` — 下列文件名：
 
 - `02_SL-B15_Marketing_AssetAudit_Plan_CN_v1.md`
 - `02_SL-B15_Marketing_AssetAudit_Plan_CN_v1.xlsx`
 - `02_SL-B16_Marketing_CopyDraft_Catalogue_Website_Email_EN_CN_v1.md`
 - `02_SL-B16_Marketing_CopyDraft_Catalogue_Website_Email_EN_CN_v1.xlsx`
 - `09_GTM_OnePager_RetrofitSmartLock_Content_Draft_EN_CN_v0.1.md`
-- `27_GTM_Scene_Reference_Recomposite_Closeup_BlackCADRatio_PhoneScale_v5.png`
-- `27_GTM_Scene_Reference_Recomposite_Mobile_BlackCADRatio_PhoneScale_v5.png`
 - `40_GTM_Engineering_Target_Spec_And_Claim_Ladder_v1_2026-09-16.json`
 - `40_GTM_Engineering_Target_Spec_And_Claim_Ladder_v1_2026-09-16.md`
 - `42_GTM_Compatibility_Target_And_Checker_v1_2026-09-16.json`

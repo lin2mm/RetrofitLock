@@ -9,7 +9,7 @@
 ## 1. 这一版允许说的
 
 - 这是一份给已经索取目录的人看的讨论稿，用来判断要不要寄样品。
-- 产品方向是紧凑的旧锁加装模组，不是“所有门都能装”的成品声明。
+- 产品方向是一个驱动核心、两条机械路径，不是“所有门都能装”的成品声明。
 - 兼容性按具体门和锁核对，不按国家页面批量承诺。
 - 无线、射频和机械认证都还不能写。没有证书编号，就不写 FCC、CE、UKCA、RCM、UL、BHMA、ANSI 或同等标志。
 - AccessX／Axess 是原型，不出现在这版目录里。工程站 `globallocksummary.pages.dev` 是夹爪研究资料，不是本目录，也不是消费者选配站。
@@ -32,7 +32,7 @@
 
 Subject: Catalogue for discussion and sample review
 
-This catalogue is for discussion and for deciding whether a sample is useful. It describes a compact module intended to work with an existing door lock. It does not say that the module fits every lock, every door, or every country.
+This catalogue is for discussion and for deciding whether a sample is useful. It describes one drive core and two mechanical paths. It does not say that the product fits every lock, every door, or every country.
 
 Compatibility is checked against the actual lock and door. We do not claim wireless, radio, or mechanical certification in this version. We also do not claim a finished mobile app, a brand partnership, a price, or an installation time.
 
@@ -40,7 +40,7 @@ If you want a sample review, please send the lock type, a photo of the inside an
 
 ## 4. 中文对照（内部，不单独当另一款产品）
 
-这是讨论和样品评估用的目录，不是适配证书。它描述的是打算加装在现有门锁上的紧凑模组。它不表示每把锁、每扇门或每个国家都适用。
+这是讨论和样品评估用的目录，不是适配证书。它描述的是一个驱动核心、两条机械路径。它不表示每把锁、每扇门或每个国家都适用。
 
 是否适用，要看实际的锁和门。这一版不声称无线、射频或机械认证，也不写成品 App、品牌合作、价格或安装时间。
 
@@ -48,6 +48,6 @@ If you want a sample review, please send the lock type, a photo of the inside an
 
 ## 5. 发送前仍缺的
 
-1. 重新读取上述两份当前 PDF，把每一句英文稿改成“PDF 里已有且允许外发”或删除。
+1. 两份目录的工具解析文本已经读过。句子对照见安装商句子表。没有“可以发送”，就不发送。
 2. 用户明确说可以发送哪一版。没有这句话，本文件保持不外发。
 3. 记录实际发出的文件名和日期。不在本页记录收件人。

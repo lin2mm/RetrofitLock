@@ -4,7 +4,7 @@
 > `00_MTH-J07_Agent3_Start_Summary_Plan_CN_v2.md`（R7–R14 时间线）、`00_EXP1-DRIVE_SourceOfTruth_Registry_CN_v1.md`。
 > 用法：**做目录 = 按本页清单逐条执行**；每条后面写"沿用 / 修订（Dxx）"，不许跳过也不许另起炉灶。
 >  **2026-09-20 两处修正**：① delta 已到 **D67**，续编从 **D68**；② 按 **D61**，第①步交付物**不是 9 页目录**，
-> 而是**一页 B2B retrofit one-pager**（`09_GTM_OnePager_..._v0.1` 已有草稿，白底/大留白/银黑独立/单一 CTA，批准前 NoSend）；
+> 而是**一页 B2B retrofit one-pager**（`09_GTM_OnePager_..._v0.1` 已有草稿，白底/大留白/单一 CTA，批准前 NoSend）；
 > 目录（Catalogue）在 one-pager 批准后再做。视觉依据全部改指 `00_meta/PRODUCT_TRUTH.md` §0 铁律。
 
 ## 0. 继承的三个既有事实（决定"重做"的含义）
@@ -33,7 +33,7 @@ P1 是什么  3 张 CAD verified 视图（前/侧/底 R 角可见）+ 包络尺�
 P2 兼容矩阵 配件 × 锁体类型 × 门厚 × 耗时（表格由 accessories.csv 生成）
 P3 装法    3–4 步安装（每步一张 CAD/实拍帧；无文字依赖）              [K6 无假字]
 P4 面盖与旋钮  **只以最新设计师稿**（O1/O2/O5/O6）；旧稿不得引用                  [K9]
-P5 电池盖   **只放 09-20 三张装配截图的引用图**，其余不写            [K7]
+P5 电池盖   只认确认稿的底部外观，不另写尺寸                          [K7]
 P6 按 ICP 选配件包  installer / dealer / STR-property / hospitality（对齐 Phase B 路线图）
 P7 规格表  全字段，缺项 【问】/TBD                                    [D53]
 P8 合规与认证  按客户群区分；RF/进口闸门不可豁免（D34）；AU DDA / UK Secured by Design

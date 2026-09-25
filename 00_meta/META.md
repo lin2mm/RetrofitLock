@@ -57,7 +57,7 @@
 ```
 90_archive (原始素材，只读)
    ↓ 人工/脚本提炼
-10_product/base_unit.md + accessories.csv  ← 唯一真相源
+外壳见 CAD 日志。面盖见确认稿。目录句子见已读目录。10_product 只留未确认字段
    ↓ 派生
 40_images/slots.csv → 40_images/out/*  (图位登记 + 成品)
    ↓ 排版

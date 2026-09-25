@@ -26,13 +26,8 @@
 | `07_SL-H03_SocialDM_Wave1_..._添加了已发送.xlsx` | F2 | 15KB | ⬜ 与 CAD 无关（做目录封面大字才要） |
 
 ## B. 只在文字里被引用、没在 Drive 顶层枚举到（🟩确知存在 / 🟨不确定）
-**P0 · 视觉冻结基准与 QA 底稿（做图必需，缺了就无从评分）**
-- 🟩 `01_SL-B03_Visual_ConfirmedClosedCover_DesignerFinal_Hero_Source_v1.png`（面盖确认源，Registry §10 指定最高优先级）
-- 🟩 `01_SL-B03_Visual_TwoColorwaysFrozen_GrayBlack_BorderHighlightCorrected_CN_v1.png`（**R19 冻结基准**，逐像素比对底稿）
-- 🟩 `01_SL-B03_Visual_TwoColorwaysFrozen_UserSelectedReference_CN_v1.png`（登记复制版）
-- 🟩 `01_SL-B03_Visual_TwoColorwaysFrozen_GrayBlack_BottomShapeCorrected_CN_v1.png`（R16 中间版，溯源用）
-- 🟩 `01_SL-B03_Visual_TwoColorwaysFrozen_LockOnly_WhiteBG_CN_v1.png`（R19 派生，R20 判废；**别当底稿**）
-- 🟩 `01_SL-B03_Visual_..._SilverLock_v2.png` / `..._BlackLock_v2.png`（R20 通过 100/100 的两张，**这两张最该给我**）
+**P0 · 现行外观不在下面这些旧图里**
+- 外壳只认 `CAD_LOG.md` §1。面盖和旋钮只认两张确认图，见 `KNOB_LOG.md` §1。
 
 **P1 · CAD 验证与规则文档（`StartHere` 明写"下次 CAD prompt 先读"）**
 - 🟩 `66_GTM_ConfirmedClosedCover_KnobSource_Crop_v1.png` + `66_GTM_FrozenClosedCover_Knob_And_Envelope_Proportions_v1_2026-09-19.md`
@@ -67,8 +62,8 @@
 
 ## C. 直接从 CAD 出发，你只需要给我这些（其余我先不看）
 > 原则：二进制走**聊天附件**（我读不到 Drive 二进制，已实测：curl 000 / `fetch_page` HTTP 500）；md 我可以用 Drive 直链自己读。
-1. **附件（4 个，合计 ~2MB）**：`CAD-贴锁-设计-stl.zip` · `装配-DB-4-成功.FCStd`（**指认 F2 还是 F2a 那份**）· `..._SilverLock_v2.png` + `..._BlackLock_v2.png`
-2. **电池盖 3 张装配截图**（09-20 新版）：两个 folder 顶层都没有 → 若在 `J07 上传包.zip` 里，你确认一下我再去解它的 manifest；否则你单独发
+1. 外壳和确认稿已经定稿。不再补交旧配色图
+2. 电池盖外观已由确认稿定稿。不再要求补交三张装配截图
 3. **md 类给我 Drive 直链即可**（我自己读）：`101`/`105`/`107`（CAD 验证与电池盖几何读取）、`09_GTM_AI_CAD_Combination...`（D66 正文）、`09_GTM_Visual_FromFrozenProduct...`（D64 正文）、`ImmutableCrop_Extract_v2.py` 与 `QA_Score_v2` 的内容
 4. `00_MTH-J07_NewAgent_Upload_Package_CN_v1.zip` 的 **manifest**（12 文件清单 + SHA256）→ 我据此把本索引从"重建"升级为"确认"
 

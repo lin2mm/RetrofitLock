@@ -25,7 +25,7 @@
 | `111_GTM_Workspace_Refresh_Summary_2026-09-20.md` | `1pV8007Nz1O9QpbjdbrPiKxqyx5tq7JsX` | 新 | md | ✅ `Agent read` **关键**：CAD/FCStd 几何已读完（见下） |
 | `112_GTM_Workspace_Compression_And_Source_Delete_Plan_2026-09-20.md` | `1dl1loXUqVE6YSUL-tPTB2azvk-4uKYab` | 新 | md | ✅ `Agent read`：容量爆 4 根因（zip+解包同存/多代并存/视频抽帧留存/uploads 不清）+ refetch 六步法 |
 | `113_GTM_Workspace_Compression_And_Source_Delete_Completion_2026-09-20.md` | `1MoTjN3orsPf13ubAWdnrZiuZq8Cx9wX3` | 新 | md | ✅ `Agent read`：快照 92,354,796 B / 355 files / SHA256 a0300a56…；按需 refetch 六步法 |
-| `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | `1_9Tw4l9pijghc-LncTgZ8D7FeUuvx_E1` | 新 | md | ✅ `Agent read`：产品事实/claim 纪律/证据标签/**银黑转换需你确认** |
+| `01_EXP1-A01_ProductTruth_Check_CN_v1.md` | 不在本页重写标识 | 新 | md | ✅ 已读：产品事实、claim 纪律、证据标签。不另做第二套外壳配色 |
 | `09_GTM_Visual_FromFrozenProduct_ToAngles_ToScenes_Method_CN_v1.md` | `1WgowHv295WmU468KYtw5AK1dCgw97ROX` | 新 | md | ✅ `Agent read` **关键**：Stage0–6 + **100 分 QA 评分表** + 3 个 prompt 模板 |
 | `09_GTM_AI_CAD_Combination_Capability_Assessment_CN_v1.md` | `1qazu-EWL359lekGhzyY54BzzHrvZG_4B` | 16KB | md | `User-reported`（要点已从 111/D66 覆盖，全文不阻塞） |
 | `00_EXP1-J09` / `00_MTH-J09` Drive 通道说明 | `1kvH9LNRVR-5eIIb_XOZcv2NHwwb1ld3R` | 2KB | md | ✅ 已读（旧沙盒通道） |
@@ -36,7 +36,7 @@
 | `装配- DB-4-DC-4-成功-3个FCStd/`（子文件夹） | `1iGXjZ4djXxYbSHr51WQdcsblDixtRp-B` | 17/45/40KB | FCStd×3 | `User-reported`：ids `1RloavfBnqEQgY6dI3CwR08Jcx0wPIP_6` / `1qacexo-Whomb3wdFqXjxGQyXdBZgTpwS` / `1FyznpYkXJ3PU7L3EOQUYH_T277fETLQ2`；几何结论已被 107 全文化，二进制暂不必修（107 内旧 id `1n5gFRP-AcLH8y1-Rqq9zKRueRgo3kIZ8` 以本条为准） |
 | `09_GTM_Visual_Input_Inventory_2026-09-15.md` | `13ixlQ8Nv03b1Meg3fN91hgmufQzTZQjG` | 新 | md | ✅ 已读：**zip 实为 5 STEP（无 STL）**全单实体 mm；两视频已解码+关键帧已抽；明细在 3 份报告（Keyframe Inspection / Asset Audit / Geometry Inspection.json，**均不在 folder**） |
 | `102_GTM_..._TwoImageGate_And_HistoricalCleanupPlan` | `1vuNo74mOWWNg9xEormjg5sg1XJ6I0_40` | 新 | md | ✅ 已读（2/2）：双图闸门全流程 + 清理 6 步安全检 + 不可变禁令；§3.C 旋钮规格：R21 裁定**不再作依据**（唯一正确=两图，`KNOB_LOG.md` §1） |
-| `70_GTM_CAD_ClosedCover_KnobPanel_..._v1` | `12O_DeOpmDItQMTNYQUSIsAcQV_OxiIwd` | 新 | md | ✅ 已读：三源锁（壳=STEP、面盖=确认稿、旋钮=66）+「禁止从面盖稿反推壳厚/R角」——与现行一致；旋钮 4.30:1 细则：R21 裁定**不再作依据**（唯一正确=两图，`KNOB_LOG.md` §1） |
+| `70_GTM_CAD_ClosedCover_KnobPanel_..._v1` | 不在本页重写标识 | 新 | md | ✅ 已读：壳认 CAD，面盖认确认稿。旧旋钮文字比例已删，不复述 |
 | `sx-dc-gai-4.stp`（电池盖实体） | `14DuUTk1ZIi0xwA-Mn8p9op72zLBy3STV` | ~130KB 文本 | step | ✅ 头已验（SX-DC-GAI-4/Creo/AP242）登记；几何数值已按 R16 裁出仓库，Tier 1 时回 Drive 取原文 |
 | `101` / `105` / `107` / `110` / `94` 五份 GTM 记录 | `1VUpnewuLlTiiwTEjFBdgys48jRlHkTn3` / `1eOiBiAyqlhkCEDpmcjEjPEgguXJxXR8_` / `10jGjXhu7B6Omfj84Cbk-spfytkRhaxkm` / `1OFIuujEu6UQlDksxO6Tn0rxnza_criex` / `182fMPluClFCx-E_zFULkbFKbG-1VvO0z` | 4–6KB | md | ✅ **全部读完**（09-20）；内容落点=`REUSABLE` §A/B、`CAD_LOG` §3e、`PRODUCT_TRUTH` §1ac |
 | `00_GTM_CAD_LongTermMemory_StartHere_v1_2026-09-19.md` | `1ZiCFZwu9WtuGROTaGvDowwBIAweeZU6f` | 3KB | md | ✅ 已读 |
@@ -71,8 +71,7 @@
 
 ## 仍然缺（不在任何已枚举位置）
 > **R12 起本节让位于 [`00_meta/REQUEST_FILES.md`](REQUEST_FILES.md)**（P0/P1/P2 + 文本换算 + 防重复）。新增最大缺口：旧沙盒 `exp1/` 的 94/101/102/105/107/110 六份 md 未上 Drive。
-1. **底部电池盖 3 张装配截图（2026-09-20 新版）** —— 全项目唯一的电池盖装配证据；两个 folder 里都没有。
-   ⚠️ 没有它，`K7` 无法通过，电池盖相关的任何图/文案我都不会生成（不再猜）。
+1. 底部电池盖外观已由确认稿定稿。旧的“必须另交三张装配截图，否则不能出图”已删。
 2. `01_SL-B03_..._DesignerFinal_Hero_Source_v1.png`（面盖确认源，registry §10 指定优先级最高）—— 不在 folder 里。
 3. `02_SL-B15` / `02_SL-B16`（目录资产盘点 + 文案草稿，md+xlsx）—— 做目录要对照，未枚举到。
 

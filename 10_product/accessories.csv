@@ -1,9 +1,2 @@
 id,name_en,fits_lock_type,fitment_notes,install_method,tools_required,install_time_min,for_icp,price_adder_usd,moq,needs_confirmation,photo_or_frame_ref
-ACC-EURO,euro cylinder escutcheon plate,"euro profile cylinder 30/30–45/45","covers existing cylinder, key still works","replace inner handle only, 2 screws",hex key,5,"installer / DIY","","",yes,""
-ACC-MORT,mortise lockcase adapter,"British / AU mortise sash lock, 60mm backset","no drilling on standard mortise","clip onto existing lockcase",none,5,"dealer / installer","","",yes,""
-ACC-US,US bored-lock spacer set,"US 2-3/8in & 2-3/4in cross bore","for 54/66mm backset doors","plate + screws into existing holes",phillips,5,"installer","","",yes,""
-ACC-PANIC,panic / exit-device bracket,"commercial push-bar devices","door leaf thickness 38–50mm","bracket + through bolts",socket,10,"property mgr / contractor","","",yes,""
-ACC-GLASS,glass-door clamp kit,"10–12mm frameless glass","no drilling on tempered glass","clamp",torque key,10,"hospitality / retail","","",yes,""
-ACC-GATE,outdoor gate bracket,"aluminium / steel gate profiles","IP rating depends on orientation","strap + clamp",drill,15,"gate / outdoor","","",yes,""
-# ↑ 全是我按"一款主机 + 适配全球各种锁"的常见格局**猜的行数**，只用来给你看该填哪些字段。
-#   请用 P3（真实配件清单）覆盖掉，把用不上的删掉，把缺的补上。needs_confirmation 全部先写 yes，我出图前会按行清掉。
+# 猜出来的配件行已删。真实配件清单还没到。门厚和锁距不是外壳尺寸，不写进 CAD 外壳。
