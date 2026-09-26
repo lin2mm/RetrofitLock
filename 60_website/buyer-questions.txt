@@ -1,0 +1,63 @@
+20 buyer questions
+Filtered here from the read catalogue, the channel note, and the commercial-installer boundary.
+Not copied from an older file. Not a model ranking. No customer quotes.
+
+01. Is this a full lock replacement or a retrofit?
+One drive core, two interior retrofit paths. Not a claim that every door can take it.
+
+02. What are the two product paths?
+S1 keeps the existing cylinder. S2 replaces a Euro cylinder.
+
+03. Are the English and Chinese catalogues two products?
+No. They are two language versions of the same catalogue.
+
+04. Will the original key still work?
+Do not promise that it always remains. The keep-cylinder path says the original key stays. The replace-cylinder path says matching keys are included. Check the door.
+
+05. Does it fit every door in a country?
+No. Fit is checked per door. Green, yellow, and red marks are a door screen, not a country certificate.
+
+06. Is it certified in the six discussion countries?
+Cannot say. Certificate text has not been read. No FCC, CE, UKCA, RCM, UL, BHMA, or ANSI mark is claimed.
+
+07. What is the brand?
+Name pending. AccessX is not the public name.
+
+08. Is this a finished app, AccessX, or a Siemens product?
+No. AccessX and Axess are the same prototype, not a finished product, and not a Siemens product.
+
+09. Does it support a named smart-home platform?
+Connection method is unconfirmed. Do not claim a named platform, and do not call it a finished app.
+
+10. What are the price, minimum order, lead time, and warranty?
+Cannot say. Those fields are empty.
+
+11. What are battery life, install time, torque, noise, cycles, and temperature?
+Cannot say. Those are starred engineering targets, not verified facts.
+
+12. What is the case material, and is the cover wood?
+Aluminum case. Fine-textured polymer cover, not wood. The drawing on this site is a diagram, not a product photo.
+
+13. Can we discuss it or review a sample? Is a catalogue request a purchase?
+Discussion and sample review are allowed. A catalogue request is not a purchase.
+
+14. What is needed before a sample review?
+Lock type, inside and outside photos, and whether the existing cylinder must stay. Door thickness can be asked. It is not a shell dimension, and no number is published here.
+
+15. Who is this page for?
+The recorded profile is a commercial access-control installer or integrator, not a residential-only key-cutting shop. A lead score is not a purchase.
+
+16. Should this be offered first through retail, property, or OEM?
+Recorded order, not a sales result: OEM, white-label, and mid-size import or distribution first; then installers and security integrators; then property, short-stay, and small hotels. Not mass retail first. This page does not start outreach.
+
+17. Are the six countries approved sales countries?
+No. United States, United Kingdom, Canada, Australia, Ireland, and New Zealand are a reading order. Not a fit certificate and not a shipment approval.
+
+18. Is there a French catalogue for Canada?
+No. The catalogues read so far are English and Chinese.
+
+19. Is this the engineer site or the consumer advice site?
+No. This is the installer discussion draft. The engineer site stays separate. The public-interest site is not built.
+
+20. Can a scene photo prove the lock is installed and verified?
+No. The stronger install-verification sentence is not for public use.
