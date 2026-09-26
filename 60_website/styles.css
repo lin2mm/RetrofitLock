@@ -81,6 +81,10 @@ h2 { font-size: 32px; margin: 0 0 8px; }
 .glyph figcaption { position: absolute; left: 16px; bottom: 14px; color: var(--muted); font-size: 12px; }
 
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 10px 0 28px; }
+.grid.two { grid-template-columns: 1fr 1fr; }
+.qa { display: grid; gap: 12px; margin: 8px 0 28px; }
+.qa h3 { font-size: 22px; margin: 6px 0; }
+.qa p { margin: 0; }
 .card, .sheet {
   background: var(--card);
   border: 1px solid var(--line);

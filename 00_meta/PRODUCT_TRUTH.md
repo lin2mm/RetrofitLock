@@ -100,7 +100,7 @@ Drive 里对应实物（我列过清单，尚未取得本地副本）：
 01_ProductTruth ← 10_product/       05_Angle_Renders ← 40_images/out/（必须再分 Hypothesis_Not_ProductTruth / CAD_Verified / QA）
 02_CAD          ← 90_archive/cad/    06_Scene_Images  ← 40_images/out/ 场景类
 03_Video        ← 40_images/video/   07_GTM_Assets    ← 50_catalog/ + 60_website/
-04_Frozen_Visual← 40_images/refs/frozen/{silver,black}/ + Visual_QA
+04_Frozen_Visual← 已删除的旧配色图不找回。出图只认 CAD 日志第一节和旋钮日志第一节
 99_Archive      ← 90_archive/
 ```
 关键：**图必须分进 `Hypothesis_Not_ProductTruth/` 还是 `CAD_Verified/`**，两者混放就是之前反复返工的机制原因。

@@ -47,7 +47,7 @@
 **P2 · 目录 / 宣传资产（第③步要）**
 - 🟩 `02_SL-B15_Marketing_AssetAudit_Plan_CN_v1.md/.xlsx`（资产分层：当前可用/待恢复/仅参考/禁止公开）
 - 🟩 `02_SL-B16_Marketing_CopyDraft_Catalogue_Website_Email_EN_CN_v1.md/.xlsx`（12 天计划 + EN-CN 草案 + readiness）
-- 🟩 `09_GTM_OnePager_RetrofitSmartLock_Content_Draft_EN_CN_v0.1.md` + Silver/Black `.docx`（**D61 定的第①步交付物**）
+- 🟩 `09_GTM_OnePager_RetrofitSmartLock_Content_Draft_EN_CN_v0.1.md`（**D61 定的第①步交付物**）。旧配色文稿已从本页删除，不找回。
 - 🟨 `01/02_SL-B01/B02/B10–B14` 旧视觉与营销实体（J07 明确"已确认缺失，不能假设存在"）→ **不用找**
 
 **P3 · 方法论与规则（长期 loop 的正文）**
