@@ -1,25 +1,16 @@
 # Repository structure index
 
-本文件用于索引此仓库的目录结构和主要内容分布，便于快速定位文件与工作区。
+This file is the repo-level directory index for quick navigation and context.
 
-## 统计信息
+## Summary
 
-- 仓库：`lin2mm/RetrofitLock`
-- 主要语言组成：
+- Repository: `lin2mm/RetrofitLock`
+- Primary language composition:
   - Shell: 85%
   - Python: 15%
-- 结构特点：
-  - `00_meta/`：元数据、方法论、日志、脚本和索引
-  - `00_handoff/`：交接材料
-  - `10_product/`：产品与 SKU 数据
-  - `20_audience/`：受众与对象分析
-  - `30_sales_assets/`：销售资产
-  - `40_images/`：图像、CAD、视频与输出目录
-  - `50_catalog/`：目录与说明稿
-  - `60_website/`：静态网站
-  - `90_archive/`：归档材料
+- Repository structure is organized by operational phase and asset type.
 
-## Top-level index tree
+## Top-level tree
 
 ```text
 RetrofitLock/
@@ -79,15 +70,18 @@ RetrofitLock/
 │   ├── intake/
 │   │   ├── README.md
 │   │   └── _READ_LOG.md
-│   └── scripts/
-│       ├── capacity.sh
-│       ├── fetch-drive.sh
-│       ├── learn.sh
-│       ├── probe-drive.sh
-│       ├── pull-inbox.py
-│       ├── push-inbox.sh
-│       ├── scratch.sh
-│       └── verify-upload.sh
+│   ├── scripts/
+│   │   ├── capacity.sh
+│   │   ├── fetch-drive.sh
+│   │   ├── learn.sh
+│   │   ├── probe-drive.sh
+│   │   ├── pull-inbox.py
+│   │   ├── push-inbox.sh
+│   │   ├── scratch.sh
+│   │   └── verify-upload.sh
+│   ├── REPO_STRUCTURE.md
+│   ├── STRUCTURE_00_META.md
+│   └── ...
 │
 ├── 10_product/
 │   ├── .gitkeep
@@ -109,15 +103,13 @@ RetrofitLock/
 │   ├── README.md
 │   ├── slots.csv
 │   ├── out/
-│   │   ├── .gitkeep
 │   │   ├── README.md
 │   │   ├── CAD_Verified/
 │   │   └── Hypothesis_Not_ProductTruth/
 │   ├── refs/
-│   │   └── .gitkeep
-│   └── video/
-│       ├── .ffmpeg_path
-│       └── .gitkeep
+│   ├── video/
+│   ├── STRUCTURE_40_IMAGES.md
+│   └── ...
 │
 ├── 50_catalog/
 │   ├── .gitkeep
@@ -140,21 +132,31 @@ RetrofitLock/
     └── README.md
 ```
 
-## 关键目录说明
+## Key directory roles
 
-- `00_meta/`：这是仓库的“方法论与元数据中心”，包含历史记录、方法、索引、脚本和 session 记录。
-- `10_product/`：产品事实与 SKU 数据，适合做产品基线核对。
-- `20_audience/`：目标客户与产品诉求分析。
-- `30_sales_assets/`：销售沟通模板和资产。
-- `40_images/`：图像、模型引用与输出目录；图像状态会分入 `CAD_Verified/` 或 `Hypothesis_Not_ProductTruth/`。
-- `50_catalog/`：目录与发稿材料。
-- `60_website/`：静态站点，包含页面、样式和脚本。
-- `90_archive/`：历史归档。
+- `00_handoff/` — session handoff and transfer notes
+- `00_meta/` — repo-level method, logic, logs, rules, and scripts
+- `10_product/` — product details, SKU data, accessories, core product file
+- `20_audience/` — ICP and objection analysis
+- `30_sales_assets/` — sales collateral and templates
+- `40_images/` — image source, output, QA, and visual asset pipeline
+- `50_catalog/` — catalog-related materials
+- `60_website/` — static website
+- `90_archive/` — archived or historical project files
 
-## 入口建议
+## Recommended reading order
 
-- 读项目前先看：`00_meta/META.md`
-- 当前方法参考：`00_meta/METHOD_CURRENT.md`
-- 仓库主说明：`README.md`
+1. `README.md`
+2. `00_meta/META.md`
+3. `00_meta/SESSION_BOOTSTRAP.md`
+4. `00_meta/PRODUCT_TRUTH.md`
+5. `00_meta/METHOD_CURRENT.md`
+6. `00_meta/REPO_STRUCTURE.md`
+7. `00_meta/STRUCTURE_00_META.md`
+8. `40_images/STRUCTURE_40_IMAGES.md`
 
-这份索引适合在快速定位、文档导航和协同开发中使用。
+## Related structure notes
+
+- `00_meta/STRUCTURE_00_META.md` explains the governance and operational role of the metadata folder.
+- `40_images/STRUCTURE_40_IMAGES.md` explains the visual asset pipeline and QA boundaries.
+- This repository is intentionally organized as a research-and-operations sandbox, so metadata and logs are as important as the final deliverables.
